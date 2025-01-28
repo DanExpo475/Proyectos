@@ -42,7 +42,7 @@
         .hero {
             text-align: center;
             padding: 100px 20px;
-            background-image: url('assets/images/IMG_6036.JPG'); /* Ruta de la imagen */
+            background-image: url('assets/images/IMG_6036.JPG'); 
             background-size: cover;
             background-position: center;
             color: white;
@@ -85,53 +85,58 @@
         }
 
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            justify-content: center;
             gap: 20px;
-            max-width: 1000px;
+            flex-wrap: wrap;
+            max-width: 1100px;
             margin: auto;
         }
 
         .project-card {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            height: 250px;
+            width: 300px;
+            height: 280px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
             justify-content: center;
-            text-align: center;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
         }
 
+        .project-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
         .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #2a9d8f;
             color: white;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
             border-radius: 5px;
-            width: 100%;
-            text-align: center;
-            margin: 0;
+            transition: background-color 0.3s ease-in-out;
         }
 
-        /* Fondos personalizados para los proyectos */
-        .spotify {
-            background-image: url('assets/images/spotify_logo.png');
-        }
-
-        .ia {
-            background-image: url('assets/images/ia_logo.png');
-        }
-
-        .mna {
-            background-image: url('assets/images/mna_logo.png');
+        .project-card a:hover {
+            background-color: #21867a;
         }
 
         footer {
@@ -173,14 +178,20 @@
     <section id="projects" class="projects">
         <h2>Proyectos Destacados</h2>
         <div class="projects-grid">
-            <div class="project-card spotify">
-                <h3><a href="https://drive.google.com/file/d/ID_PROYECTO_SPOTIFY/view?usp=sharing" target="_blank">Análisis Musical | Spotify</a></h3>
+            <div class="project-card">
+                <img src="assets/images/spotify_logo.png" alt="Spotify Logo">
+                <h3>Análisis Musical | Spotify</h3>
+                <a href="https://drive.google.com/file/d/ID_PROYECTO_SPOTIFY/view?usp=sharing" target="_blank">Ver Proyecto</a>
             </div>
-            <div class="project-card ia">
-                <h3><a href="https://drive.google.com/file/d/ID_PROYECTO_IA/view?usp=sharing" target="_blank">Proyecto IA | Análisis de Imágenes</a></h3>
+            <div class="project-card">
+                <img src="assets/images/ia_logo.png" alt="IA Logo">
+                <h3>Proyecto IA | Análisis de Imágenes</h3>
+                <a href="https://drive.google.com/file/d/ID_PROYECTO_IA/view?usp=sharing" target="_blank">Ver Proyecto</a>
             </div>
-            <div class="project-card mna">
-                <h3><a href="https://drive.google.com/file/d/ID_PROYECTO_MNA/view?usp=sharing" target="_blank">Big Data | MNA Proyecto</a></h3>
+            <div class="project-card">
+                <img src="assets/images/mna_logo.png" alt="MNA Logo">
+                <h3>Big Data | MNA Proyecto</h3>
+                <a href="https://drive.google.com/file/d/ID_PROYECTO_MNA/view?usp=sharing" target="_blank">Ver Proyecto</a>
             </div>
         </div>
     </section>
