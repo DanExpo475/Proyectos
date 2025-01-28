@@ -53,8 +53,8 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+            gap: 20px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -64,42 +64,34 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             transition: transform 0.3s;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            min-height: 300px;
+            justify-content: flex-end;
+            height: 250px;
+            background-size: contain; /* Ajusta el logo al tamaño de la tarjeta */
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
         }
 
-        .logo-container {
-            width: 100px; /* Tamaño del logo */
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-container img {
-            width: 100%; /* Ocupar todo el contenedor */
-            height: 100%;
-            object-fit: contain; /* Mantiene proporción sin cortar la imagen */
-        }
-
         .project-card h3 {
-            margin-top: 10px;
             font-size: 1.2rem;
+            margin-top: auto;
+            background: rgba(255, 255, 255, 0.8); /* Efecto de fondo para mejorar la legibilidad */
+            padding: 10px;
+            border-radius: 10px;
+            width: 90%;
         }
 
         .project-card h3 a {
             display: block;
-            padding: 10px;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #2a9d8f;
             text-decoration: none;
         }
@@ -125,6 +117,24 @@
         footer a:hover {
             color: #b82837;
         }
+
+        /* Imágenes de fondo en las tarjetas */
+        .spotify {
+            background-image: url('assets/images/spotify_logo.png');
+        }
+
+        .disney {
+            background-image: url('assets/images/disney_logo.png');
+        }
+
+        .panot {
+            background-image: url('assets/images/panot_logo.png');
+        }
+
+        .casify {
+            background-image: url('assets/images/casify_log.png');
+        }
+
     </style>
 </head>
 <body>
@@ -140,31 +150,19 @@
     <section class="projects">
         <h1>Proyectos</h1>
         <div class="projects-grid">
-            <div class="project-card">
-                <div class="logo-container">
-                    <img src="assets/images/spotify_logo.png" alt="Logo Spotify">
-                </div>
+            <div class="project-card spotify">
                 <h3><a href="https://drive.google.com/file/d/ID_PROYECTO_SPOTIFY/view?usp=sharing" target="_blank">Proyecto Web Interactiva | Tendencias Spotify</a></h3>
             </div>
 
-            <div class="project-card">
-                <div class="logo-container">
-                    <img src="assets/images/disney_logo.png" alt="Logo Disney">
-                </div>
+            <div class="project-card disney">
                 <h3><a href="https://drive.google.com/file/d/1CafufRtgooflCTdd1rxXTx0yh5zXK1uT/view?usp=sharing" target="_blank">Análisis Big Data | Disney Adults</a></h3>
             </div>
 
-            <div class="project-card">
-                <div class="logo-container">
-                    <img src="assets/images/panot_logo.png" alt="Logo Panot">
-                </div>
+            <div class="project-card panot">
                 <h3><a href="https://drive.google.com/file/d/ID_PROYECTO_PANOT/view?usp=sharing" target="_blank">Análisis Big Data | Proyecto Panot</a></h3>
             </div>
 
-            <div class="project-card">
-                <div class="logo-container">
-                    <img src="assets/images/casify_log.png" alt="Logo Casetify">
-                </div>
+            <div class="project-card casify">
                 <h3><a href="https://drive.google.com/file/d/ID_PRESENTACION_CASETFY/view?usp=sharing" target="_blank">Documento PDF | Presentación Casetify</a></h3>
             </div>
         </div>
@@ -176,5 +174,6 @@
     </footer>
 </body>
 </html>
+
 
 
