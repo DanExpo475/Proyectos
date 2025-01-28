@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +42,7 @@
         .hero {
             text-align: center;
             padding: 100px 20px;
-            background-image: url('./assets/images/IMG_6036.JPG'); /* Ruta relativa */
+            background-image: url('assets/images/IMG_6036.JPG'); /* Ruta de la imagen */
             background-size: cover;
             background-position: center;
             color: white;
@@ -76,10 +76,10 @@
         .projects {
             padding: 50px 20px;
             background-color: #f1f1f1;
+            text-align: center;
         }
 
         .projects h2 {
-            text-align: center;
             margin-bottom: 30px;
             color: #333;
         }
@@ -88,14 +88,23 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .project-card {
-            background-color: white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            height: 250px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
         }
 
         .project-card:hover {
@@ -103,12 +112,26 @@
         }
 
         .project-card h3 {
-            color: #2a9d8f;
-            margin-bottom: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            text-align: center;
+            margin: 0;
         }
 
-        .project-card p {
-            color: #555;
+        /* Fondos personalizados para los proyectos */
+        .spotify {
+            background-image: url('assets/images/spotify_logo.png');
+        }
+
+        .ia {
+            background-image: url('assets/images/ia_logo.png');
+        }
+
+        .mna {
+            background-image: url('assets/images/mna_logo.png');
         }
 
         footer {
@@ -150,24 +173,21 @@
     <section id="projects" class="projects">
         <h2>Proyectos Destacados</h2>
         <div class="projects-grid">
-            <div class="project-card">
-                <h3>Oat coffee 3D Proyecto</h3>
+            <div class="project-card spotify">
+                <h3><a href="https://drive.google.com/file/d/ID_PROYECTO_SPOTIFY/view?usp=sharing" target="_blank">Análisis Musical | Spotify</a></h3>
             </div>
-            <div class="project-card">
-                <h3>Proyecto 2</h3>
-                <p>Descripción breve del proyecto, incluyendo tecnologías usadas y resultados clave.</p>
+            <div class="project-card ia">
+                <h3><a href="https://drive.google.com/file/d/ID_PROYECTO_IA/view?usp=sharing" target="_blank">Proyecto IA | Análisis de Imágenes</a></h3>
             </div>
-            <div class="project-card">
-                <h3>Proyecto 3</h3>
-                <p>Descripción breve del proyecto, incluyendo tecnologías usadas y resultados clave.</p>
+            <div class="project-card mna">
+                <h3><a href="https://drive.google.com/file/d/ID_PROYECTO_MNA/view?usp=sharing" target="_blank">Big Data | MNA Proyecto</a></h3>
             </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2025 Daniel Exposito. Todos los derechos reservados.</p>
-       <p>Sígueme en <a href="https://www.linkedin.com/in/daniel-expósito-pérez-a4a863181" target="_blank">LinkedIn</a>
+       <p>Sígueme en <a href="https://www.linkedin.com/in/daniel-expósito-pérez-a4a863181" target="_blank">LinkedIn</a></p>
     </footer>
 </body>
 </html>
-
