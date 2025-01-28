@@ -14,7 +14,7 @@
 
         header {
             background-color: white;
-            padding: 20px;
+            padding: 10px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
@@ -25,13 +25,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            flex-wrap: wrap;
         }
 
         nav a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            margin: 5px 10px;
             transition: color 0.3s;
         }
 
@@ -42,21 +43,21 @@
         /* Sección Hero */
         .hero {
             text-align: center;
-            padding: 100px 20px;
-            background-image: url('assets/images/IMG_6036.JPG'); /* Ruta relativa */
+            padding: 60px 20px;
+            background-image: url('assets/images/IMG_6036.JPG');
             background-size: cover;
             background-position: center;
             color: white;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         .hero button {
@@ -76,21 +77,21 @@
 
         /* Sección de Proyectos */
         .projects {
-            padding: 50px 20px;
+            padding: 40px 20px;
             background-color: white;
             text-align: center;
         }
 
         .projects h1 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -100,16 +101,13 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             text-align: center;
-            padding: 0;
             transition: transform 0.3s;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: flex-end;
-            height: 260px;
+            height: 200px;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
         }
 
         .project-card:hover {
@@ -117,17 +115,14 @@
         }
 
         .project-card h3 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             background: rgba(255, 255, 255, 0.85);
             padding: 10px;
-            border-radius: 0 0 15px 15px;
-            width: 100%;
             margin: 0;
         }
 
         .project-card h3 a {
             display: block;
-            font-size: 1.3rem;
             color: #2a9d8f;
             text-decoration: none;
         }
@@ -166,6 +161,56 @@
         .mna {
             background-image: url('assets/images/mna_logo.png');
         }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .hero button {
+                font-size: 0.9rem;
+            }
+
+            .projects h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.8rem;
+            }
+
+            .projects h1 {
+                font-size: 1.5rem;
+            }
+
+            .project-card {
+                height: 180px;
+            }
+
+            .project-card h3 {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -174,20 +219,17 @@
             <div><strong><a href="index.html">Mi Portafolio</a></strong></div>
             <div>
                 <a href="proyectos.html">Proyectos</a>
-                
                 <a href="Sobre_mi.html">Sobre Mí</a>
             </div>
         </nav>
     </header>
 
-    <!-- Sección Hero -->
     <section class="hero">
         <h1>¡Hola! Soy Dani</h1>
         <p>Desarrollador | Analista | Creativo</p>
         <button onclick="window.location.href='#projects'">Ver Proyectos</button>
     </section>
 
-    <!-- Sección de Proyectos -->
     <section id="projects" class="projects">
         <h1>Proyectos Destacados</h1>
         <div class="projects-grid">
