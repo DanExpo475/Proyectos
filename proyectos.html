@@ -64,14 +64,14 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             text-align: center;
-            padding: 15px;
+            padding: 0;
             transition: transform 0.3s;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-end;
-            height: 250px;
-            background-size: contain; /* Ajusta el logo al tamaño de la tarjeta */
+            height: 260px; /* Tamaño ajustado para que encuadre bien */
+            background-size: cover; /* Hace que la imagen cubra toda la tarjeta */
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -82,11 +82,11 @@
 
         .project-card h3 {
             font-size: 1.2rem;
-            margin-top: auto;
-            background: rgba(255, 255, 255, 0.8); /* Efecto de fondo para mejorar la legibilidad */
+            background: rgba(255, 255, 255, 0.85); /* Mejor fondo para legibilidad */
             padding: 10px;
-            border-radius: 10px;
-            width: 90%;
+            border-radius: 0 0 15px 15px; /* Solo redondeamos la parte inferior */
+            width: 100%;
+            margin: 0;
         }
 
         .project-card h3 a {
