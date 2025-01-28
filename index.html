@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,166 +7,42 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
-            color: #333;
+            font-family: Arial, sans-serif;
             background-color: #f9f9f9;
         }
 
-        header {
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #e63946;
-        }
-
         .hero {
+            height: 100vh;
             text-align: center;
-            padding: 100px 20px;
-            background-image: url('./assets/images/IMG_6036.JPG'); /* Ruta relativa */
+            color: white;
+            background-image: url('assets/images/IMG_6036.JPG'); /* Ruta corregida */
             background-size: cover;
             background-position: center;
-            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero h1 {
             font-size: 3rem;
-            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .hero button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: white;
-            background-color: #2a9d8f;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .hero button:hover {
-            background-color: #21867a;
-        }
-
-        .projects {
-            padding: 50px 20px;
-            background-color: #f1f1f1;
-        }
-
-        .projects h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background-color: white;
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-card h3 {
-            color: #2a9d8f;
-            margin-bottom: 10px;
-        }
-
-        .project-card p {
-            color: #555;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            color: #777;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: #e63946;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            color: #b82837;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div><a href="index.html"><strong>Mi Portafolio</strong></a></div>
-            <div>
-                <a href="Sobre_mi.html">Sobre Mí</a>
-                <a href="#projects">Proyectos</a>
-            </div>
-        </nav>
-    </header>
-
     <section class="hero">
         <h1>¡Hola! Soy Dani</h1>
         <p>Desarrollador | Analista | Creativo</p>
-        <button>Ver Proyectos</button>
     </section>
-
-    <section id="projects" class="projects">
-        <h2>Proyectos Destacados</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Oat coffee 3D Proyecto</h3>
-            </div>
-            <div class="project-card">
-                <h3>Proyecto 2</h3>
-                <p>Descripción breve del proyecto, incluyendo tecnologías usadas y resultados clave.</p>
-            </div>
-            <div class="project-card">
-                <h3>Proyecto 3</h3>
-                <p>Descripción breve del proyecto, incluyendo tecnologías usadas y resultados clave.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Daniel Exposito. Todos los derechos reservados.</p>
-       <p>Sígueme en <a href="https://www.linkedin.com/in/daniel-expósito-pérez-a4a863181" target="_blank">LinkedIn</a>
-    </footer>
 </body>
 </html>
