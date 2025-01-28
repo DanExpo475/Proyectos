@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        .about {
+            padding: 50px 20px;
+            background-color: white;
+            color: #333;
+        }
+
+        .about h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .about img {
+            display: block;
+            margin: 30px auto;
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .skill {
+            max-width: 800px;
+            margin: 10px auto;
+        }
+
+        .progress {
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px;
+        }
+
+        .progress-bar {
+            background-color: #2a9d8f;
+            height: 100%;
+            transition: width 0.3s;
+        }
+
+        .quote {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f1f1f1;
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonials {
+            padding: 50px 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .testimonial {
+            max-width: 600px;
+            margin: 10px auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            color: #777;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #e63946;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #b82837;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div><a href="index.html"><strong>Mi Portafolio</strong></a></div>
+            <div>
+                <a href="projects.html">Proyectos</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="about">
+        <h1>Sobre Mí</h1>
+        <img src="C:/Users/danie/OneDrive/Escritorio/Portafolio/Perfil.jpeg" alt="Dani">
+        <p>
+            Soy técnico en Marketing, Publicidad y Relaciones Públicas, con un gran interés por las estrategias de 
+            comunicación efectivas y creativas. Actualmente estoy cursando la carrera de Comunicación Interactiva, 
+            especializándome en Marketing Digital y el uso de Inteligencia Artificial en la comunicación. 
+            Mi objetivo es combinar la creatividad con la tecnología para generar experiencias innovadoras que 
+            conecten a las personas con las marcas de manera significativa.
+        </p>
+    </section>
+
+    <section class="skills">
+        <h2>Habilidades</h2>
+        <div class="skill">
+            <p>Marketing Digital</p>
+            <div class="progress"><div class="progress-bar" style="width: 95%;"></div></div>
+        </div>
+        <div class="skill">
+            <p>Publicidad Creativa</p>
+            <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
+        </div>
+        <div class="skill">
+            <p>Uso de IA en Comunicación</p>
+            <div class="progress"><div class="progress-bar" style="width: 65%;"></div></div>
+        </div>
+    </section>
+
+    <section class="quote">
+        <blockquote>
+            "La creatividad es la inteligencia divirtiéndose." - Albert Einstein
+        </blockquote>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dani. Todos los derechos reservados.</p>
+        <p>Sígueme en <a href="https://www.linkedin.com/in/daniel-expósito-pérez-a4a863181" target="_blank">LinkedIn</a> 
+    </footer>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        .projects {
+            padding: 50px 20px;
+            background-color: white;
+        }
+
+        .projects h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card iframe, .project-card video {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            padding: 20px;
+            font-size: 1.8rem;
+            color: #2a9d8f;
+        }
+
+        .project-card p {
+            padding: 0 20px 20px;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            color: #777;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #e63946;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #b82837;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div><strong>Mi Portafolio</strong></div>
+            <div>
+                <a href="index.html">Inicio</a>
+                <a href="about_me.html">Sobre Mí</a>
+                <a href="contact.html">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="projects">
+        <h1>Proyectos</h1>
+        <div class="projects-grid">
+            <div class="project-card">
+                <iframe src=" https://danexpo475.github.io/Tendencias_Spoitfy/" sandbox></iframe>
+                <h3>Proyecto Web Interactiva | Tendencias Tendencias_Spoitfy</h3>
+            </div>
+            <div class="project-card">
+                <iframe src=" https://grupb.alwaysdata.net/" sandbox></iframe>
+                <h3>Proyecto Web Interactiva con implemntacion de Ia | Detector_Cateles_Politicos </h3>
+            </div>
+            <div class="project-card">
+                <iframe src="C:\Users\danie\OneDrive\Escritorio\Portafolio\Disney Adults (2).pdf" width="100%" height="250"></iframe>
+                <h3>Analisis Big Data| Dinsey_Adults</h3>
+            </div>
+            <div class="project-card">
+                <video controls>
+                    <source src="C:\Users\danie\OneDrive\Escritorio\Portafolio\Spot_Animacion_oatly.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+                <h3>Proyecto Creativo|Animacion_3D</h3>
+            </div>
+            <div class="project-card">
+                <video controls>
+                    <source src="C:\Users\danie\OneDrive\Escritorio\Portafolio\CreativeDiet.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+                <h3>Proyecto Creativo|Campaña_publicitaria_Instagram</h3>
+            </div>
+            <div class="project-card">
+                <iframe src="C:\Users\danie\OneDrive\Escritorio\Portafolio\PROYECTO PANOT POR UNA Barcelona LIMPIA.pdf" width="100%" height="250"></iframe>
+                <h3>Analisis Big Data</h3>
+            </div>
+            <div class="project-card">
+                <video controls>
+                    <source src="C:\Users\danie\OneDrive\Escritorio\Portafolio\Spot_Animado_Converse.mov" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+                <h3>Proyecto Creativo</h3>
+                <p>Un video promocional con contenido visual impactante y narrativas atractivas.</p>
+            </div>
+            <div class="project-card">
+                <iframe src="C:\Users\danie\OneDrive\Escritorio\Portafolio\Nº2021-10.pdf" width="100%" height="250"></iframe>
+                <h3>Documento PDF</h3>
+                <p>Un documento PDF que detalla estrategias clave y resultados obtenidos en proyectos previos.</p>
+            </div>
+            <div class="project-card">
+                <iframe src="C:\Users\danie\OneDrive\Escritorio\Portafolio\Presentación Casefy (3).pdf" width="100%" height="250"></iframe>
+                <h3>Documento PDF</h3>
+                <p>Un documento PDF que detalla estrategias clave y resultados obtenidos en proyectos previos.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dani. Todos los derechos reservados.</p>
+        <p>Sígueme en <a href="https://www.linkedin.com/in/daniel-expósito-pérez-a4a863181" target="_blank">LinkedIn</a> | <a href="#">GitHub</a></p>
+    </footer>
+</body>
+</html>
+
+
