@@ -8,12 +8,12 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            color: #333;
             background-color: #f9f9f9;
+            color: #333;
         }
 
         header {
-            background-color: white;
+            background: white;
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: sticky;
@@ -25,14 +25,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
         }
 
         nav a {
             text-decoration: none;
-            color: #333;
             font-weight: bold;
-            transition: color 0.3s;
+            color: #333;
             margin-left: 15px;
         }
 
@@ -42,58 +40,70 @@
 
         .projects {
             padding: 50px 20px;
-            background-color: white;
             text-align: center;
+            background-color: white;
         }
 
         .projects h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 30px;
+            color: #2a9d8f;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             max-width: 1100px;
             margin: 0 auto;
         }
 
         .project-card {
-            background-color: #fff;
             border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            height: 260px;
+            height: 250px;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, filter 0.3s ease;
+            position: relative;
+        }
+
+        .project-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            filter: brightness(1.05);
+        }
+
+        .project-card:hover::after {
+            opacity: 1;
         }
 
         .project-card h3 {
-            font-size: 1.2rem;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 10px;
-            border-radius: 0 0 15px 15px;
-            width: 100%;
+            position: relative;
+            z-index: 2;
+            background: rgba(255,255,255,0.85);
             margin: 0;
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1rem;
         }
 
         .project-card h3 a {
-            display: block;
-            font-size: 1.3rem;
-            color: #2a9d8f;
             text-decoration: none;
+            color: #2a9d8f;
         }
 
         .project-card h3 a:hover {
@@ -103,22 +113,12 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: white;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            color: #777;
+            font-size: 0.9rem;
+            background: white;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
         }
 
-        footer a {
-            text-decoration: none;
-            color: #e63946;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            color: #b82837;
-        }
-
-        /* Imágenes de fondo en las tarjetas */
+        /* Rutas de imágenes */
         .boqueria { background-image: url('assets/images/boqueria_logo.png'); }
         .tram { background-image: url('assets/images/tram_logo.png'); }
         .intermedia { background-image: url('assets/images/intermedia_logo.png'); }
@@ -130,10 +130,8 @@
 <body>
     <header>
         <nav>
-            <div><strong><a href="index.html">Proyectos dentro de Intermèdia Comunicació</a></strong></div>
-            <div>
-                <a href="https://www.intermedia.cat/es/" target="_blank">Ir a Intermèdia</a>
-            </div>
+            <div><strong><a href="index.html">Proyectos Intermèdia</a></strong></div>
+            <div><a href="https://www.intermedia.cat/es/" target="_blank">Intermèdia Web</a></div>
         </nav>
     </header>
 
@@ -141,31 +139,32 @@
         <h1>Proyectos</h1>
         <div class="projects-grid">
             <div class="project-card boqueria">
-                <h3><a href="https://www.instagram.com/la_boqueria/" target="_blank">Creación de contenidos en redes sociales | Boqueria</a></h3>
+                <h3><a href="https://www.instagram.com/la_boqueria/" target="_blank">Contenidos en Redes | Boqueria</a></h3>
             </div>
             <div class="project-card tram">
-                <h3><a href="https://www.instagram.com/tram_barcelona/?hl=es" target="_blank">Creación de contenidos en redes sociales | Tram Barcelona</a></h3>
+                <h3><a href="https://www.instagram.com/tram_barcelona/" target="_blank">Redes Sociales | Tram Barcelona</a></h3>
             </div>
             <div class="project-card intermedia">
-                <h3><a href="https://www.instagram.com/intermediacomunicacio/" target="_blank">Creación de contenidos interactivos | Intermèdia Comunicació</a></h3>
+                <h3><a href="https://www.instagram.com/intermediacomunicacio/" target="_blank">Contenidos Interactivos | Intermèdia</a></h3>
             </div>
             <div class="project-card estabanell">
-                <h3><a href="https://www.instagram.com/estabanell/?hl=es" target="_blank">Creación de contenidos en redes sociales | Estabanell</a></h3>
+                <h3><a href="https://www.instagram.com/estabanell/" target="_blank">Redes Sociales | Estabanell</a></h3>
             </div>
             <div class="project-card parlem">
-                <h3><a href="https://www.instagram.com/parlemtelecom/" target="_blank">Creación de contenidos en redes sociales | Parlem</a></h3>
+                <h3><a href="https://www.instagram.com/parlemtelecom/" target="_blank">Redes Sociales | Parlem</a></h3>
             </div>
             <div class="project-card enginyers">
-                <h3><a href="https://www.eic.cat/noticies" target="_blank">Gestión de proyectos | Enginyers Industrials de Catalunya</a></h3>
+                <h3><a href="https://www.eic.cat/noticies" target="_blank">Gestión de Proyectos | Enginyers Catalunya</a></h3>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Dani. Todos los derechos reservados.</p>
-        <p>Sígueme en <a href="https://www.linkedin.com/in/daniel-expósito-pérez-a4a863181" target="_blank">LinkedIn</a></p>
+        <p>&copy; 2025 Dani. Todos los derechos reservados. | 
+        <a href="https://www.linkedin.com/in/daniel-expósito-pérez-a4a863181" target="_blank">LinkedIn</a></p>
     </footer>
 </body>
 </html>
+
 
 
