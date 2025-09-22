@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        .projects {
+            padding: 50px 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .projects h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 0;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 260px; /* Tamaño ajustado para que encuadre bien */
+            background-size: cover; /* Hace que la imagen cubra toda la tarjeta */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.85); /* Mejor fondo para legibilidad */
+            padding: 10px;
+            border-radius: 0 0 15px 15px; /* Solo redondeamos la parte inferior */
+            width: 100%;
+            margin: 0;
+        }
+
+        .project-card h3 a {
+            display: block;
+            font-size: 1.3rem;
+            color: #2a9d8f;
+            text-decoration: none;
+        }
+
+        .project-card h3 a:hover {
+            color: #e63946;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            color: #777;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #e63946;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #b82837;
+        }
+
+        /* Imágenes de fondo en las tarjetas */
+         .boqueria {
+            background-image: url('assets/images/bpqueria_logo.png'); 
+        .tram {
+            background-image: url('assets/images/tram_logo.png');
+        }
+        .intermedia {
+            background-image: url('assets/images/intermedia_logo.png');
+        }
+        .estabanell {
+            background-image: url('assets/images/estabanell.png');
+        }
+        .parlem {
+            background-image: url('assets/images/parlem_logo.png');
+        }
+
+        .enginyers {
+            background-image: url('assets/images/eniginyers.pmg');
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div><strong><a href="index.html">Proyectos dentro de Intermèdia Comunació</a></strong></div>
+            <div>
+                <a href="https://www.intermedia.cat/es/"</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="projects">
+        <h1>Proyectos</h1>
+         <div class="projects-grid">
+            <div class="project-card boqueria">
+                <h3><a href="https://www.instagram.com/la_boqueria//" target="_blank">Creación de contenidos en redes Sociales | Boqueria</a></h3>
+        <div class="projects-grid">
+            <div class="project-card tram">
+                <h3><a href="https://www.instagram.com/tram_barcelona/?hl=es" target="_blank">Creación de contenidos en redes sociales | Tram Barcelona</a></h3>
+            </div>
+            <div class="project-card intermedia">
+                <h3><a href="https://www.instagram.com/intermediacomunicacio/" target="_blank">Creación de contenidos interactivos | Intermèdia Comunació</a></h3>
+            </div>
+            <div class="project-card estabanell">
+                <h3><a href="https://www.instagram.com/estabanell/?hl=es" target="_blank">Creación de contenidos en redes sociales | Parlem </a></h3>
+            </div>
+            <div class="project-card parlem">
+                <h3><a href="https://www.instagram.com/parlemtelecom/" target="_blank">Creación de contenidos en redes sociales | Parlem</a></h3>
+            </div>
+            <div class="project-card enginyers">
+                <h3><a href="https://www.eic.cat/noticies" target="_blank">Gestión de proryectos | Enginyers Industria Catalunya </a></h3>
+            </div>
+            <
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dani. Todos los derechos reservados.</p>
+        <p>Sígueme en <a href="https://www.linkedin.com/in/daniel-expósito-pérez-a4a863181" target="_blank">LinkedIn</a> </p>
+    </footer>
+</body>
+</html>
 
