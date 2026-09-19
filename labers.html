@@ -1,1317 +1,1163 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Labers / Transciende Estudio — Caso de comunicación, marketing y estrategia."
-    >
-
-    <title>Labers / Transciende Estudio — DANI.</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="../style.css">
+    <title>Labers / Transciende — Dani</title>
 
     <style>
+        :root {
+            --bg: #f4f1e9;
+            --black: #111111;
+            --grey: #777777;
+            --light-grey: #d8d5cc;
+            --green: #60783f;
+            --white: #ffffff;
+            --serif: Georgia, "Times New Roman", serif;
+            --sans: Arial, Helvetica, sans-serif;
+        }
 
-        /* =====================================================
-           LABERS — CASE STUDY
-        ===================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        .case-page {
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
             background: var(--bg);
-        }
-
-
-        /* HEADER */
-
-        .case-header {
-            height: 72px;
-
-            padding: 0 5.8vw;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            border-bottom: 1px solid var(--line);
-        }
-
-        .case-header .logo {
-            font-family: "Manrope", sans-serif;
-            font-size: 17px;
-            font-weight: 800;
-            letter-spacing: -0.05em;
-        }
-
-        .case-header .logo span {
-            color: var(--green);
-        }
-
-        .back-home {
-            font-size: 13px;
-
-            border-bottom: 1px solid var(--black);
-
-            padding-bottom: 5px;
-        }
-
-
-        /* HERO */
-
-        .case-hero {
-            min-height: 78vh;
-
-            padding: 100px 7vw 90px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .case-label {
-            color: #65aa2d;
-
-            font-size: 11px;
-            font-weight: 700;
-
-            letter-spacing: .14em;
-        }
-
-        .case-hero h1 {
-            max-width: 1250px;
-
-            margin: 70px 0 0;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: clamp(70px, 10vw, 155px);
-
-            line-height: .84;
-
-            letter-spacing: -.075em;
-
-            font-weight: 800;
-        }
-
-        .case-hero h1 span {
-            display: block;
-
-            color: #777;
-        }
-
-        .case-intro {
-            max-width: 620px;
-
-            margin-top: 55px;
-
-            color: var(--grey);
-
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-
-        /* META */
-
-        .case-meta {
-
-            margin-top: 70px;
-
-            padding-top: 22px;
-
-            border-top: 1px solid var(--line);
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr 1fr;
-
-            gap: 30px;
-        }
-
-        .case-meta div {
-            display: flex;
-            flex-direction: column;
-
-            gap: 7px;
-        }
-
-        .case-meta small {
-
-            color: #777;
-
-            font-size: 10px;
-
-            text-transform: uppercase;
-
-            letter-spacing: .1em;
-        }
-
-        .case-meta strong {
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: 16px;
-        }
-
-
-        /* INTRO */
-
-        .case-intro-section {
-
-            background: white;
-
-            padding: 120px 7vw;
-        }
-
-        .case-two-column {
-
-            display: grid;
-
-            grid-template-columns: .7fr 1.3fr;
-
-            gap: 10vw;
-        }
-
-        .case-two-column h2 {
-
-            margin: 0;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: clamp(45px, 5.5vw, 80px);
-
-            line-height: .92;
-
-            letter-spacing: -.065em;
-        }
-
-        .case-two-column h2 span {
-
-            color: #777;
-        }
-
-        .case-copy {
-
-            max-width: 700px;
-        }
-
-        .case-copy p {
-
-            margin: 0 0 24px;
-
-            color: var(--grey);
-
-            font-size: 17px;
-
-            line-height: 1.7;
-        }
-
-        .case-copy .lead {
-
             color: var(--black);
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: 25px;
-
-            line-height: 1.35;
-
-            letter-spacing: -.025em;
-        }
-
-
-        /* SERVICES */
-
-        .case-services {
-
-            margin-top: 65px;
-
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            border-top: 1px solid var(--line);
-        }
-
-        .case-service {
-
-            padding: 25px 20px 25px 0;
-
-            border-bottom: 1px solid var(--line);
-        }
-
-        .case-service:nth-child(even) {
-
-            padding-left: 20px;
-
-            border-left: 1px solid var(--line);
-        }
-
-        .case-service span {
-
-            display: block;
-
-            margin-bottom: 25px;
-
-            color: #65aa2d;
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            letter-spacing: .1em;
-        }
-
-        .case-service h3 {
-
-            margin: 0 0 8px;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: 25px;
-
-            letter-spacing: -.04em;
-        }
-
-        .case-service p {
-
-            margin: 0;
-
-            color: var(--grey);
-
-            font-size: 14px;
-
+            font-family: var(--serif);
             line-height: 1.5;
         }
 
-
-        /* DOWN CÓRDOBA */
-
-        .down-section {
-
-            padding: 120px 7vw;
-
-            background: #eef4e9;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        .down-header {
+        /* =========================
+           HEADER
+        ========================= */
 
+        .site-header {
+            width: 100%;
+            padding: 28px 5.5vw;
             display: flex;
-
             justify-content: space-between;
-
-            align-items: flex-end;
-
-            gap: 50px;
-
-            margin-bottom: 60px;
+            align-items: center;
+            font-family: var(--sans);
+            font-size: 13px;
         }
 
-        .down-header h2 {
-
-            margin: 15px 0 0;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: clamp(55px, 7vw, 105px);
-
-            line-height: .88;
-
-            letter-spacing: -.07em;
-        }
-
-        .down-header p {
-
-            max-width: 440px;
-
-            margin: 0;
-
-            color: var(--grey);
-
-            font-size: 16px;
-
-            line-height: 1.6;
-        }
-
-
-        /* DOWN CONTENT */
-
-        .down-content {
-
-            display: grid;
-
-            grid-template-columns: 1.25fr .75fr;
-
-            gap: 25px;
-        }
-
-        .down-main {
-
-            min-height: 500px;
-
-            padding: 40px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: flex-end;
-
-            background: #d5e8c2;
-        }
-
-        .down-main strong {
-
-            max-width: 700px;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: clamp(42px, 5vw, 75px);
-
-            line-height: .9;
-
-            letter-spacing: -.065em;
-        }
-
-        .down-main p {
-
-            max-width: 600px;
-
-            margin: 25px 0 0;
-
-            color: #53604d;
-
-            font-size: 15px;
-
-            line-height: 1.55;
-        }
-
-        .down-side {
-
-            padding: 40px;
-
-            background: white;
-
-            border: 1px solid #d1d8ca;
-        }
-
-        .down-side span {
-
-            color: #65aa2d;
-
-            font-size: 10px;
-
+        .logo {
             font-weight: 700;
-
-            letter-spacing: .12em;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
-        .down-side h3 {
-
-            margin: 35px 0 20px;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: 35px;
-
-            line-height: .95;
-
-            letter-spacing: -.055em;
+        .back-link {
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
-        .down-side p {
+        /* =========================
+           HERO
+        ========================= */
 
-            margin: 0;
-
-            color: var(--grey);
-
-            font-size: 15px;
-
-            line-height: 1.6;
-        }
-
-
-        /* CONTENT AREAS */
-
-        .content-section {
-
-            padding: 120px 7vw;
-
-            background: white;
-        }
-
-        .content-heading {
-
+        .hero {
+            min-height: 760px;
+            padding: 105px 6.7vw 90px;
             display: flex;
-
-            justify-content: space-between;
-
-            align-items: flex-end;
-
-            gap: 50px;
-
-            margin-bottom: 55px;
-        }
-
-        .content-heading h2 {
-
-            margin: 0;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: clamp(48px, 6vw, 85px);
-
-            line-height: .9;
-
-            letter-spacing: -.065em;
-        }
-
-        .content-heading p {
-
-            max-width: 430px;
-
-            margin: 0;
-
-            color: var(--grey);
-
-            font-size: 15px;
-
-            line-height: 1.6;
-        }
-
-
-        /* CONTENT GRID */
-
-        .content-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .content-box {
-
-            min-height: 300px;
-
-            padding: 30px;
-
-            display: flex;
-
             flex-direction: column;
-
             justify-content: space-between;
-
-            background: #f0f0eb;
-
-            border: 1px solid var(--line);
         }
 
-        .content-box:nth-child(2) {
-
-            background: #e7e7e2;
-        }
-
-        .content-box:nth-child(3) {
-
-            background: #d9e9ca;
-        }
-
-        .content-box span {
-
-            font-size: 10px;
-
-            color: #6a7278;
-
-            letter-spacing: .1em;
-        }
-
-        .content-box strong {
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: 30px;
-
-            line-height: .95;
-
-            letter-spacing: -.05em;
-        }
-
-
-        /* PUBLICATION */
-
-        .published-case {
-
-            background: #111;
-
-            color: white;
-
-            padding: 120px 7vw;
-        }
-
-        .published-case .case-label {
-
+        .eyebrow {
+            font-family: var(--sans);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
             color: var(--green);
         }
 
-        .published-case h2 {
-
-            max-width: 900px;
-
-            margin: 25px 0 60px;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: clamp(55px, 7vw, 105px);
-
-            line-height: .88;
-
-            letter-spacing: -.07em;
+        .hero-title {
+            max-width: 1100px;
+            margin-top: 55px;
         }
 
-        .publication-link {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            gap: 30px;
-
-            padding: 22px 0;
-
-            border-top: 1px solid #333;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: 20px;
+        .hero-title h1 {
+            font-family: var(--sans);
+            font-size: clamp(72px, 12vw, 175px);
+            line-height: 0.82;
+            letter-spacing: -0.075em;
+            font-weight: 700;
         }
 
-        .publication-link:last-child {
-
-            border-bottom: 1px solid #333;
+        .hero-title h1 span {
+            display: block;
         }
 
-        .publication-link span {
-
-            color: #999;
-
-            font-family: "DM Sans", sans-serif;
-
-            font-size: 12px;
+        .hero-title h1 .grey {
+            color: var(--grey);
         }
 
-
-        /* CLOSING */
-
-        .case-closing {
-
-            min-height: 65vh;
-
-            padding: 110px 7vw;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-
-            background: var(--green);
+        .hero-description {
+            max-width: 560px;
+            margin-top: 55px;
+            font-size: 22px;
+            line-height: 1.35;
         }
 
-        .case-closing h2 {
+        .hero-meta {
+            margin-top: 90px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-grey);
 
-            max-width: 950px;
-
-            margin: 0;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: clamp(55px, 8vw, 120px);
-
-            line-height: .87;
-
-            letter-spacing: -.07em;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
         }
 
-        .case-closing p {
+        .meta-label {
+            display: block;
+            font-family: var(--sans);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--grey);
+            margin-bottom: 8px;
+        }
 
-            max-width: 550px;
+        .meta-value {
+            font-family: var(--sans);
+            font-size: 15px;
+            font-weight: 600;
+        }
 
-            margin: 50px 0 0;
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
-            font-size: 17px;
+        .section {
+            padding: 115px 6.7vw;
+            border-top: 1px solid var(--light-grey);
+        }
 
+        .section-header {
+            display: grid;
+            grid-template-columns: 25% 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .section-number {
+            font-family: var(--sans);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-family: var(--sans);
+            font-size: clamp(42px, 5vw, 76px);
+            line-height: 0.95;
+            letter-spacing: -0.055em;
+            font-weight: 700;
+        }
+
+        .section-intro {
+            max-width: 650px;
+            margin-left: calc(25% + 60px);
+            margin-bottom: 70px;
+            font-size: 21px;
+            line-height: 1.45;
+        }
+
+        /* =========================
+           CONTEXTO
+        ========================= */
+
+        .context-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            margin-left: calc(25% + 60px);
+        }
+
+        .context-text {
+            font-size: 19px;
             line-height: 1.55;
         }
 
-        .case-closing .email {
-
-            margin-top: 40px;
-
-            align-self: flex-start;
-
-            font-family: "Manrope", sans-serif;
-
-            font-size: 30px;
-
-            font-weight: 700;
-
-            border-bottom: 2px solid;
+        .context-text p + p {
+            margin-top: 25px;
         }
 
+        .context-aside {
+            border-left: 1px solid var(--light-grey);
+            padding-left: 35px;
+        }
 
-        /* RESPONSIVE */
+        .context-aside strong {
+            display: block;
+            font-family: var(--sans);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .context-aside p {
+            font-size: 17px;
+            color: #555;
+        }
+
+        /* =========================
+           SERVICIOS
+        ========================= */
+
+        .services {
+            margin-left: calc(25% + 60px);
+            border-top: 1px solid var(--light-grey);
+        }
+
+        .service {
+            display: grid;
+            grid-template-columns: 80px 1fr 1fr;
+            gap: 30px;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--light-grey);
+            align-items: baseline;
+        }
+
+        .service-number {
+            font-family: var(--sans);
+            font-size: 11px;
+            color: var(--grey);
+        }
+
+        .service-name {
+            font-family: var(--sans);
+            font-size: 25px;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .service-description {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* =========================
+           DOWN CÓRDOBA
+        ========================= */
+
+        .featured {
+            margin-left: calc(25% + 60px);
+        }
+
+        .featured-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+            margin-bottom: 45px;
+        }
+
+        .featured-title {
+            font-family: var(--sans);
+            font-size: clamp(52px, 8vw, 110px);
+            line-height: 0.85;
+            letter-spacing: -0.07em;
+            font-weight: 700;
+        }
+
+        .featured-label {
+            font-family: var(--sans);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .featured-visual {
+            min-height: 430px;
+            background: #d9ded0;
+            padding: 45px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .featured-visual::before {
+            content: "DOWN";
+            position: absolute;
+            top: 35px;
+            right: 40px;
+            font-family: var(--sans);
+            font-size: clamp(70px, 12vw, 170px);
+            font-weight: 700;
+            letter-spacing: -0.08em;
+            color: rgba(17, 17, 17, 0.09);
+        }
+
+        .featured-caption {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+        }
+
+        .featured-caption p {
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .featured-caption small {
+            display: block;
+            margin-top: 20px;
+            font-family: var(--sans);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .featured-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 45px;
+        }
+
+        .featured-info p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           CONTENTS
+        ========================= */
+
+        .content-list {
+            margin-left: calc(25% + 60px);
+            border-top: 1px solid var(--light-grey);
+        }
+
+        .content-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--light-grey);
+        }
+
+        .content-item span:first-child {
+            font-family: var(--sans);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .content-item span:last-child {
+            font-family: var(--sans);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--grey);
+            text-align: right;
+        }
+
+        /* =========================
+           PUBLICACIONES
+        ========================= */
+
+        .publication-grid {
+            margin-left: calc(25% + 60px);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .publication {
+            min-height: 240px;
+            border: 1px solid var(--light-grey);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: none;
+        }
+
+        .publication-label {
+            font-family: var(--sans);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .publication h3 {
+            font-family: var(--sans);
+            font-size: 30px;
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+
+        .publication-link {
+            font-family: var(--sans);
+            font-size: 12px;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* =========================
+           DOCUMENTO
+        ========================= */
+
+        .document-box {
+            margin-left: calc(25% + 60px);
+            padding: 50px;
+            border: 1px solid var(--black);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .document-box h3 {
+            font-family: var(--sans);
+            font-size: 38px;
+            line-height: 1;
+            letter-spacing: -0.045em;
+            margin-bottom: 15px;
+        }
+
+        .document-box p {
+            font-size: 17px;
+            max-width: 600px;
+            color: #555;
+        }
+
+        .document-button {
+            display: inline-block;
+            padding: 15px 22px;
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--sans);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+        }
+
+        /* =========================
+           CIERRE
+        ========================= */
+
+        .closing {
+            min-height: 520px;
+            padding: 130px 6.7vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: 1px solid var(--light-grey);
+        }
+
+        .closing-text {
+            font-family: var(--sans);
+            font-size: clamp(50px, 8vw, 120px);
+            line-height: 0.88;
+            letter-spacing: -0.075em;
+            font-weight: 700;
+            max-width: 1100px;
+        }
+
+        .closing-text span {
+            color: var(--green);
+        }
+
+        .closing-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 100px;
+            font-family: var(--sans);
+            font-size: 13px;
+        }
+
+        .closing-bottom a {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media (max-width: 900px) {
 
-            .case-hero {
-
+            .hero {
                 min-height: auto;
-
-                padding: 90px 6vw;
+                padding-top: 80px;
             }
 
-            .case-meta {
-
-                grid-template-columns: 1fr 1fr;
+            .hero-title {
+                margin-top: 70px;
             }
 
-            .case-two-column {
+            .hero-description {
+                font-size: 19px;
+            }
 
+            .hero-meta {
                 grid-template-columns: 1fr;
-
-                gap: 60px;
+                gap: 25px;
+                margin-top: 70px;
             }
 
-            .down-header {
+            .section {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
 
+            .section-header {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 50px;
+            }
+
+            .section-intro,
+            .context-grid,
+            .services,
+            .featured,
+            .content-list,
+            .publication-grid,
+            .document-box {
+                margin-left: 0;
+            }
+
+            .context-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .service {
+                grid-template-columns: 45px 1fr;
+            }
+
+            .service-description {
+                grid-column: 2;
+            }
+
+            .featured-top {
                 display: block;
             }
 
-            .down-header p {
-
-                margin-top: 30px;
+            .featured-label {
+                display: block;
+                margin-bottom: 20px;
             }
 
-            .down-content {
+            .featured-info {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
 
+            .publication-grid {
                 grid-template-columns: 1fr;
             }
 
-            .content-grid {
-
+            .document-box {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
-
         }
-
 
         @media (max-width: 600px) {
 
-            .case-header {
-
-                padding: 0 5vw;
+            .site-header {
+                padding: 22px 6vw;
             }
 
-            .case-hero {
-
-                padding: 75px 6vw;
+            .hero {
+                padding: 65px 6vw 70px;
             }
 
-            .case-hero h1 {
+            .hero-title h1 {
+                font-size: clamp(65px, 20vw, 110px);
+            }
 
+            .hero-description {
                 margin-top: 45px;
-
-                font-size: 15vw;
+                font-size: 18px;
             }
 
-            .case-intro {
-
-                font-size: 16px;
+            .section {
+                padding-left: 6vw;
+                padding-right: 6vw;
             }
 
-            .case-meta {
-
-                grid-template-columns: 1fr;
-
-                gap: 20px;
+            .section-title {
+                font-size: 48px;
             }
 
-            .case-intro-section,
-            .down-section,
-            .content-section,
-            .published-case,
-            .case-closing {
-
-                padding: 75px 6vw;
+            .section-intro {
+                font-size: 18px;
             }
 
-            .case-services {
-
-                grid-template-columns: 1fr;
+            .featured-visual {
+                min-height: 320px;
+                padding: 25px;
             }
 
-            .case-service:nth-child(even) {
-
-                padding-left: 0;
-
-                border-left: 0;
+            .featured-caption p {
+                font-size: 19px;
             }
 
-            .down-main {
-
-                min-height: 380px;
-
+            .document-box {
                 padding: 30px;
             }
 
-            .down-side {
-
-                padding: 30px;
+            .document-box h3 {
+                font-size: 30px;
             }
 
-            .content-heading {
+            .closing {
+                padding: 90px 6vw;
+            }
 
+            .closing-text {
+                font-size: 58px;
+            }
+
+            .closing-bottom {
                 display: block;
             }
 
-            .content-heading p {
-
+            .closing-bottom a {
+                display: inline-block;
                 margin-top: 25px;
             }
-
-            .publication-link {
-
-                display: block;
-            }
-
-            .publication-link span {
-
-                display: block;
-
-                margin-top: 8px;
-            }
-
         }
-
     </style>
-
 </head>
 
+<body>
 
-<body class="case-page">
+    <!-- HEADER -->
 
+    <header class="site-header">
+        <a href="index.html" class="logo">DANI.</a>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header class="case-header">
-
-    <a href="../index.html" class="logo">
-        DANI<span>.</span>
-    </a>
-
-    <a href="../index.html#experiencia" class="back-home">
-        ← Volver al portfolio
-    </a>
-
-</header>
-
-
-<main>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="case-hero">
-
-    <div>
-
-        <div class="case-label">
-            EXPERIENCIA · 2026
-        </div>
-
-        <h1>
-            Labers /
-            <span>Transciende</span>
-        </h1>
-
-        <p class="case-intro">
-            Trabajo desarrollado en entorno de agencia alrededor de
-            estrategia, comunicación digital, contenidos, social media
-            y planificación de proyectos.
-        </p>
-
-    </div>
-
-
-    <div class="case-meta">
-
-        <div>
-
-            <small>
-                Rol
-            </small>
-
-            <strong>
-                Marketing & Growth
-            </strong>
-
-        </div>
-
-
-        <div>
-
-            <small>
-                Área
-            </small>
-
-            <strong>
-                Comunicación & Marketing
-            </strong>
-
-        </div>
-
-
-        <div>
-
-            <small>
-                Entorno
-            </small>
-
-            <strong>
-                Agencia
-            </strong>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTEXTO
-===================================================== -->
-
-<section class="case-intro-section">
-
-    <div class="case-two-column">
-
-        <h2>
-            Estrategia
-            <span>antes que ruido.</span>
-        </h2>
-
-
-        <div class="case-copy">
-
-            <p class="lead">
-                Mi trabajo en Labers / Transciende Estudio se situó
-                entre la estrategia, la comunicación y la ejecución
-                de contenidos digitales.
-            </p>
-
-            <p>
-                La experiencia me permitió trabajar dentro de un
-                entorno de agencia participando en la planificación
-                de proyectos, definición de líneas de comunicación,
-                contenidos para redes sociales y coordinación
-                con diferentes perfiles del equipo.
-            </p>
-
-            <p>
-                El objetivo no era simplemente producir contenido,
-                sino entender qué necesitaba cada proyecto y
-                convertirlo en una propuesta de comunicación
-                coherente con sus objetivos.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="case-services">
-
-        <div class="case-service">
-
-            <span>01</span>
-
-            <h3>
-                Estrategia
-            </h3>
-
-            <p>
-                Definición de líneas de comunicación,
-                objetivos y planificación.
-            </p>
-
-        </div>
-
-
-        <div class="case-service">
-
-            <span>02</span>
-
-            <h3>
-                Social Media
-            </h3>
-
-            <p>
-                Planificación y desarrollo de contenidos
-                para diferentes canales.
-            </p>
-
-        </div>
-
-
-        <div class="case-service">
-
-            <span>03</span>
-
-            <h3>
-                Contenido
-            </h3>
-
-            <p>
-                Conceptos, formatos, copies y calendarios
-                editoriales.
-            </p>
-
-        </div>
-
-
-        <div class="case-service">
-
-            <span>04</span>
-
-            <h3>
-                Coordinación
-            </h3>
-
-            <p>
-                Trabajo conjunto con perfiles de copy,
-                diseño y creatividad.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     DOWN CÓRDOBA
-===================================================== -->
-
-<section class="down-section">
-
-    <div class="down-header">
-
-        <div>
-
-            <div class="case-label">
-                PROYECTO DESTACADO
-            </div>
-
-            <h2>
-                Down<br>
-                Córdoba
-            </h2>
-
-        </div>
-
-        <p>
-            Desarrollo de una línea de comunicación y contenidos
-            para trabajar diferentes áreas de la asociación y
-            trasladarlas a sus canales digitales.
-        </p>
-
-    </div>
-
-
-    <div class="down-content">
-
-        <div class="down-main">
-
-            <strong>
-                Down es Más
-            </strong>
-
-            <p>
-                Una línea de comunicación planteada para reforzar
-                la visión global de la asociación y dar visibilidad
-                a diferentes áreas y servicios.
-            </p>
-
-        </div>
-
-
-        <div class="down-side">
-
-            <span>
-                LÍNEAS DE CONTENIDO
-            </span>
-
-            <h3>
-                Comunicación
-                con propósito.
-            </h3>
-
-            <p>
-                La estrategia contempló contenidos educativos,
-                comunicación de servicios y piezas pensadas para
-                acercar la actividad de la asociación a su comunidad.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTENIDOS
-===================================================== -->
-
-<section class="content-section">
-
-    <div class="content-heading">
-
-        <div>
-
-            <div class="case-label">
-                CONTENIDOS
-            </div>
-
-            <h2>
-                De la estrategia
-                <br>
-                al contenido.
-            </h2>
-
-        </div>
-
-        <p>
-            El trabajo se trasladó a diferentes formatos y líneas
-            editoriales para mantener una comunicación coherente
-            y reconocible.
-        </p>
-
-    </div>
-
-
-    <div class="content-grid">
-
-        <div class="content-box">
-
-            <span>
-                01 / EDUCACIÓN
-            </span>
-
-            <strong>
-                Logopedia
-            </strong>
-
-        </div>
-
-
-        <div class="content-box">
-
-            <span>
-                02 / EDUCACIÓN
-            </span>
-
-            <strong>
-                Habilidades
-                Básicas
-            </strong>
-
-        </div>
-
-
-        <div class="content-box">
-
-            <span>
-                03 / COMUNICACIÓN
-            </span>
-
-            <strong>
-                Lectoescritura
-                & Lectura Fácil
-            </strong>
-
-        </div>
-
-
-        <div class="content-box">
-
-            <span>
-                04 / AUTONOMÍA
-            </span>
-
-            <strong>
-                Social &
-                Ocio
-            </strong>
-
-        </div>
-
-
-        <div class="content-box">
-
-            <span>
-                05 / CONTENIDO
-            </span>
-
-            <strong>
-                Carruseles
-                educativos
-            </strong>
-
-        </div>
-
-
-        <div class="content-box">
-
-            <span>
-                06 / FORMATO
-            </span>
-
-            <strong>
-                Reels &
-                audiovisual
-            </strong>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PUBLICADO
-===================================================== -->
-
-<section class="published-case">
-
-    <div class="case-label">
-        TRABAJO PUBLICADO
-    </div>
-
-    <h2>
-        Puedes ver
-        el trabajo
-        directamente.
-    </h2>
-
-
-    <a
-        class="publication-link"
-        href="https://www.instagram.com/trasciende_estudio/"
-        target="_blank"
-        rel="noopener"
-    >
-
-        <strong>
-            Transciende Estudio
-        </strong>
-
-        <span>
-            Instagram ↗
-        </span>
-
-    </a>
-
-
-    <a
-        class="publication-link"
-        href="https://downcordoba.org/trasciende-estudio-trabaja-con-nosotros/"
-        target="_blank"
-        rel="noopener"
-    >
-
-        <strong>
-            Down Córdoba
-        </strong>
-
-        <span>
-            Web ↗
-        </span>
-
-    </a>
-
-
-</section>
-
-
-<!-- =====================================================
-     CIERRE
-===================================================== -->
-
-<section class="case-closing">
-
-    <div>
-
-        <div class="case-label">
-            LABERS / TRANSCIENDE
-        </div>
-
-        <h2>
-            Comunicación
-            que tiene
-            <span>un porqué.</span>
-        </h2>
-
-    </div>
-
-
-    <div>
-
-        <p>
-            Una experiencia que me permitió seguir construyendo
-            una visión transversal de la comunicación: estrategia,
-            contenido, social media y marketing trabajando juntos.
-        </p>
-
-        <a
-            class="email"
-            href="mailto:danieleexp@gmail.com"
-        >
-            danieleexp@gmail.com ↗
+        <a href="index.html#experiencia" class="back-link">
+            ← Volver al portfolio
         </a>
-
-    </div>
-
-</section>
+    </header>
 
 
-</main>
+    <!-- HERO -->
 
+    <main>
+
+        <section class="hero">
+
+            <div>
+                <p class="eyebrow">Experiencia · 2026</p>
+
+                <div class="hero-title">
+                    <h1>
+                        <span>Labers /</span>
+                        <span class="grey">Transciende</span>
+                    </h1>
+                </div>
+
+                <p class="hero-description">
+                    Trabajo desarrollado en entorno de agencia alrededor de
+                    estrategia, comunicación digital, contenidos, social media
+                    y planificación de proyectos.
+                </p>
+            </div>
+
+
+            <div class="hero-meta">
+
+                <div>
+                    <span class="meta-label">Rol</span>
+                    <span class="meta-value">Marketing & Growth</span>
+                </div>
+
+                <div>
+                    <span class="meta-label">Área</span>
+                    <span class="meta-value">Comunicación & Marketing</span>
+                </div>
+
+                <div>
+                    <span class="meta-label">Entorno</span>
+                    <span class="meta-value">Agencia</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEXTO -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">01 / CONTEXTO</span>
+
+                <h2 class="section-title">
+                    Estrategia<br>
+                    antes que ruido.
+                </h2>
+
+            </div>
+
+            <p class="section-intro">
+                Una experiencia centrada en entender la comunicación como
+                una herramienta estratégica: definir qué contar, para quién,
+                con qué formato y con qué objetivo.
+            </p>
+
+
+            <div class="context-grid">
+
+                <div class="context-text">
+
+                    <p>
+                        El trabajo se desarrolló dentro de un entorno de
+                        agencia, participando en proyectos de comunicación,
+                        marketing digital y contenidos para diferentes
+                        organizaciones.
+                    </p>
+
+                    <p>
+                        El foco estuvo en conectar estrategia y ejecución:
+                        desde la planificación de contenidos hasta la
+                        definición de líneas editoriales y la preparación
+                        de piezas para redes sociales.
+                    </p>
+
+                </div>
+
+
+                <div class="context-aside">
+
+                    <strong>
+                        Mi enfoque
+                    </strong>
+
+                    <p>
+                        Pensar primero el porqué de una comunicación y
+                        convertirlo después en contenido, formatos y
+                        acciones concretas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICIOS -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">02 / ÁREAS</span>
+
+                <h2 class="section-title">
+                    Qué<br>
+                    hice.
+                </h2>
+
+            </div>
+
+
+            <div class="services">
+
+                <div class="service">
+
+                    <span class="service-number">01</span>
+
+                    <span class="service-name">
+                        Estrategia
+                    </span>
+
+                    <span class="service-description">
+                        Definición de líneas de comunicación, objetivos,
+                        enfoques y planificación.
+                    </span>
+
+                </div>
+
+
+                <div class="service">
+
+                    <span class="service-number">02</span>
+
+                    <span class="service-name">
+                        Social Media
+                    </span>
+
+                    <span class="service-description">
+                        Planificación y desarrollo de contenidos para
+                        diferentes canales sociales.
+                    </span>
+
+                </div>
+
+
+                <div class="service">
+
+                    <span class="service-number">03</span>
+
+                    <span class="service-name">
+                        Contenido
+                    </span>
+
+                    <span class="service-description">
+                        Desarrollo de conceptos, contenidos editoriales,
+                        carruseles y formatos audiovisuales.
+                    </span>
+
+                </div>
+
+
+                <div class="service">
+
+                    <span class="service-number">04</span>
+
+                    <span class="service-name">
+                        Planificación
+                    </span>
+
+                    <span class="service-description">
+                        Organización de calendarios, temáticas,
+                        publicaciones y coordinación de proyectos.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DOWN CÓRDOBA -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">03 / PROYECTO</span>
+
+                <h2 class="section-title">
+                    Caso<br>
+                    destacado.
+                </h2>
+
+            </div>
+
+
+            <div class="featured">
+
+                <div class="featured-top">
+
+                    <div>
+                        <span class="featured-label">
+                            Comunicación · Social Media
+                        </span>
+
+                        <h2 class="featured-title">
+                            Down<br>Córdoba
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="featured-visual">
+
+                    <div class="featured-caption">
+
+                        <p>
+                            Una estrategia de contenidos orientada a
+                            visibilizar las diferentes áreas de trabajo
+                            de la asociación y convertirlas en contenidos
+                            accesibles y relevantes.
+                        </p>
+
+                        <small>
+                            Estrategia · Contenido · Social Media
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="featured-info">
+
+                    <p>
+                        La planificación de contenidos se estructuró
+                        alrededor de diferentes líneas temáticas,
+                        trabajando cada una desde formatos educativos,
+                        divulgativos y audiovisuales.
+                    </p>
+
+                    <p>
+                        El proyecto permitió trabajar la comunicación
+                        desde una perspectiva editorial: ordenar temas,
+                        crear una narrativa y convertir información
+                        especializada en contenido para redes sociales.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENIDOS -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">04 / CONTENIDOS</span>
+
+                <h2 class="section-title">
+                    De la idea<br>
+                    al formato.
+                </h2>
+
+            </div>
+
+
+            <div class="content-list">
+
+                <div class="content-item">
+
+                    <span>Logopedia</span>
+
+                    <span>
+                        Contenido educativo
+                    </span>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <span>Habilidades Básicas</span>
+
+                    <span>
+                        Divulgación
+                    </span>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <span>Lectoescritura</span>
+
+                    <span>
+                        Contenido educativo
+                    </span>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <span>Lectura Fácil</span>
+
+                    <span>
+                        Accesibilidad
+                    </span>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <span>Autonomía Social & Ocio</span>
+
+                    <span>
+                        Comunicación
+                    </span>
+
+                </div>
+
+
+                <div class="content-item">
+
+                    <span>Carruseles & Reels</span>
+
+                    <span>
+                        Formatos digitales
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PUBLICACIONES -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">05 / PUBLICADO</span>
+
+                <h2 class="section-title">
+                    Trabajo<br>
+                    publicado.
+                </h2>
+
+            </div>
+
+
+            <div class="publication-grid">
+
+                <a
+                    href="https://www.instagram.com/trasciende_estudio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="publication"
+                >
+
+                    <span class="publication-label">
+                        Instagram
+                    </span>
+
+                    <h3>
+                        Transciende<br>
+                        Estudio
+                    </h3>
+
+                    <span class="publication-link">
+                        Ver publicación ↗
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="https://downcordoba.org/trasciende-estudio-trabaja-con-nosotros/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="publication"
+                >
+
+                    <span class="publication-label">
+                        Web
+                    </span>
+
+                    <h3>
+                        Down<br>
+                        Córdoba
+                    </h3>
+
+                    <span class="publication-link">
+                        Ver proyecto ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- DOCUMENTACIÓN -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">06 / DOCUMENTACIÓN</span>
+
+                <h2 class="section-title">
+                    El proyecto,<br>
+                    sobre papel.
+                </h2>
+
+            </div>
+
+
+            <div class="document-box">
+
+                <div>
+
+                    <h3>
+                        Labers / Transciende
+                    </h3>
+
+                    <p>
+                        Case study con el contexto del proyecto,
+                        áreas de trabajo, estrategia de contenidos
+                        y principales líneas desarrolladas.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="documents/Labers_Transciende_Case_Study.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-button"
+                >
+                    Abrir PDF ↗
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CIERRE -->
+
+        <section class="closing">
+
+            <p class="closing-text">
+                Comunicación<br>
+                con <span>un porqué.</span>
+            </p>
+
+
+            <div class="closing-bottom">
+
+                <span>
+                    Labers / Transciende · 2026
+                </span>
+
+                <a href="index.html#experiencia">
+                    ← Volver al portfolio
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
-
 </html>
