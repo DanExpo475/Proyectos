@@ -1,15 +1,53 @@
-document.querySelectorAll('.experience-item,.project-card,.video-card,.publication-list a').forEach((el,i)=>{
-  el.style.opacity='0';
-  el.style.transform='translateY(18px)';
-  el.style.transition=`opacity .6s ease ${Math.min(i*40,300)}ms, transform .6s ease ${Math.min(i*40,300)}ms`;
-});
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.style.opacity='1';
-      entry.target.style.transform='none';
-      observer.unobserve(entry.target);
-    }
+// ======================================================
+// DANI — PORTFOLIO
+// JavaScript base
+// ======================================================
+
+// Portfolio intentionally kept static.
+// No scroll animations, no IntersectionObserver,
+// no marquee effects.
+
+// Año actual
+const yearElement = document.querySelector('[data-year]');
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
+
+
+// ======================================================
+// Menú móvil
+// ======================================================
+
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.nav');
+
+if (menuButton && navigation) {
+  menuButton.addEventListener('click', () => {
+    navigation.classList.toggle('is-open');
+    menuButton.classList.toggle('is-open');
   });
-},{threshold:.08});
-document.querySelectorAll('.experience-item,.project-card,.video-card,.publication-list a').forEach(el=>observer.observe(el));
+}
+
+
+// Cerrar el menú al hacer clic en un enlace
+if (navigation) {
+  navigation.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navigation.classList.remove('is-open');
+
+      if (menuButton) {
+        menuButton.classList.remove('is-open');
+      }
+    });
+  });
+}
+
+
+// ======================================================
+// Evitar errores si no existen elementos específicos
+// ======================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Portfolio cargado correctamente.
+});
