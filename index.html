@@ -1,210 +1,2454 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            background-color: #f9f9f9;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+<title>Dani Expósito — Comunicación Digital & Marketing</title>
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+<meta name="description"
+content="Portfolio de Dani Expósito. Comunicación digital, marketing, estrategia, social media, contenidos e inteligencia artificial.">
 
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        nav a:hover {
-            color: #e63946;
-        }
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-        /* Sección Hero */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background-image: url('assets/images/IMG_6036.JPG'); /* Ruta relativa */
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
+<style>
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+:root{
+    --bg:#f5f5f1;
+    --white:#fff;
+    --black:#111;
+    --grey:#707070;
+    --line:#deded8;
+    --green:#91d84c;
+    --green-dark:#57952b;
+    --max:1240px;
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .hero button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: white;
-            background-color: #2a9d8f;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .hero button:hover {
-            background-color: #21867a;
-        }
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--bg);
+    color:var(--black);
+    line-height:1.6;
+}
 
-        /* Sección de Proyectos */
-        .projects {
-            padding: 50px 20px;
-            background-color: white;
-            text-align: center;
-        }
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-        .projects h1 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
+img,video{
+    display:block;
+    width:100%;
+}
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+.container{
+    width:min(var(--max),calc(100% - 56px));
+    margin:auto;
+}
 
-        .project-card {
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            padding: 0;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            height: 260px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+section{
+    padding:120px 0;
+}
 
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
+.eyebrow{
+    color:var(--green-dark);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
 
-        .project-card h3 {
-            font-size: 1.2rem;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 10px;
-            border-radius: 0 0 15px 15px;
-            width: 100%;
-            margin: 0;
-        }
+h1,h2,h3{
+    font-family:"Manrope",sans-serif;
+    line-height:1.04;
+    letter-spacing:-.045em;
+}
 
-        .project-card h3 a {
-            display: block;
-            font-size: 1.3rem;
-            color: #2a9d8f;
-            text-decoration: none;
-        }
+/* =========================
+   NAV
+========================= */
 
-        .project-card h3 a:hover {
-            color: #e63946;
-        }
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            color: #777;
-        }
+    background:rgba(245,245,241,.88);
+    backdrop-filter:blur(18px);
 
-        footer a {
-            text-decoration: none;
-            color: #e63946;
-            margin: 0 10px;
-        }
+    border-bottom:1px solid rgba(0,0,0,.06);
+}
 
-        footer a:hover {
-            color: #b82837;
-        }
+.nav{
+    height:78px;
+    max-width:var(--max);
+    margin:auto;
+    padding:0 28px;
 
-        /* Imágenes de fondo en las tarjetas */
-        .intermedia {
-            background-image: url('assets/images/intermedia_logo.png');
-        }
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-        .tfg {
-            background-image: url('assets/images/tfg_logo.png');
-        }
+.logo{
+    font-family:"Manrope",sans-serif;
+    font-size:21px;
+    font-weight:800;
+    letter-spacing:-.06em;
+}
 
-        .mna {
-            background-image: url('assets/images/mna_logo.png');
-        }
-    </style>
+.logo span{
+    color:var(--green-dark);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.nav-links a{
+    font-size:13px;
+    color:#444;
+}
+
+.nav-links a:hover{
+    color:var(--green-dark);
+}
+
+.nav-contact{
+    border:1px solid var(--black);
+    padding:9px 17px;
+    border-radius:50px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:145px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:90px;
+    align-items:end;
+}
+
+.hero h1{
+    font-size:clamp(58px,8vw,110px);
+    max-width:1000px;
+}
+
+.green{
+    color:var(--green-dark);
+}
+
+.hero-description{
+    max-width:700px;
+    margin-top:35px;
+    color:#555;
+    font-size:19px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:12px;
+    margin-top:38px;
+}
+
+.button{
+    display:inline-flex;
+    padding:14px 22px;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+}
+
+.button-black{
+    background:var(--black);
+    color:white;
+}
+
+.button-outline{
+    border:1px solid #c9c9c4;
+}
+
+.hero-aside{
+    border-left:1px solid #d1d1cb;
+    padding-left:34px;
+}
+
+.hero-aside p{
+    color:var(--grey);
+    font-size:14px;
+    margin-bottom:24px;
+}
+
+.hero-aside strong{
+    display:block;
+    font-family:"Manrope";
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    background:var(--black);
+    color:white;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:.75fr 1.25fr;
+    gap:100px;
+}
+
+.intro h2{
+    font-size:clamp(42px,5.5vw,72px);
+}
+
+.intro-text{
+    max-width:760px;
+    color:#d0d0d0;
+    font-size:20px;
+}
+
+.intro-text p+p{
+    margin-top:25px;
+}
+
+/* =========================
+   HEADERS
+========================= */
+
+.section-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:40px;
+    margin-bottom:60px;
+}
+
+.section-header h2{
+    font-size:clamp(45px,6vw,78px);
+}
+
+.section-header>p{
+    max-width:430px;
+    color:var(--grey);
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience-list{
+    border-top:1px solid var(--line);
+}
+
+.experience-item{
+    display:grid;
+    grid-template-columns:150px 1fr 220px;
+    gap:40px;
+    padding:38px 0;
+    border-bottom:1px solid var(--line);
+}
+
+.experience-date{
+    color:var(--grey);
+    font-size:13px;
+}
+
+.experience-content h3{
+    font-size:29px;
+    margin-bottom:8px;
+}
+
+.experience-content p{
+    max-width:760px;
+    color:var(--grey);
+}
+
+.experience-role{
+    text-align:right;
+    color:var(--grey);
+    font-size:13px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects{
+    background:white;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+}
+
+.project{
+    overflow:hidden;
+    background:var(--bg);
+    border-radius:22px;
+    transition:.35s;
+}
+
+.project:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+
+.project-image{
+    aspect-ratio:16/10;
+    overflow:hidden;
+    background:#ddd;
+}
+
+.project-image img{
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.project:hover .project-image img{
+    transform:scale(1.04);
+}
+
+.project-content{
+    padding:29px;
+}
+
+.project-category{
+    display:block;
+    color:var(--green-dark);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.project h3{
+    font-size:31px;
+    margin-bottom:12px;
+}
+
+.project p{
+    color:var(--grey);
+    font-size:15px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:20px;
+}
+
+.tag{
+    border:1px solid #d0d0cb;
+    border-radius:50px;
+    padding:6px 10px;
+    font-size:10px;
+    color:#555;
+}
+
+.project-link{
+    display:inline-block;
+    margin-top:22px;
+    font-size:13px;
+    font-weight:700;
+}
+
+/* FEATURED */
+
+.featured{
+    grid-column:span 2;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+}
+
+.featured .project-image{
+    height:100%;
+    min-height:470px;
+}
+
+.featured .project-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:55px;
+}
+
+.featured h3{
+    font-size:48px;
+}
+
+.featured-label{
+    width:max-content;
+    padding:7px 11px;
+    border-radius:50px;
+    background:var(--green);
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-section{
+    background:#ecece7;
+}
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+}
+
+.video-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.video-wrapper{
+    background:#111;
+    aspect-ratio:9/16;
+    max-height:650px;
+}
+
+.video-wrapper video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.video-info{
+    padding:25px;
+}
+
+.video-info span{
+    color:var(--green-dark);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.1em;
+}
+
+.video-info h3{
+    margin-top:10px;
+    font-size:25px;
+}
+
+.video-info p{
+    color:var(--grey);
+    font-size:14px;
+    margin-top:8px;
+}
+
+.video-info a{
+    display:inline-block;
+    margin-top:17px;
+    font-size:12px;
+    font-weight:700;
+    text-decoration:underline;
+    text-underline-offset:4px;
+}
+
+/* =========================
+   DOCUMENTS
+========================= */
+
+.documents{
+    background:white;
+}
+
+.documents-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.document{
+    background:var(--bg);
+    padding:28px;
+    border:1px solid var(--line);
+    border-radius:18px;
+}
+
+.document-type{
+    color:var(--green-dark);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+}
+
+.document h3{
+    font-size:23px;
+    margin-top:24px;
+}
+
+.document p{
+    color:var(--grey);
+    font-size:14px;
+    margin-top:9px;
+}
+
+.document-actions{
+    display:flex;
+    gap:18px;
+    margin-top:22px;
+}
+
+.document-actions a{
+    font-size:12px;
+    font-weight:700;
+    text-decoration:underline;
+    text-underline-offset:4px;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social{
+    background:var(--black);
+    color:white;
+}
+
+.social .section-header>p{
+    color:#aaa;
+}
+
+.social-list{
+    border-top:1px solid #333;
+}
+
+.social-item{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:40px;
+    align-items:center;
+    padding:27px 0;
+    border-bottom:1px solid #333;
+}
+
+.social-item h3{
+    font-size:25px;
+}
+
+.social-item p{
+    color:#999;
+    font-size:13px;
+}
+
+.social-links{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    font-size:12px;
+    text-decoration:underline;
+    text-underline-offset:4px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-left:1px solid var(--line);
+    border-top:1px solid var(--line);
+}
+
+.skill{
+    min-height:180px;
+    padding:28px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.skill-number{
+    color:var(--green-dark);
+    font-size:11px;
+    font-weight:800;
+}
+
+.skill h3{
+    font-size:21px;
+    margin-top:28px;
+}
+
+.skill p{
+    color:var(--grey);
+    font-size:13px;
+    margin-top:8px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:#e7e7e2;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.7fr 1.3fr;
+    gap:100px;
+}
+
+.about h2{
+    font-size:clamp(45px,6vw,80px);
+}
+
+.about-content{
+    color:#444;
+    font-size:19px;
+}
+
+.about-content p+p{
+    margin-top:24px;
+}
+
+.education{
+    margin-top:45px;
+    border-top:1px solid #c9c9c4;
+}
+
+.education-item{
+    display:flex;
+    justify-content:space-between;
+    padding:17px 0;
+    border-bottom:1px solid #d0d0cb;
+    font-size:14px;
+}
+
+.education-item span{
+    color:var(--grey);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:var(--green);
+}
+
+.contact h2{
+    max-width:1050px;
+    font-size:clamp(55px,9vw,120px);
+}
+
+.contact-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-top:70px;
+}
+
+.email{
+    font-size:20px;
+    font-weight:600;
+}
+
+.contact-socials{
+    display:flex;
+    gap:20px;
+}
+
+.contact-socials a{
+    font-size:13px;
+    text-decoration:underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:var(--black);
+    color:white;
+    padding:28px 0;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    color:#999;
+    font-size:11px;
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:.8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+    .hero-grid,
+    .intro-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .hero-aside{
+        border-left:0;
+        border-top:1px solid #d1d1cb;
+        padding:25px 0 0;
+    }
+
+    .experience-item{
+        grid-template-columns:100px 1fr;
+    }
+
+    .experience-role{
+        display:none;
+    }
+
+    .featured{
+        grid-template-columns:1fr;
+    }
+
+    .featured .project-image{
+        min-height:350px;
+    }
+
+    .documents-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .skills-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+
+    .container{
+        width:calc(100% - 36px);
+    }
+
+    section{
+        padding:85px 0;
+    }
+
+    .nav{
+        padding:0 18px;
+    }
+
+    .nav-links a:not(.nav-contact){
+        display:none;
+    }
+
+    .hero{
+        min-height:auto;
+        padding-top:135px;
+    }
+
+    .hero h1{
+        font-size:53px;
+    }
+
+    .hero-description{
+        font-size:17px;
+    }
+
+    .section-header{
+        display:block;
+    }
+
+    .section-header>p{
+        margin-top:20px;
+    }
+
+    .projects-grid,
+    .video-grid{
+        grid-template-columns:1fr;
+    }
+
+    .featured{
+        grid-column:span 1;
+    }
+
+    .featured .project-content{
+        padding:32px;
+    }
+
+    .featured h3{
+        font-size:39px;
+    }
+
+    .documents-grid,
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .experience-item{
+        grid-template-columns:1fr;
+        gap:8px;
+    }
+
+    .social-item{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .contact-bottom{
+        display:block;
+        margin-top:45px;
+    }
+
+    .contact-socials{
+        margin-top:25px;
+    }
+
+    .footer{
+        display:block;
+    }
+
+    .footer div+div{
+        margin-top:8px;
+    }
+}
+
+</style>
 </head>
+
+
 <body>
-    <header>
-        <nav>
-            <div><strong><a href="index.html">Mi Portafolio</a></strong></div>
-            <div>
-                <a href="Sobre_mi.html">Sobre Mí</a>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Sección Hero -->
-    <section class="hero">
-        <h1>¡Hola! Soy Dani</h1>
-        <p>Desarrollador | Analista | Creativo</p>
-        <button onclick="window.location.href='proyectos.html'">Ver Proyectos</button>
-    </section>
 
-    <!-- Sección de Proyectos -->
-    <section id="projects" class="projects">
-        <h1>Proyectos Destacados</h1>
-        <div class="projects-grid">
-             <div class="project-card intermedia">
-                <h3><a href="intermedia.html">Proyecto Redes Sociales | Intermèdia Comunicació</a></h3>
-            </div>
-            <div class="project-card tfg">
-                <h3><a href="https://drive.google.com/drive/u/0/folders/1H-HTuayVSbFKqNAlZ7tfZaNrnkHxPJz4/" target="_blank"> Proyecto Final de Grado | Inbound marketing en la era de la inteligencia artificial</a></h3>
-            </div>
-            <div class="project-card mna">
-                <h3><a href="https://www.instagram.com/mnastands/" target="_blank">Proyecto de Redes Sociales | MNA Stands</a></h3>
-            </div>
-        </div>
-    </section>
+<!-- =====================================================
+     NAV
+===================================================== -->
 
-    <footer>
-        <p>&copy; 2025 Dani. Todos los derechos reservados.</p>
-        <p>Sígueme en <a href="https://www.linkedin.com/in/daniel-expósito-pérez-a4a863181" target="_blank">LinkedIn</a> </p>
-    </footer>
+<header>
+
+<nav class="nav">
+
+<a href="#inicio" class="logo">
+DANI<span>.</span>
+</a>
+
+<div class="nav-links">
+
+<a href="#experiencia">Experiencia</a>
+
+<a href="#proyectos">Proyectos</a>
+
+<a href="#audiovisual">Audiovisual</a>
+
+<a href="#documentos">Documentos</a>
+
+<a href="#sobre-mi">Sobre mí</a>
+
+<a href="#contacto" class="nav-contact">
+Contacto
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+<div class="container hero-grid">
+
+<div class="reveal">
+
+<div class="eyebrow">
+Comunicación Digital · Marketing · Estrategia
+</div>
+
+<h1>
+Comunicación
+que
+<span class="green">
+conecta.
+</span>
+</h1>
+
+<p class="hero-description">
+Soy Dani, profesional de la comunicación y el marketing digital.
+Trabajo entre estrategia, contenidos, social media, creatividad,
+datos y tecnología para desarrollar proyectos con sentido.
+</p>
+
+<div class="hero-actions">
+
+<a href="#proyectos" class="button button-black">
+Ver proyectos →
+</a>
+
+<a href="#audiovisual" class="button button-outline">
+Ver contenido →
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-aside reveal">
+
+<p>
+Perfil orientado a comunicación digital, marketing y entorno
+de agencia.
+</p>
+
+<strong>
+Barcelona · España
+</strong>
+
+<p>
+Comunicación Interactiva · Marketing Digital
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro">
+
+<div class="container intro-grid">
+
+<div class="reveal">
+
+<div class="eyebrow">
+Mi enfoque
+</div>
+
+<h2>
+Estrategia,
+creatividad
+y tecnología.
+</h2>
+
+</div>
+
+
+<div class="intro-text reveal">
+
+<p>
+Mi perfil combina formación en Comunicación Interactiva,
+Marketing y Publicidad con experiencia práctica en comunicación
+digital y entorno de agencia.
+</p>
+
+<p>
+He trabajado en estrategia de contenidos, planificación editorial,
+redes sociales, comunicación de marca, coordinación de proyectos
+y análisis de resultados.
+</p>
+
+<p>
+Me interesa convertir objetivos de comunicación en ideas,
+contenidos y acciones digitales que puedan medirse y evolucionar.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCIA
+===================================================== -->
+
+<section id="experiencia">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div>
+
+<div class="eyebrow">
+Trayectoria
+</div>
+
+<h2>
+Experiencia
+</h2>
+
+</div>
+
+<p>
+Una trayectoria que combina agencia, comunicación digital,
+estrategia de contenidos y desarrollo de proyectos.
+</p>
+
+</div>
+
+
+<div class="experience-list">
+
+
+<article class="experience-item reveal">
+
+<div class="experience-date">
+2026
+</div>
+
+<div class="experience-content">
+
+<h3>
+Labers / Transciende Estudio
+</h3>
+
+<p>
+Participación en proyectos de marketing y comunicación digital
+para diferentes clientes, trabajando estrategia, social media,
+planificación de contenidos, propuestas creativas y coordinación
+de proyectos.
+</p>
+
+</div>
+
+<div class="experience-role">
+Marketing & Growth
+</div>
+
+</article>
+
+
+<article class="experience-item reveal">
+
+<div class="experience-date">
+2026
+</div>
+
+<div class="experience-content">
+
+<h3>
+Intermèdia Comunicació
+</h3>
+
+<p>
+Desarrollo de contenidos y comunicación digital para diferentes
+marcas y organizaciones, participando en planificación,
+creación de contenidos y proyectos de comunicación.
+</p>
+
+</div>
+
+<div class="experience-role">
+Comunicación Digital
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section class="projects" id="proyectos">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div>
+
+<div class="eyebrow">
+Trabajo seleccionado
+</div>
+
+<h2>
+Proyectos
+</h2>
+
+</div>
+
+<p>
+Proyectos reales de comunicación, marketing digital, social media,
+contenido y estrategia.
+</p>
+
+</div>
+
+
+<div class="projects-grid">
+
+
+<!-- LABERS -->
+
+<article class="project featured reveal">
+
+<div class="project-image">
+
+<img
+src="img/labers.jpg"
+alt="Labers / Transciende Estudio">
+
+</div>
+
+
+<div class="project-content">
+
+<span class="featured-label">
+Experiencia destacada
+</span>
+
+<span class="project-category">
+Marketing · Estrategia · Social Media
+</span>
+
+<h3>
+Labers /
+Transciende Estudio
+</h3>
+
+<p>
+Experiencia en entorno de agencia trabajando estrategia digital,
+planificación de contenidos, redes sociales, propuestas de
+comunicación, coordinación de equipos y proyectos.
+</p>
+
+<div class="tags">
+
+<span class="tag">Estrategia</span>
+<span class="tag">Social Media</span>
+<span class="tag">Contenido</span>
+<span class="tag">Marketing</span>
+<span class="tag">IA</span>
+
+</div>
+
+<a href="labers.html" class="project-link">
+Ver experiencia →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- INTERMEDIA -->
+
+<article class="project reveal">
+
+<div class="project-image">
+
+<img
+src="img/intermedia.jpg"
+alt="Intermèdia Comunicació">
+
+</div>
+
+<div class="project-content">
+
+<span class="project-category">
+Comunicación · Contenido
+</span>
+
+<h3>
+Intermèdia
+Comunicació
+</h3>
+
+<p>
+Experiencia junto a diferentes marcas y organizaciones,
+trabajando contenidos y comunicación digital.
+</p>
+
+<div class="tags">
+
+<span class="tag">Comunicación</span>
+<span class="tag">Contenido</span>
+<span class="tag">Social Media</span>
+
+</div>
+
+<a href="intermedia.html" class="project-link">
+Ver proyectos →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- DOWN -->
+
+<article class="project reveal">
+
+<div class="project-image">
+
+<img
+src="img/down-cordoba.jpg"
+alt="Down Córdoba">
+
+</div>
+
+<div class="project-content">
+
+<span class="project-category">
+Estrategia · Social Media
+</span>
+
+<h3>
+Down Córdoba
+</h3>
+
+<p>
+Estrategia de comunicación y planificación de contenidos
+para redes sociales.
+</p>
+
+<div class="tags">
+
+<span class="tag">Estrategia</span>
+<span class="tag">Instagram</span>
+<span class="tag">Contenido</span>
+
+</div>
+
+<a href="down-cordoba.html" class="project-link">
+Ver proyecto →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MNA STUDIOS -->
+
+<article class="project reveal">
+
+<div class="project-image">
+
+<img
+src="img/mna-studios.jpg"
+alt="MNA Studios">
+
+</div>
+
+<div class="project-content">
+
+<span class="project-category">
+Social Media · Contenido
+</span>
+
+<h3>
+MNA Studios
+</h3>
+
+<p>
+Proyecto centrado en comunicación de marca, creación de
+contenidos y presencia digital.
+</p>
+
+<div class="tags">
+
+<span class="tag">Social Media</span>
+<span class="tag">Contenido</span>
+<span class="tag">Marca</span>
+
+</div>
+
+<a href="mna-studios.html" class="project-link">
+Ver proyecto →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MNA STANDS -->
+
+<article class="project reveal">
+
+<div class="project-image">
+
+<img
+src="img/mna-stands.jpg"
+alt="MNA Stands">
+
+</div>
+
+<div class="project-content">
+
+<span class="project-category">
+Digital · Social Media · Web
+</span>
+
+<h3>
+MNA Stands
+</h3>
+
+<p>
+Comunicación digital y contenidos para redes sociales
+y entorno web.
+</p>
+
+<div class="tags">
+
+<span class="tag">Social Media</span>
+<span class="tag">Web</span>
+<span class="tag">Comunicación</span>
+
+</div>
+
+<a href="mna-stands.html" class="project-link">
+Ver proyecto →
+</a>
+
+</div>
+
+</article>
+
+
+<!-- TFG -->
+
+<article class="project reveal">
+
+<div class="project-image">
+
+<img
+src="img/tfg.jpg"
+alt="Inbound Marketing en la era de la IA">
+
+</div>
+
+<div class="project-content">
+
+<span class="project-category">
+Marketing · IA · Estrategia
+</span>
+
+<h3>
+Inbound Marketing
+en la era de la IA
+</h3>
+
+<p>
+Investigación sobre inteligencia artificial, datos,
+automatización e inbound marketing.
+</p>
+
+<div class="tags">
+
+<span class="tag">Marketing</span>
+<span class="tag">IA</span>
+<span class="tag">Datos</span>
+
+</div>
+
+<a href="tfg.html" class="project-link">
+Ver proyecto →
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     AUDIOVISUAL
+===================================================== -->
+
+<section class="video-section" id="audiovisual">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div>
+
+<div class="eyebrow">
+Contenido
+</div>
+
+<h2>
+Audiovisual
+</h2>
+
+</div>
+
+<p>
+Una selección de contenido audiovisual y piezas desarrolladas
+para comunicación digital y redes sociales.
+</p>
+
+</div>
+
+
+<div class="video-grid">
+
+
+<!-- DOWN -->
+
+<article class="video-card reveal">
+
+<div class="video-wrapper">
+
+<video
+controls
+playsinline
+preload="metadata"
+poster="img/down-video-cover.jpg">
+
+<source
+src="videos/down-reel-01.mp4"
+type="video/mp4">
+
+</video>
+
+</div>
+
+<div class="video-info">
+
+<span>
+DOWN CÓRDOBA · REEL
+</span>
+
+<h3>
+Contenido para Social Media
+</h3>
+
+<p>
+Pieza desarrollada dentro de la estrategia de contenidos
+para redes sociales.
+</p>
+
+<a
+href="https://www.instagram.com/trasciende_estudio/"
+target="_blank">
+
+Ver proyecto en Instagram ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MNA -->
+
+<article class="video-card reveal">
+
+<div class="video-wrapper">
+
+<video
+controls
+playsinline
+preload="metadata"
+poster="img/mna-video-cover.jpg">
+
+<source
+src="videos/mna-studios-01.mp4"
+type="video/mp4">
+
+</video>
+
+</div>
+
+<div class="video-info">
+
+<span>
+MNA STUDIOS · SOCIAL MEDIA
+</span>
+
+<h3>
+Contenido de marca
+</h3>
+
+<p>
+Pieza audiovisual desarrollada para comunicación digital
+y redes sociales.
+</p>
+
+<a
+href="mna-studios.html">
+
+Ver proyecto completo →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     DOCUMENTS
+===================================================== -->
+
+<section class="documents" id="documentos">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div>
+
+<div class="eyebrow">
+Trabajo real
+</div>
+
+<h2>
+Documentos
+</h2>
+
+</div>
+
+<p>
+Además de las piezas finales, puedes consultar documentos,
+estrategias, calendarios y presentaciones desarrolladas
+durante los proyectos.
+</p>
+
+</div>
+
+
+<div class="documents-grid">
+
+
+<article class="document reveal">
+
+<span class="document-type">
+Estrategia
+</span>
+
+<h3>
+Estrategia de comunicación
+</h3>
+
+<p>
+Documento estratégico con objetivos, líneas de comunicación
+y acciones digitales.
+</p>
+
+<div class="document-actions">
+
+<a
+href="docs/estrategia.pdf"
+target="_blank">
+
+Abrir ↗
+
+</a>
+
+<a
+href="docs/estrategia.pdf"
+download>
+
+Descargar ↓
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="document reveal">
+
+<span class="document-type">
+Social Media
+</span>
+
+<h3>
+Calendario editorial
+</h3>
+
+<p>
+Planificación de contenidos, formatos y publicaciones
+para redes sociales.
+</p>
+
+<div class="document-actions">
+
+<a
+href="docs/calendario.pdf"
+target="_blank">
+
+Abrir ↗
+
+</a>
+
+<a
+href="docs/calendario.pdf"
+download>
+
+Descargar ↓
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="document reveal">
+
+<span class="document-type">
+Marketing
+</span>
+
+<h3>
+Plan de Marketing
+</h3>
+
+<p>
+Documento de planificación estratégica y marketing digital.
+</p>
+
+<div class="document-actions">
+
+<a
+href="docs/plan-marketing.pdf"
+target="_blank">
+
+Abrir ↗
+
+</a>
+
+<a
+href="docs/plan-marketing.pdf"
+download>
+
+Descargar ↓
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="document reveal">
+
+<span class="document-type">
+Presentación
+</span>
+
+<h3>
+Presentación estratégica
+</h3>
+
+<p>
+Propuesta visual con estrategia, objetivos y acciones.
+</p>
+
+<div class="document-actions">
+
+<a
+href="docs/presentacion.pdf"
+target="_blank">
+
+Abrir ↗
+
+</a>
+
+<a
+href="docs/presentacion.pdf"
+download>
+
+Descargar ↓
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="document reveal">
+
+<span class="document-type">
+Investigación
+</span>
+
+<h3>
+TFG · Inbound Marketing + IA
+</h3>
+
+<p>
+Investigación sobre inbound marketing, IA, datos
+y conversión.
+</p>
+
+<div class="document-actions">
+
+<a href="tfg.html">
+Ver proyecto →
+</a>
+
+</div>
+
+</article>
+
+
+<article class="document reveal">
+
+<span class="document-type">
+Case Studies
+</span>
+
+<h3>
+Proyectos de agencia
+</h3>
+
+<p>
+Selección de proyectos desarrollados durante experiencias
+profesionales en agencia.
+</p>
+
+<div class="document-actions">
+
+<a href="labers.html">
+Ver proyectos →
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PUBLICADO EN REDES
+===================================================== -->
+
+<section class="social">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div>
+
+<div class="eyebrow">
+Trabajo publicado
+</div>
+
+<h2>
+En redes
+</h2>
+
+</div>
+
+<p>
+Algunos proyectos pueden consultarse directamente en los
+canales donde fueron publicados.
+</p>
+
+</div>
+
+
+<div class="social-list">
+
+
+<!-- INTERMEDIA 1 -->
+
+<article class="social-item reveal">
+
+<div>
+
+<h3>
+Intermèdia · Reel
+</h3>
+
+<p>
+Contenido audiovisual desarrollado durante la experiencia
+en comunicación.
+</p>
+
+</div>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/reel/DHYIHi6IYir/"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- INTERMEDIA 2 -->
+
+<article class="social-item reveal">
+
+<div>
+
+<h3>
+Intermèdia · Publicación
+</h3>
+
+<p>
+Contenido desarrollado para comunicación digital.
+</p>
+
+</div>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/p/DJcIIlnoTww/?img_index=8"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- INTERMEDIA 3 -->
+
+<article class="social-item reveal">
+
+<div>
+
+<h3>
+Intermèdia · Publicación
+</h3>
+
+<p>
+Contenido de marca y comunicación.
+</p>
+
+</div>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/p/DGdpDsIo3sz/?img_index=1"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- INTERMEDIA 4 -->
+
+<article class="social-item reveal">
+
+<div>
+
+<h3>
+Intermèdia · Publicación
+</h3>
+
+<p>
+Contenido para redes sociales.
+</p>
+
+</div>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/p/DGfSzsUotn3/?img_index=1"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- INTERMEDIA 5 -->
+
+<article class="social-item reveal">
+
+<div>
+
+<h3>
+Intermèdia · Reel
+</h3>
+
+<p>
+Contenido audiovisual para comunicación digital.
+</p>
+
+</div>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/reel/DL7uZu2Iaj8/"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- INTERMEDIA 6 -->
+
+<article class="social-item reveal">
+
+<div>
+
+<h3>
+Intermèdia · Reel
+</h3>
+
+<p>
+Pieza audiovisual para redes sociales.
+</p>
+
+</div>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/reel/DHLBnDSotpQ/"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- INTERMEDIA 7 -->
+
+<article class="social-item reveal">
+
+<div>
+
+<h3>
+Intermèdia · Reel
+</h3>
+
+<p>
+Contenido audiovisual.
+</p>
+
+</div>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/reel/DJ8pCB6o3V2/"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- INTERMEDIA 8 -->
+
+<article class="social-item reveal">
+
+<div>
+
+<h3>
+Intermèdia · Publicación
+</h3>
+
+<p>
+Contenido desarrollado para comunicación digital.
+</p>
+
+</div>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/p/DHD4RvNofns/?img_index=1"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- TRANSCIENDE -->
+
+<article class="social-item reveal">
+
+<div>
+
+<h3>
+Transciende Estudio
+</h3>
+
+<p>
+Canal de comunicación y contenidos del proyecto de agencia.
+</p>
+
+</div>
+
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/trasciende_estudio/"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+<a
+href="https://downcordoba.org/trasciende-estudio-trabaja-con-nosotros/"
+target="_blank">
+
+Web ↗
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div>
+
+<div class="eyebrow">
+Competencias
+</div>
+
+<h2>
+Lo que hago
+</h2>
+
+</div>
+
+<p>
+Un perfil híbrido entre comunicación, marketing,
+creatividad, análisis y tecnología.
+</p>
+
+</div>
+
+
+<div class="skills-grid">
+
+
+<div class="skill reveal">
+<span class="skill-number">01</span>
+<h3>Estrategia</h3>
+<p>Planificación de comunicación, campañas, contenidos y KPIs.</p>
+</div>
+
+
+<div class="skill reveal">
+<span class="skill-number">02</span>
+<h3>Social Media</h3>
+<p>Instagram, TikTok, LinkedIn, calendarios y formatos.</p>
+</div>
+
+
+<div class="skill reveal">
+<span class="skill-number">03</span>
+<h3>Contenido</h3>
+<p>Copywriting, storytelling, contenido visual y audiovisual.</p>
+</div>
+
+
+<div class="skill reveal">
+<span class="skill-number">04</span>
+<h3>Analítica</h3>
+<p>Métricas, reporting, KPIs y análisis de resultados.</p>
+</div>
+
+
+<div class="skill reveal">
+<span class="skill-number">05</span>
+<h3>Marketing Digital</h3>
+<p>Campañas digitales, CRM, email marketing y SEO.</p>
+</div>
+
+
+<div class="skill reveal">
+<span class="skill-number">06</span>
+<h3>IA aplicada</h3>
+<p>IA aplicada a contenidos, procesos y estrategia.</p>
+</div>
+
+
+<div class="skill reveal">
+<span class="skill-number">07</span>
+<h3>Gestión</h3>
+<p>Coordinación de proyectos, equipos y clientes.</p>
+</div>
+
+
+<div class="skill reveal">
+<span class="skill-number">08</span>
+<h3>Digital & UX</h3>
+<p>Web, experiencia digital, UX y usabilidad.</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="sobre-mi">
+
+<div class="container about-grid">
+
+<div class="reveal">
+
+<div class="eyebrow">
+Sobre mí
+</div>
+
+<h2>
+Un perfil
+híbrido.
+</h2>
+
+</div>
+
+
+<div class="about-content reveal">
+
+<p>
+Soy profesional de la Comunicación Interactiva y el Marketing
+Digital, con formación en Marketing y Publicidad y experiencia
+en comunicación digital dentro de entornos de agencia.
+</p>
+
+<p>
+Mi recorrido combina estrategia, creatividad, contenidos,
+redes sociales, análisis y tecnología. Me interesa especialmente
+trabajar en proyectos donde la comunicación tenga un objetivo
+claro y pueda evolucionar a partir de los datos.
+</p>
+
+<p>
+Actualmente busco seguir desarrollándome dentro de equipos de
+comunicación, marketing o agencia, aportando una visión transversal
+y orientada a resultados.
+</p>
+
+
+<div class="education">
+
+<div class="education-item">
+
+<strong>
+Comunicación Interactiva
+</strong>
+
+<span>
+UAB
+</span>
+
+</div>
+
+
+<div class="education-item">
+
+<strong>
+Marketing y Publicidad
+</strong>
+
+<span>
+Técnico Superior
+</span>
+
+</div>
+
+
+<div class="education-item">
+
+<strong>
+Marketing Digital
+</strong>
+
+<span>
+UNIR
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contacto">
+
+<div class="container reveal">
+
+<div class="eyebrow">
+Contacto
+</div>
+
+<h2>
+¿Hablamos?
+</h2>
+
+<div class="contact-bottom">
+
+<a
+href="mailto:TU_EMAIL"
+class="email">
+
+TU_EMAIL
+
+</a>
+
+<div class="contact-socials">
+
+<a
+href="TU_LINKEDIN"
+target="_blank">
+
+LinkedIn ↗
+
+</a>
+
+<a
+href="TU_INSTAGRAM"
+target="_blank">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<div class="container footer">
+
+<div>
+© 2026 Dani Expósito
+</div>
+
+<div>
+Comunicación Digital · Marketing · Estrategia
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+const observer = new IntersectionObserver(
+
+entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},
+
+{
+threshold:.12
+}
+
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(element => observer.observe(element));
+
+
+const header =
+document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+header.style.boxShadow =
+window.scrollY > 30
+? "0 8px 35px rgba(0,0,0,.05)"
+: "none";
+
+});
+
+</script>
+
 </body>
 </html>
 
