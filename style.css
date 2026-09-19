@@ -575,14 +575,78 @@ h2 span{
    GRID DE PROYECTOS
 ===================================================== */
 
-.project-grid{
+/* ======================================================
+   PROJECTS GRID
+   3 experiencias profesionales + TFG/TFM destacado
+   ====================================================== */
+
+.projects-grid{
   display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:22px;
+  align-items:stretch;
+}
 
-  grid-template-columns:repeat(2,1fr);
+/* Las tres experiencias profesionales */
+.projects-grid > .project-card:not(.research-card){
+  grid-column:auto;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
 
-  gap:25px;
+/* Las tres tarjetas tienen la misma proporción visual */
+.projects-grid > .project-card:not(.research-card) .project-image{
+  aspect-ratio:16 / 10;
+}
 
-  margin-top:25px;
+/* Mantener el contenido inferior alineado */
+.projects-grid > .project-card:not(.research-card) .card-meta{
+  margin-top:auto;
+}
+
+/* ======================================================
+   TFG / TFM — PROYECTO DESTACADO
+   ====================================================== */
+
+.projects-grid > .research-card{
+  grid-column:1 / -1;
+  min-height:360px;
+}
+
+
+/* ======================================================
+   TABLET
+   ====================================================== */
+
+@media (max-width:900px){
+
+  .projects-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-grid > .research-card{
+    grid-column:1 / -1;
+  }
+
+}
+
+
+/* ======================================================
+   MÓVIL
+   ====================================================== */
+
+@media (max-width:600px){
+
+  .projects-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .projects-grid > .research-card{
+    grid-column:auto;
+  }
+
 }
 
 .project-card{
