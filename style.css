@@ -1519,3 +1519,309 @@ h2 span{
   }
 
 }
+
+/* ======================================================
+   CASOS DE ESTUDIO
+   Estructura horizontal uniforme
+   ====================================================== */
+
+.case-study{
+  display:grid;
+  grid-template-columns:1.65fr .85fr;
+
+  min-height:420px;
+
+  margin-top:22px;
+
+  background:#f3f3ef;
+
+  border-radius:var(--radius);
+
+  overflow:hidden;
+
+  color:var(--ink);
+
+  text-decoration:none;
+}
+
+
+/* ======================================================
+   PARTE VISUAL
+   ====================================================== */
+
+.case-study-media{
+  position:relative;
+
+  min-height:420px;
+
+  overflow:hidden;
+
+  background:#dcdcd9;
+}
+
+
+.case-study-media img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  transition:transform .3s ease;
+}
+
+
+.case-study:hover .case-study-media img{
+  transform:scale(1.02);
+}
+
+
+/* Placeholder */
+
+.case-study-media .media-placeholder{
+  position:absolute;
+
+  inset:0;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:flex-end;
+
+  padding:35px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 30%,
+      rgba(0,0,0,.72)
+    );
+
+  color:#fff;
+}
+
+
+.case-study-media .media-placeholder small{
+  margin-bottom:12px;
+
+  font-size:11px;
+
+  opacity:.7;
+}
+
+
+.case-study-media .media-placeholder strong{
+  font:800 clamp(32px,4vw,58px)/.92 Manrope,sans-serif;
+
+  letter-spacing:-.06em;
+}
+
+
+.case-study-media .media-placeholder span{
+  margin-top:10px;
+
+  font-size:10px;
+
+  font-weight:700;
+
+  letter-spacing:.14em;
+}
+
+
+/* ======================================================
+   PARTE INFORMACIÓN
+   ====================================================== */
+
+.case-study-info{
+  padding:35px 40px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+}
+
+
+.case-study-top{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-start;
+
+  color:var(--acid);
+
+  font-size:10px;
+
+  letter-spacing:.1em;
+
+  text-transform:uppercase;
+}
+
+
+.case-study-top b{
+  font-weight:400;
+}
+
+
+.case-study-content{
+  max-width:470px;
+}
+
+
+.case-study-content h3{
+  margin:0 0 18px;
+
+  font:800 clamp(34px,3.2vw,52px)/.92 Manrope,sans-serif;
+
+  letter-spacing:-.06em;
+}
+
+
+.case-study-content p{
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:15px;
+
+  line-height:1.55;
+}
+
+
+.case-study-link{
+  display:inline-block;
+
+  margin-top:28px;
+
+  padding-bottom:6px;
+
+  border-bottom:1px solid var(--ink);
+
+  font-size:13px;
+
+  font-weight:700;
+}
+
+
+/* ======================================================
+   TFG / TFM
+   ====================================================== */
+
+.case-study-dark{
+  background:#151515;
+
+  color:#fff;
+}
+
+
+.case-study-dark .case-study-info{
+  background:#151515;
+}
+
+
+.case-study-dark .case-study-top{
+  color:var(--acid-light);
+}
+
+
+.case-study-dark .case-study-content p{
+  color:#9c9c9c;
+}
+
+
+.case-study-dark .case-study-link{
+  color:#fff;
+
+  border-color:#777;
+}
+
+
+.case-study-dark .case-study-media{
+  background:
+    linear-gradient(
+      180deg,
+      #1b1b1b 0%,
+      #151515 55%,
+      #101010 100%
+    );
+}
+
+
+.case-study-dark .case-study-media::before{
+  content:"04";
+
+  position:absolute;
+
+  right:-20px;
+  top:-90px;
+
+  font-family:Arial,Helvetica,sans-serif;
+
+  font-size:400px;
+
+  font-weight:700;
+
+  line-height:1;
+
+  letter-spacing:-.12em;
+
+  color:rgba(255,255,255,.035);
+
+  pointer-events:none;
+}
+
+
+/* ======================================================
+   TABLET
+   ====================================================== */
+
+@media(max-width:900px){
+
+  .case-study{
+    grid-template-columns:1.2fr .8fr;
+
+    min-height:360px;
+  }
+
+  .case-study-media{
+    min-height:360px;
+  }
+
+  .case-study-info{
+    padding:28px;
+  }
+
+}
+
+
+/* ======================================================
+   MÓVIL
+   ====================================================== */
+
+@media(max-width:600px){
+
+  .case-study{
+    grid-template-columns:1fr;
+
+    min-height:0;
+  }
+
+  .case-study-media{
+    min-height:300px;
+  }
+
+  .case-study-info{
+    min-height:300px;
+
+    padding:28px;
+  }
+
+  .case-study-content h3{
+    font-size:38px;
+  }
+
+}
