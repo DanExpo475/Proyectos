@@ -1,1258 +1,361 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Labers / Transciende — Dani</title>
-
-    <style>
-
-        /* =====================================================
-           BASE
-        ===================================================== */
-
-        :root {
-            --bg: #f3f0e8;
-            --black: #111111;
-            --grey: #777777;
-            --line: #d7d3c9;
-            --green: #647c42;
-            --white: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--black);
-            font-family: Georgia, "Times New Roman", serif;
-            line-height: 1.45;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* =====================================================
-           HEADER
-        ===================================================== */
-
-        header {
-            height: 72px;
-            padding: 0 5.5vw;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-        }
-
-        .logo {
-            font-weight: 700;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .back {
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .hero {
-            padding: 95px 5.5vw 70px;
-            min-height: calc(100vh - 72px);
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .eyebrow {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: .14em;
-            color: var(--green);
-            text-transform: uppercase;
-        }
-
-        .hero-main {
-            margin-top: 65px;
-        }
-
-        .hero-title {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(75px, 13vw, 185px);
-            line-height: .78;
-            letter-spacing: -.085em;
-            font-weight: 700;
-        }
-
-        .hero-title span {
-            display: block;
-        }
-
-        .hero-title .grey {
-            color: var(--grey);
-        }
-
-        .hero-description {
-            margin-top: 65px;
-            max-width: 600px;
-
-            font-size: 21px;
-            line-height: 1.35;
-        }
-
-        .hero-bottom {
-            margin-top: 80px;
-            border-top: 1px solid var(--line);
-
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .hero-meta {
-            padding-top: 16px;
-        }
-
-        .meta-label {
-            display: block;
-
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 9px;
-            letter-spacing: .13em;
-            text-transform: uppercase;
-            color: var(--grey);
-
-            margin-bottom: 8px;
-        }
-
-        .meta-value {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* =====================================================
-           GENERAL
-        ===================================================== */
-
-        .section {
-            padding: 115px 5.5vw;
-            border-top: 1px solid var(--line);
-        }
-
-        .section-grid {
-            display: grid;
-            grid-template-columns: 20% 1fr;
-            gap: 70px;
-        }
-
-        .section-number {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: .14em;
-            color: var(--green);
-            text-transform: uppercase;
-        }
-
-        .section-title {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(48px, 6vw, 85px);
-            line-height: .88;
-            letter-spacing: -.065em;
-            font-weight: 700;
-        }
-
-        .content {
-            max-width: 1000px;
-        }
-
-        /* =====================================================
-           INTRO
-        ===================================================== */
-
-        .intro-layout {
-            display: grid;
-            grid-template-columns: 1.1fr .9fr;
-            gap: 100px;
-            margin-top: 75px;
-        }
-
-        .intro-big {
-            font-size: clamp(27px, 3vw, 42px);
-            line-height: 1.15;
-            letter-spacing: -.025em;
-        }
-
-        .intro-small {
-            padding-top: 5px;
-            border-left: 1px solid var(--line);
-            padding-left: 35px;
-
-            font-size: 18px;
-            color: #555;
-        }
-
-        /* =====================================================
-           AREAS
-        ===================================================== */
-
-        .areas {
-            margin-top: 70px;
-            border-top: 1px solid var(--line);
-        }
-
-        .area {
-            display: grid;
-            grid-template-columns: 70px 1fr 1fr;
-            gap: 25px;
-
-            padding: 28px 0;
-            border-bottom: 1px solid var(--line);
-
-            align-items: baseline;
-        }
-
-        .area-number {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
-            color: var(--grey);
-        }
-
-        .area-title {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 25px;
-            font-weight: 600;
-            letter-spacing: -.035em;
-        }
-
-        .area-text {
-            font-size: 17px;
-            color: #555;
-        }
-
-        /* =====================================================
-           FEATURED PROJECT
-        ===================================================== */
-
-        .project-section {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .project-section .section-number {
-            color: #a2b57e;
-        }
-
-        .project-section .section-title {
-            color: var(--white);
-        }
-
-        .project-intro {
-            margin-top: 75px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 40px;
-        }
-
-        .project-name {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(70px, 11vw, 155px);
-            font-weight: 700;
-            line-height: .78;
-            letter-spacing: -.085em;
-        }
-
-        .project-tag {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            letter-spacing: .13em;
-            text-transform: uppercase;
-            color: #a2b57e;
-            white-space: nowrap;
-        }
-
-        /* Gran bloque visual sin necesidad de inventar fotografías */
-
-        .project-visual {
-            margin-top: 65px;
-            min-height: 470px;
-
-            background: #d7dfc9;
-            color: var(--black);
-
-            position: relative;
-            overflow: hidden;
-
-            display: flex;
-            align-items: flex-end;
-            padding: 45px;
-        }
-
-        .project-visual::before {
-            content: "DOWN";
-            position: absolute;
-
-            top: -45px;
-            right: -20px;
-
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(150px, 25vw, 370px);
-            font-weight: 700;
-            letter-spacing: -.1em;
-
-            color: rgba(17,17,17,.07);
-        }
-
-        .visual-label {
-            position: relative;
-            z-index: 2;
-
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: .1em;
-        }
-
-        .visual-copy {
-            position: relative;
-            z-index: 2;
-
-            max-width: 570px;
-            margin-top: 12px;
-
-            font-size: 25px;
-            line-height: 1.18;
-        }
-
-        .project-description {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-
-            margin-top: 55px;
-        }
-
-        .project-description p {
-            font-size: 18px;
-            line-height: 1.5;
-        }
-
-        /* =====================================================
-           CONTENT LINES
-        ===================================================== */
-
-        .content-lines {
-            margin-top: 75px;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-top: 1px solid var(--line);
-        }
-
-        .line-item {
-            padding: 28px 0;
-            border-bottom: 1px solid var(--line);
-
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .line-item:nth-child(odd) {
-            padding-right: 35px;
-            border-right: 1px solid var(--line);
-        }
-
-        .line-item:nth-child(even) {
-            padding-left: 35px;
-        }
-
-        .line-name {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            letter-spacing: -.02em;
-        }
-
-        .line-type {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 9px;
-            color: var(--grey);
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            text-align: right;
-        }
-
-        /* =====================================================
-           PUBLICATIONS
-        ===================================================== */
-
-        .publications {
-            margin-top: 70px;
-            border-top: 1px solid var(--line);
-        }
-
-        .publication {
-            display: grid;
-            grid-template-columns: 100px 1fr auto;
-            gap: 30px;
-
-            padding: 32px 0;
-            border-bottom: 1px solid var(--line);
-
-            align-items: center;
-        }
-
-        .publication-type {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: .12em;
-            color: var(--green);
-            font-weight: 700;
-        }
-
-        .publication-name {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: -.04em;
-        }
-
-        .publication-link {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        /* =====================================================
-           DOCUMENT
-        ===================================================== */
-
-        .document {
-            margin-top: 70px;
-
-            background: var(--green);
-            color: var(--white);
-
-            padding: 55px;
-
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 50px;
-            align-items: end;
-        }
-
-        .document-label {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: .12em;
-            margin-bottom: 18px;
-        }
-
-        .document-title {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(40px, 5vw, 70px);
-            line-height: .9;
-            letter-spacing: -.06em;
-            font-weight: 700;
-        }
-
-        .document-description {
-            max-width: 600px;
-            margin-top: 25px;
-
-            font-size: 18px;
-        }
-
-        .document-button {
-            background: var(--white);
-            color: var(--black);
-
-            padding: 17px 23px;
-
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: .08em;
-
-            white-space: nowrap;
-        }
-
-        /* =====================================================
-           CLOSING
-        ===================================================== */
-
-        .closing {
-            padding: 145px 5.5vw 80px;
-            border-top: 1px solid var(--line);
-        }
-
-        .closing-title {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: clamp(65px, 10vw, 145px);
-            line-height: .8;
-            letter-spacing: -.085em;
-            font-weight: 700;
-        }
-
-        .closing-title span {
-            color: var(--green);
-        }
-
-        .closing-footer {
-            margin-top: 130px;
-
-            padding-top: 20px;
-            border-top: 1px solid var(--line);
-
-            display: flex;
-            justify-content: space-between;
-
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-        }
-
-        .closing-footer a {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
-
-        @media (max-width: 900px) {
-
-            .hero {
-                min-height: auto;
-            }
-
-            .hero-bottom {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-
-            .section-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .intro-layout {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .area {
-                grid-template-columns: 50px 1fr;
-            }
-
-            .area-text {
-                grid-column: 2;
-            }
-
-            .project-intro {
-                display: block;
-            }
-
-            .project-tag {
-                display: block;
-                margin-bottom: 25px;
-            }
-
-            .project-description {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .document {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            header {
-                padding: 0 6vw;
-            }
-
-            .hero {
-                padding: 70px 6vw 60px;
-            }
-
-            .hero-title {
-                font-size: clamp(65px, 20vw, 110px);
-            }
-
-            .hero-description {
-                font-size: 18px;
-                margin-top: 45px;
-            }
-
-            .hero-bottom {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .section {
-                padding: 80px 6vw;
-            }
-
-            .section-title {
-                font-size: 50px;
-            }
-
-            .intro-big {
-                font-size: 28px;
-            }
-
-            .content-lines {
-                grid-template-columns: 1fr;
-            }
-
-            .line-item:nth-child(odd) {
-                padding-right: 0;
-                border-right: none;
-            }
-
-            .line-item:nth-child(even) {
-                padding-left: 0;
-            }
-
-            .publication {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .publication-link {
-                margin-top: 10px;
-            }
-
-            .project-visual {
-                min-height: 330px;
-                padding: 25px;
-            }
-
-            .visual-copy {
-                font-size: 20px;
-            }
-
-            .document {
-                padding: 35px 28px;
-            }
-
-            .closing {
-                padding: 100px 6vw 60px;
-            }
-
-            .closing-footer {
-                margin-top: 90px;
-                display: block;
-            }
-
-            .closing-footer a {
-                display: inline-block;
-                margin-top: 20px;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Labers / Transciende Estudio — Caso de comunicación, marketing, estrategia, contenidos y social media.">
+  <title>Labers / Transciende — DANI.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f4f4f0;--paper:#fff;--ink:#101010;--muted:#66707a;--line:#d9d9d3;--acid:#713B48;--acid-dark:#5E303C;--acid-light:#8A5360;--dark:#111;--radius:22px;--max:1440px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:"Manrope",sans-serif;line-height:1.5;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    ::selection{background:var(--acid);color:#fff}
+
+    .site-header{width:100%;height:78px;padding:0 5.8vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:rgba(244,244,240,.94);position:relative;z-index:20}
+    .brand{font-size:17px;line-height:1;font-weight:800;letter-spacing:-.06em}
+    .brand span{color:var(--acid)}
+    .header-right{display:flex;align-items:center;gap:30px}
+    .back-link,.header-contact{font-size:12px;font-weight:600;letter-spacing:-.01em}
+    .back-link{color:var(--muted)}
+    .back-link:hover,.header-contact:hover{color:var(--acid)}
+    .header-contact{border-bottom:1px solid var(--ink);padding-bottom:4px}
+
+    .section{padding:120px 5.8vw;border-top:1px solid var(--line)}
+    .section-inner{max-width:var(--max);margin:0 auto}
+    .section-grid{display:grid;grid-template-columns:18% 1fr;gap:70px}
+    .section-label{color:var(--acid);font-size:10px;line-height:1.2;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    .section-title{max-width:900px;font-size:clamp(48px,6.4vw,92px);line-height:.91;letter-spacing:-.075em;font-weight:800}
+    .section-title span{color:var(--muted)}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    .hero{min-height:calc(100vh - 78px);padding:90px 5.8vw 50px;display:flex;flex-direction:column;justify-content:space-between}
+    .hero-inner{width:100%;max-width:var(--max);margin:0 auto}
+    .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:50px}
+    .eyebrow{color:var(--acid);font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    .hero-index{color:var(--muted);font-size:11px;font-weight:600}
+    .hero-main{margin-top:70px}
+    .hero-title{max-width:1250px;font-size:clamp(70px,11.5vw,165px);line-height:.82;letter-spacing:-.095em;font-weight:800}
+    .hero-title span{display:block}
+    .hero-title .muted{color:var(--muted)}
+    .hero-description{max-width:650px;margin-top:55px;font-size:18px;line-height:1.55;color:#3f4448}
+    .hero-bottom{margin-top:75px;padding-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid var(--line)}
+    .meta{display:flex;flex-direction:column;gap:7px}
+    .meta-label{color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+    .meta-value{font-size:13px;font-weight:700;letter-spacing:-.02em}
+
+    .hero-visual{margin-top:70px;width:100%;min-height:390px;display:grid;grid-template-columns:1.45fr .55fr;gap:14px}
+    .hero-image{min-height:390px;overflow:hidden;border-radius:var(--radius);background:#deddd8;position:relative}
+    .hero-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+    .hero-image:hover img{transform:scale(1.025)}
+    .hero-image::after{content:"LABERS / TRANSCIENDE";position:absolute;left:24px;bottom:20px;color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+    .hero-side{min-height:390px;padding:30px;border-radius:var(--radius);background:var(--acid);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+    .hero-side small{font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;opacity:.75}
+    .hero-side strong{max-width:260px;font-size:clamp(28px,3.2vw,46px);line-height:.95;letter-spacing:-.06em}
+
+    .context-layout{margin-top:75px;display:grid;grid-template-columns:1.1fr .9fr;gap:90px}
+    .context-lead{max-width:720px;font-size:clamp(26px,3vw,42px);line-height:1.13;letter-spacing:-.045em}
+    .context-copy{padding-left:35px;border-left:1px solid var(--line);color:#555d63;font-size:16px;line-height:1.7}
+    .context-copy p+p{margin-top:22px}
+
+    .areas{margin-top:75px;border-top:1px solid var(--line)}
+    .area{display:grid;grid-template-columns:60px 1fr 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line);align-items:baseline}
+    .area-number{color:var(--muted);font-size:10px;font-weight:700}
+    .area-title{font-size:24px;line-height:1.1;font-weight:700;letter-spacing:-.04em}
+    .area-text{color:#596067;font-size:15px;line-height:1.55}
+
+    .project-section{background:var(--dark);color:#fff;border-top:none}
+    .project-section .section-label{color:#c28f9d}
+    .project-section .section-title span{color:#858585}
+    .project-head{margin-top:75px;display:flex;align-items:flex-end;justify-content:space-between;gap:50px}
+    .project-tag{color:#c28f9d;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
+    .project-name{font-size:clamp(70px,10vw,150px);line-height:.8;letter-spacing:-.09em;font-weight:800}
+    .project-visual{margin-top:65px;min-height:480px;padding:45px;position:relative;overflow:hidden;border-radius:var(--radius);background:#e9e6e0;color:var(--ink);display:flex;align-items:flex-end}
+    .project-visual::before{content:"DOWN";position:absolute;right:-25px;top:-55px;color:rgba(16,16,16,.065);font-size:clamp(160px,25vw,380px);line-height:.8;letter-spacing:-.12em;font-weight:800}
+    .project-visual-content{position:relative;z-index:2;max-width:620px}
+    .visual-label{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .visual-copy{margin-top:14px;font-size:clamp(24px,3vw,40px);line-height:1.08;letter-spacing:-.045em}
+    .project-description{margin-top:55px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+    .project-description p{color:#bcbcbc;font-size:16px;line-height:1.7}
+
+    .content-lines{margin-top:75px;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+    .line-item{min-height:92px;padding:25px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--line)}
+    .line-item:nth-child(odd){padding-right:35px;border-right:1px solid var(--line)}
+    .line-item:nth-child(even){padding-left:35px}
+    .line-name{font-size:18px;font-weight:700;letter-spacing:-.03em}
+    .line-type{color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-align:right}
+
+    .links-intro{max-width:700px;margin-top:28px;color:#5c6369;font-size:16px;line-height:1.65}
+    .organizations{margin-top:65px;border-top:1px solid var(--line)}
+    .organization{display:grid;grid-template-columns:110px 1fr auto;gap:30px;padding:32px 0;border-bottom:1px solid var(--line);align-items:center;transition:padding .25s ease,color .25s ease}
+    .organization:hover{padding-left:10px;color:var(--acid)}
+    .organization-type{color:var(--acid);font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .organization-name{font-size:27px;font-weight:700;letter-spacing:-.045em}
+    .organization-link{font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:5px}
+
+    .document{margin-top:70px;padding:48px;border-radius:var(--radius);background:var(--acid);color:#fff;display:grid;grid-template-columns:1fr auto;gap:50px;align-items:end}
+    .document-label{margin-bottom:18px;font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;opacity:.72}
+    .document-title{font-size:clamp(42px,5vw,72px);line-height:.88;letter-spacing:-.07em;font-weight:800}
+    .document-description{max-width:620px;margin-top:24px;font-size:15px;line-height:1.6;opacity:.86}
+    .document-button{padding:16px 21px;border-radius:999px;background:#fff;color:var(--ink);font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;transition:transform .2s ease,background .2s ease}
+    .document-button:hover{transform:translateY(-2px);background:#f0ecee}
+
+    .closing{padding:145px 5.8vw 75px;border-top:1px solid var(--line)}
+    .closing-inner{max-width:var(--max);margin:0 auto}
+    .closing-title{font-size:clamp(65px,10vw,145px);line-height:.82;letter-spacing:-.095em;font-weight:800}
+    .closing-title span{color:var(--acid)}
+    .closing-footer{margin-top:125px;padding-top:20px;display:flex;justify-content:space-between;gap:30px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:600}
+    .closing-footer a{color:var(--ink);text-decoration:underline;text-underline-offset:5px}
+    .closing-footer a:hover{color:var(--acid)}
+
+    @media (max-width:1000px){
+      .section-grid{grid-template-columns:1fr;gap:25px}
+      .hero-visual{grid-template-columns:1fr}
+      .hero-side{min-height:220px}
+      .context-layout{grid-template-columns:1fr;gap:45px}
+      .area{grid-template-columns:50px 1fr}
+      .area-text{grid-column:2}
+      .project-description{grid-template-columns:1fr;gap:25px}
+      .document{grid-template-columns:1fr;align-items:start}
+    }
+
+    @media (max-width:700px){
+      .site-header{height:70px;padding:0 6vw}
+      .header-right{gap:18px}
+      .back-link{display:none}
+      .hero{min-height:auto;padding:70px 6vw 55px}
+      .hero-main{margin-top:55px}
+      .hero-title{font-size:clamp(62px,18vw,105px)}
+      .hero-description{margin-top:42px;font-size:17px}
+      .hero-bottom{grid-template-columns:1fr 1fr;gap:25px 18px}
+      .hero-visual{margin-top:55px}
+      .hero-image{min-height:280px}
+      .hero-side{min-height:220px}
+      .section{padding:82px 6vw}
+      .section-title{font-size:clamp(46px,13vw,70px)}
+      .context-layout{margin-top:55px}
+      .context-lead{font-size:28px}
+      .context-copy{padding-left:22px}
+      .area{grid-template-columns:40px 1fr;gap:18px}
+      .area-title{font-size:20px}
+      .area-text{grid-column:2;font-size:14px}
+      .project-head{display:block;margin-top:55px}
+      .project-tag{display:block;margin-bottom:28px}
+      .project-name{font-size:clamp(70px,18vw,110px)}
+      .project-visual{min-height:350px;padding:25px;margin-top:45px}
+      .project-description{margin-top:38px}
+      .content-lines{grid-template-columns:1fr;margin-top:55px}
+      .line-item:nth-child(odd){padding-right:0;border-right:none}
+      .line-item:nth-child(even){padding-left:0}
+      .organization{grid-template-columns:1fr auto;gap:12px}
+      .organization-type{grid-column:1/-1}
+      .organization-name{font-size:21px}
+      .document{padding:32px 25px;margin-top:50px}
+      .closing{padding:100px 6vw 60px}
+      .closing-footer{margin-top:90px;display:block}
+      .closing-footer a{display:inline-block;margin-top:18px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      .hero-image img,.document-button,.organization{transition:none}
+    }
+  </style>
 </head>
-
-
 <body>
 
+  <header class="site-header">
+    <a href="../index.html" class="brand" aria-label="Volver al portfolio">DANI<span>.</span></a>
+    <div class="header-right">
+      <a href="../index.html#experiencia" class="back-link">← Volver al portfolio</a>
+      <a href="../index.html#contacto" class="header-contact">Hablemos ↗</a>
+    </div>
+  </header>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header>
-
-    <a href="index.html" class="logo">
-        DANI.
-    </a>
-
-    <a href="index.html#experiencia" class="back">
-        ← Volver al portfolio
-    </a>
-
-</header>
-
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero">
-
-    <div>
-
-        <div class="eyebrow">
-            Experiencia · 2026
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-top">
+          <span class="eyebrow">Experiencia · Agencia · 2026</span>
+          <span class="hero-index">01 / 04</span>
         </div>
 
+        <div class="hero-main reveal">
+          <h1 class="hero-title">
+            <span>Labers /</span>
+            <span class="muted">Transciende</span>
+          </h1>
+          <p class="hero-description">
+            Trabajo de estrategia, comunicación digital, contenidos y
+            social media desarrollado dentro de un entorno de agencia.
+          </p>
+        </div>
 
-        <div class="hero-main">
+        <div class="hero-bottom reveal">
+          <div class="meta"><span class="meta-label">Rol</span><span class="meta-value">Marketing &amp; Growth</span></div>
+          <div class="meta"><span class="meta-label">Área</span><span class="meta-value">Comunicación &amp; Marketing</span></div>
+          <div class="meta"><span class="meta-label">Entorno</span><span class="meta-value">Agencia</span></div>
+          <div class="meta"><span class="meta-label">Año</span><span class="meta-value">2026</span></div>
+        </div>
 
-            <h1 class="hero-title">
-                <span>Labers /</span>
-                <span class="grey">Transciende</span>
-            </h1>
+        <div class="hero-visual reveal">
+          <div class="hero-image">
+            <img src="../img/labers.jpg" alt="Labers / Transciende Estudio" onerror="this.style.display='none'">
+          </div>
+          <div class="hero-side">
+            <small>Comunicación · Estrategia · Contenido</small>
+            <strong>Estrategia antes que ruido.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-            <p class="hero-description">
-                Comunicación, estrategia y contenido desarrollados
-                dentro de un entorno de agencia.
+    <section class="section">
+      <div class="section-inner section-grid">
+        <div class="section-label">01 / CONTEXTO</div>
+        <div>
+          <h2 class="section-title reveal">Comunicar<br><span>con un propósito.</span></h2>
+          <div class="context-layout reveal">
+            <p class="context-lead">
+              Trabajar la comunicación desde el porqué:
+              qué contar, para quién, cómo convertirlo
+              en contenido y qué objetivo persigue.
             </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="hero-bottom">
-
-        <div class="hero-meta">
-            <span class="meta-label">Rol</span>
-            <span class="meta-value">Marketing & Growth</span>
-        </div>
-
-        <div class="hero-meta">
-            <span class="meta-label">Área</span>
-            <span class="meta-value">Comunicación & Marketing</span>
-        </div>
-
-        <div class="hero-meta">
-            <span class="meta-label">Entorno</span>
-            <span class="meta-value">Agencia</span>
-        </div>
-
-        <div class="hero-meta">
-            <span class="meta-label">Año</span>
-            <span class="meta-value">2026</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTEXTO
-===================================================== -->
-
-<section class="section">
-
-    <div class="section-grid">
-
-        <div class="section-number">
-            01 / CONTEXTO
-        </div>
-
-
-        <div class="content">
-
-            <h2 class="section-title">
-                Estrategia<br>
-                antes que ruido.
-            </h2>
-
-
-            <div class="intro-layout">
-
-                <p class="intro-big">
-                    Trabajar la comunicación desde el porqué:
-                    qué contar, para quién, cómo convertirlo
-                    en contenido y qué objetivo persigue.
-                </p>
-
-
-                <p class="intro-small">
-                    Una experiencia de agencia vinculada a
-                    proyectos de comunicación, marketing digital,
-                    contenidos y social media para diferentes
-                    organizaciones.
-                </p>
-
+            <div class="context-copy">
+              <p>Mi trabajo en Labers / Transciende Estudio se situó entre la estrategia, la comunicación y la ejecución de contenidos digitales.</p>
+              <p>La experiencia se desarrolló dentro de un entorno de agencia, participando en la planificación de proyectos, definición de líneas de comunicación, contenidos para redes sociales y coordinación con diferentes perfiles del equipo.</p>
+              <p>El objetivo no era simplemente producir contenido, sino entender qué necesitaba cada proyecto y convertirlo en una propuesta de comunicación coherente con sus objetivos.</p>
             </div>
-
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ÁREAS
-===================================================== -->
-
-<section class="section">
-
-    <div class="section-grid">
-
-        <div class="section-number">
-            02 / ÁREAS
+    <section class="section">
+      <div class="section-inner section-grid">
+        <div class="section-label">02 / ÁREAS</div>
+        <div>
+          <h2 class="section-title reveal">De la estrategia<br><span>a la ejecución.</span></h2>
+          <div class="areas reveal">
+            <div class="area"><span class="area-number">01</span><span class="area-title">Estrategia</span><span class="area-text">Definición de líneas de comunicación, objetivos y planificación.</span></div>
+            <div class="area"><span class="area-number">02</span><span class="area-title">Comunicación digital</span><span class="area-text">Desarrollo de propuestas de comunicación para diferentes canales y proyectos.</span></div>
+            <div class="area"><span class="area-number">03</span><span class="area-title">Social Media</span><span class="area-text">Planificación y desarrollo de contenidos para canales sociales.</span></div>
+            <div class="area"><span class="area-number">04</span><span class="area-title">Contenido</span><span class="area-text">Conceptos, líneas editoriales, carruseles, reels y formatos digitales.</span></div>
+            <div class="area"><span class="area-number">05</span><span class="area-title">Planificación</span><span class="area-text">Calendarios, organización temática y coordinación de proyectos.</span></div>
+          </div>
         </div>
+      </div>
+    </section>
 
-
-        <div class="content">
-
-            <h2 class="section-title">
-                De la estrategia<br>
-                a la ejecución.
-            </h2>
-
-
-            <div class="areas">
-
-                <div class="area">
-
-                    <span class="area-number">
-                        01
-                    </span>
-
-                    <span class="area-title">
-                        Estrategia
-                    </span>
-
-                    <span class="area-text">
-                        Definición de líneas de comunicación,
-                        objetivos y planificación.
-                    </span>
-
-                </div>
-
-
-                <div class="area">
-
-                    <span class="area-number">
-                        02
-                    </span>
-
-                    <span class="area-title">
-                        Social Media
-                    </span>
-
-                    <span class="area-text">
-                        Planificación y desarrollo de contenidos
-                        para canales sociales.
-                    </span>
-
-                </div>
-
-
-                <div class="area">
-
-                    <span class="area-number">
-                        03
-                    </span>
-
-                    <span class="area-title">
-                        Contenido
-                    </span>
-
-                    <span class="area-text">
-                        Conceptos, líneas editoriales, carruseles,
-                        reels y formatos digitales.
-                    </span>
-
-                </div>
-
-
-                <div class="area">
-
-                    <span class="area-number">
-                        04
-                    </span>
-
-                    <span class="area-title">
-                        Planificación
-                    </span>
-
-                    <span class="area-text">
-                        Calendarios, organización temática y
-                        coordinación de proyectos.
-                    </span>
-
-                </div>
-
+    <section class="section project-section">
+      <div class="section-inner section-grid">
+        <div class="section-label">03 / PROYECTO</div>
+        <div>
+          <h2 class="section-title reveal">Un proyecto.<br><span>Una estrategia.</span></h2>
+          <div class="project-head reveal">
+            <div class="project-tag">Comunicación · Social Media</div>
+            <h3 class="project-name">Down<br>Córdoba</h3>
+          </div>
+          <div class="project-visual reveal">
+            <div class="project-visual-content">
+              <div class="visual-label">Estrategia de contenidos</div>
+              <p class="visual-copy">Convertir diferentes áreas de trabajo en contenidos claros, educativos y relevantes para redes sociales.</p>
             </div>
-
+          </div>
+          <div class="project-description reveal">
+            <p>La planificación de contenidos se estructuró alrededor de diferentes líneas temáticas, trabajando cada una desde formatos educativos, divulgativos y audiovisuales.</p>
+            <p>El proyecto permitió trabajar la comunicación desde una perspectiva editorial: ordenar temas, construir una narrativa y convertir información especializada en contenido digital.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DOWN CÓRDOBA
-===================================================== -->
-
-<section class="section project-section">
-
-    <div class="section-grid">
-
-        <div class="section-number">
-            03 / PROYECTO
+    <section class="section">
+      <div class="section-inner section-grid">
+        <div class="section-label">04 / CONTENIDOS</div>
+        <div>
+          <h2 class="section-title reveal">Diferentes temas.<br><span>Una misma línea.</span></h2>
+          <div class="content-lines reveal">
+            <div class="line-item"><span class="line-name">Logopedia</span><span class="line-type">Educativo</span></div>
+            <div class="line-item"><span class="line-name">Habilidades Básicas</span><span class="line-type">Divulgación</span></div>
+            <div class="line-item"><span class="line-name">Lectoescritura</span><span class="line-type">Educativo</span></div>
+            <div class="line-item"><span class="line-name">Lectura Fácil</span><span class="line-type">Accesibilidad</span></div>
+            <div class="line-item"><span class="line-name">Autonomía Social</span><span class="line-type">Comunicación</span></div>
+            <div class="line-item"><span class="line-name">Ocio</span><span class="line-type">Social</span></div>
+            <div class="line-item"><span class="line-name">Carruseles</span><span class="line-type">Formato</span></div>
+            <div class="line-item"><span class="line-name">Reels</span><span class="line-type">Audiovisual</span></div>
+          </div>
         </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="section-inner section-grid">
+        <div class="section-label">05 / ORGANIZACIONES</div>
+        <div>
+          <h2 class="section-title reveal">Conoce el contexto<br><span>de los proyectos.</span></h2>
+          <p class="links-intro reveal">En lugar de limitar el caso a publicaciones concretas, puedes consultar directamente las páginas web de las organizaciones relacionadas con el proyecto.</p>
+          <div class="organizations reveal">
+            <a class="organization" href="https://downcordoba.org/" target="_blank" rel="noopener noreferrer">
+              <span class="organization-type">Proyecto</span>
+              <span class="organization-name">Down Córdoba</span>
+              <span class="organization-link">Visitar web ↗</span>
+            </a>
+            <a class="organization" href="https://labers.es/comunicacion-asociaciones-fundaciones/" target="_blank" rel="noopener noreferrer">
+              <span class="organization-type">Entorno de agencia</span>
+              <span class="organization-name">Labers / Transciende</span>
+              <span class="organization-link">Ver proyecto ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="content">
-
-            <h2 class="section-title">
-                Caso<br>
-                destacado.
-            </h2>
-
-
-            <div class="project-intro">
-
-                <div class="project-tag">
-                    Comunicación · Social Media
-                </div>
-
-                <h3 class="project-name">
-                    Down<br>
-                    Córdoba
-                </h3>
-
+    <section class="section">
+      <div class="section-inner section-grid">
+        <div class="section-label">06 / DOCUMENTACIÓN</div>
+        <div>
+          <h2 class="section-title reveal">El proyecto,<br><span>documentado.</span></h2>
+          <div class="document reveal">
+            <div>
+              <div class="document-label">Case Study · PDF</div>
+              <h3 class="document-title">Labers /<br>Transciende</h3>
+              <p class="document-description">Contexto, áreas de trabajo, estrategia, contenidos y principales líneas desarrolladas.</p>
             </div>
-
-
-            <div class="project-visual">
-
-                <div>
-
-                    <div class="visual-label">
-                        Estrategia de contenidos
-                    </div>
-
-                    <p class="visual-copy">
-                        Convertir diferentes áreas de trabajo
-                        en contenidos claros, educativos y
-                        relevantes para redes sociales.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-description">
-
-                <p>
-                    La planificación de contenidos se estructuró
-                    alrededor de diferentes líneas temáticas,
-                    trabajando cada una desde formatos
-                    educativos, divulgativos y audiovisuales.
-                </p>
-
-                <p>
-                    El proyecto permitió trabajar la comunicación
-                    desde una perspectiva editorial: ordenar temas,
-                    construir una narrativa y convertir información
-                    especializada en contenido digital.
-                </p>
-
-            </div>
-
+            <a href="../documents/Labers_Transciende_Case_Study.pdf" target="_blank" rel="noopener noreferrer" class="document-button">Abrir PDF ↗</a>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     LÍNEAS DE CONTENIDO
-===================================================== -->
-
-<section class="section">
-
-    <div class="section-grid">
-
-        <div class="section-number">
-            04 / CONTENIDOS
+    <section class="closing">
+      <div class="closing-inner">
+        <h2 class="closing-title reveal">Comunicación<br>con <span>un porqué.</span></h2>
+        <div class="closing-footer">
+          <span>Labers / Transciende · 2026</span>
+          <a href="../index.html#proyectos">← Volver a casos de estudio</a>
         </div>
-
-
-        <div class="content">
-
-            <h2 class="section-title">
-                Diferentes temas.<br>
-                Una misma línea.
-            </h2>
-
-
-            <div class="content-lines">
-
-                <div class="line-item">
-                    <span class="line-name">Logopedia</span>
-                    <span class="line-type">Educativo</span>
-                </div>
-
-                <div class="line-item">
-                    <span class="line-name">Habilidades Básicas</span>
-                    <span class="line-type">Divulgación</span>
-                </div>
-
-                <div class="line-item">
-                    <span class="line-name">Lectoescritura</span>
-                    <span class="line-type">Educativo</span>
-                </div>
-
-                <div class="line-item">
-                    <span class="line-name">Lectura Fácil</span>
-                    <span class="line-type">Accesibilidad</span>
-                </div>
-
-                <div class="line-item">
-                    <span class="line-name">Autonomía Social</span>
-                    <span class="line-type">Comunicación</span>
-                </div>
-
-                <div class="line-item">
-                    <span class="line-name">Ocio</span>
-                    <span class="line-type">Social</span>
-                </div>
-
-                <div class="line-item">
-                    <span class="line-name">Carruseles</span>
-                    <span class="line-type">Formato</span>
-                </div>
-
-                <div class="line-item">
-                    <span class="line-name">Reels</span>
-                    <span class="line-type">Audiovisual</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PUBLICACIONES
-===================================================== -->
-
-<section class="section">
-
-    <div class="section-grid">
-
-        <div class="section-number">
-            05 / PUBLICADO
-        </div>
-
-
-        <div class="content">
-
-            <h2 class="section-title">
-                Trabajo<br>
-                publicado.
-            </h2>
-
-
-            <div class="publications">
-
-
-                <a
-                    class="publication"
-                    href="https://www.instagram.com/trasciende_estudio/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <span class="publication-type">
-                        Instagram
-                    </span>
-
-                    <span class="publication-name">
-                        @trasciende_estudio
-                    </span>
-
-                    <span class="publication-link">
-                        Ver ↗
-                    </span>
-
-                </a>
-
-
-                <a
-                    class="publication"
-                    href="https://downcordoba.org/trasciende-estudio-trabaja-con-nosotros/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <span class="publication-type">
-                        Web
-                    </span>
-
-                    <span class="publication-name">
-                        Down Córdoba
-                    </span>
-
-                    <span class="publication-link">
-                        Ver ↗
-                    </span>
-
-                </a>
-
-
-                <a
-                    class="publication"
-                    href="https://labers.es/comunicacion-asociaciones-fundaciones/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <span class="publication-type">
-                        Web
-                    </span>
-
-                    <span class="publication-name">
-                        Comunicación para asociaciones
-                    </span>
-
-                    <span class="publication-link">
-                        Ver ↗
-                    </span>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DOCUMENTACIÓN
-===================================================== -->
-
-<section class="section">
-
-    <div class="section-grid">
-
-        <div class="section-number">
-            06 / DOCUMENTACIÓN
-        </div>
-
-
-        <div class="content">
-
-            <h2 class="section-title">
-                El proyecto,<br>
-                documentado.
-            </h2>
-
-
-            <div class="document">
-
-                <div>
-
-                    <div class="document-label">
-                        Case Study · PDF
-                    </div>
-
-                    <h3 class="document-title">
-                        Labers /<br>
-                        Transciende
-                    </h3>
-
-                    <p class="document-description">
-                        Contexto, áreas de trabajo, estrategia,
-                        contenidos y principales líneas desarrolladas.
-                    </p>
-
-                </div>
-
-
-                <a
-                    href="documents/Labers_Transciende_Case_Study.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="document-button"
-                >
-                    Abrir PDF ↗
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CIERRE
-===================================================== -->
-
-<section class="closing">
-
-    <h2 class="closing-title">
-        Comunicación<br>
-        con <span>un porqué.</span>
-    </h2>
-
-
-    <div class="closing-footer">
-
-        <span>
-            Labers / Transciende · 2026
-        </span>
-
-        <a href="index.html#experiencia">
-            ← Volver al portfolio
-        </a>
-
-    </div>
-
-</section>
-
-
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
 </body>
-</html>
