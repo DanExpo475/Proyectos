@@ -1,352 +1,208 @@
 /* =====================================================
-   TFG / TFM — TARJETA DESTACADA
+   DANI. — IDENTIDAD VISUAL
+   BURDEOS
 ===================================================== */
 
-.project-card.research-card {
-    grid-column: 1 / -1;
+:root {
+    --accent: #713B48;
+    --accent-dark: #5E303C;
+    --accent-light: #8A5360;
 
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-
-    min-height: 360px;
-
-    padding: 0;
-
-    overflow: hidden;
-
-    border: none;
-    border-radius: 22px;
-
-    background: #151515;
-    color: #ffffff;
+    --bg: #F4F1E9;
+    --black: #111111;
+    --grey: #777777;
+    --line: #D8D5CD;
+    --white: #FFFFFF;
 }
 
 
 /* =====================================================
-   BLOQUE VISUAL IZQUIERDO
+   COLOR DE ACENTO
 ===================================================== */
 
-.project-card.research-card .project-image {
-    min-height: 360px;
+/* Etiquetas */
 
-    position: relative;
-
-    display: flex;
-    align-items: flex-end;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #1b1b1b 0%,
-            #151515 55%,
-            #101010 100%
-        );
+.section-number,
+.case-label,
+.featured-tag,
+.project-label {
+    color: var(--accent);
 }
 
 
-/* Número gigante decorativo */
+/* Flechas */
 
-.project-card.research-card .project-image::before {
-    content: "06";
-
-    position: absolute;
-
-    top: -85px;
-    right: -20px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 400px;
-    font-weight: 700;
-
-    line-height: 1;
-    letter-spacing: -.12em;
-
-    color: rgba(255, 255, 255, .035);
-
-    pointer-events: none;
+.project-arrow,
+.card-arrow,
+.experience-arrow {
+    color: var(--accent);
 }
 
 
-/* Contenido del bloque negro */
+/* Enlaces */
 
-.project-card.research-card .media-placeholder {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-    min-height: 360px;
-
-    padding: 40px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-
-/* Número */
-
-.project-card.research-card .media-placeholder small {
-    display: block;
-
-    margin-bottom: 18px;
-
-    color: #999999;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: .08em;
-}
-
-
-/* Título */
-
-.project-card.research-card .media-placeholder strong {
-    display: block;
-
-    max-width: 750px;
-
-    color: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: clamp(38px, 4vw, 62px);
-
-    line-height: .9;
-
-    letter-spacing: -.055em;
-}
-
-
-/* Subtítulo */
-
-.project-card.research-card .media-placeholder span {
-    display: block;
-
-    margin-top: 18px;
-
-    color: #b0b0b0;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: .12em;
+a:hover {
+    color: var(--accent);
 }
 
 
 /* =====================================================
-   BLOQUE DERECHO
+   CONTACTO
+===================================================== */
+
+.contact-section,
+.contact {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+
+/* Texto secundario del contacto */
+
+.contact-section p,
+.contact p {
+    color: rgba(255, 255, 255, .88);
+}
+
+
+/* Enlace de email */
+
+.contact-section a,
+.contact a {
+    color: #111111;
+}
+
+
+/* =====================================================
+   LÍNEAS Y DETALLES
+===================================================== */
+
+.contact-section hr,
+.contact hr {
+    border-color: rgba(255, 255, 255, .35);
+}
+
+
+/* =====================================================
+   BOTONES / CTAs
+===================================================== */
+
+.button-accent,
+.cta,
+.card-link {
+    color: var(--accent);
+}
+
+
+/* CTA sobre fondo burdeos */
+
+.contact-section .cta,
+.contact .cta {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+/* =====================================================
+   EXPERIENCIA
+===================================================== */
+
+.experience-item:hover .experience-arrow {
+    color: var(--accent);
+}
+
+
+.experience-item h3::after {
+    color: var(--accent);
+}
+
+
+/* =====================================================
+   PROYECTOS
+===================================================== */
+
+.project-card .card-meta {
+    color: var(--accent);
+}
+
+
+.project-card .card-link {
+    color: var(--accent);
+}
+
+
+.project-card .card-link:hover {
+    color: var(--accent-dark);
+}
+
+
+/* =====================================================
+   TFG / TFM
 ===================================================== */
 
 .project-card.research-card .card-meta {
-    grid-column: 2;
-
-    margin: 0;
-
-    padding: 32px 42px 0;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-start;
-
-    color: #8c9a70;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: .05em;
+    color: var(--accent-light);
 }
 
-
-/* Número */
-
-.project-card.research-card .card-meta b {
-    font-weight: 400;
-}
-
-
-/* Título */
-
-.project-card.research-card h3 {
-    grid-column: 2;
-
-    margin: 45px 42px 0;
-
-    color: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: clamp(32px, 3vw, 48px);
-
-    line-height: .92;
-
-    letter-spacing: -.055em;
-}
-
-
-/* Descripción */
-
-.project-card.research-card p {
-    grid-column: 2;
-
-    max-width: 470px;
-
-    margin: 18px 42px 0;
-
-    color: #9c9c9c;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 15px;
-
-    line-height: 1.5;
-}
-
-
-/* Enlace */
 
 .project-card.research-card .card-link {
-    grid-column: 2;
-
-    display: inline-block;
-
-    width: fit-content;
-
-    margin: 28px 42px 35px;
-
-    padding-bottom: 7px;
-
-    border-bottom: 1px solid #777777;
-
     color: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 13px;
-
-    font-weight: 600;
 }
 
 
 /* =====================================================
-   LIMPIEZA DE ESTILOS ANTERIORES
+   LABERS / INTERMÈDIA / MNA
 ===================================================== */
 
-.project-card.research-card::before,
-.project-card.research-card::after {
-    display: none;
-}
-
-
-/* Evita bordes negros en las tarjetas normales */
-
-.project-card:not(.research-card) {
-    border: none;
+.project-card .media-placeholder span {
+    color: var(--accent);
 }
 
 
 /* =====================================================
-   TABLET
+   ABOUT / SOBRE MÍ
 ===================================================== */
 
-@media (max-width: 900px) {
-
-    .project-card.research-card {
-        grid-template-columns: 1fr;
-
-        min-height: auto;
-    }
-
-
-    .project-card.research-card .project-image {
-        min-height: 400px;
-    }
-
-
-    .project-card.research-card .media-placeholder {
-        min-height: 400px;
-    }
-
-
-    .project-card.research-card .card-meta,
-    .project-card.research-card h3,
-    .project-card.research-card p,
-    .project-card.research-card .card-link {
-        grid-column: 1;
-    }
-
-
-    .project-card.research-card .card-meta {
-        padding-top: 30px;
-    }
-
-
-    .project-card.research-card h3 {
-        margin-top: 35px;
-    }
-
+.about-label,
+.about-section .section-number {
+    color: var(--accent);
 }
 
 
 /* =====================================================
-   MÓVIL
+   SKILLS
 ===================================================== */
 
-@media (max-width: 600px) {
-
-    .project-card.research-card {
-        border-radius: 16px;
-    }
+.skill-item::before {
+    background: var(--accent);
+}
 
 
-    .project-card.research-card .project-image {
-        min-height: 330px;
-    }
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer a:hover {
+    color: var(--accent);
+}
 
 
-    .project-card.research-card .media-placeholder {
-        min-height: 330px;
+/* =====================================================
+   SELECCIÓN DE TEXTO
+===================================================== */
 
-        padding: 28px;
-    }
-
-
-    .project-card.research-card .media-placeholder strong {
-        font-size: 42px;
-    }
+::selection {
+    background: var(--accent);
+    color: #ffffff;
+}
 
 
-    .project-card.research-card .card-meta {
-        padding-left: 28px;
-        padding-right: 28px;
-    }
+/* =====================================================
+   FOCUS
+===================================================== */
 
-
-    .project-card.research-card h3 {
-        margin-left: 28px;
-        margin-right: 28px;
-    }
-
-
-    .project-card.research-card p {
-        margin-left: 28px;
-        margin-right: 28px;
-    }
-
-
-    .project-card.research-card .card-link {
-        margin-left: 28px;
-    }
-
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
 }
