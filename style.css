@@ -27,7 +27,7 @@
 }
 
 html{
-  scroll-behavior:smooth;
+  scroll-behavior:auto;
 }
 
 body{
@@ -224,14 +224,8 @@ a{
 }
 
 .hero-marquee div{
-  animation:marquee 28s linear infinite;
 }
 
-@keyframes marquee{
-  to{
-    transform:translateX(-50%);
-  }
-}
 
 
 /* =====================================================
