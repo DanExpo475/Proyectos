@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Labers / Transciende — Dani</title>
+
+    <style>
+
+        /* =====================================================
+           BASE
+        ===================================================== */
+
+        :root {
+            --bg: #f3f0e8;
+            --black: #111111;
+            --grey: #777777;
+            --line: #d7d3c9;
+            --green: #647c42;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--black);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.45;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            height: 72px;
+            padding: 0 5.5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        .logo {
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .back {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            padding: 95px 5.5vw 70px;
+            min-height: calc(100vh - 72px);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .eyebrow {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            color: var(--green);
+            text-transform: uppercase;
+        }
+
+        .hero-main {
+            margin-top: 65px;
+        }
+
+        .hero-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(75px, 13vw, 185px);
+            line-height: .78;
+            letter-spacing: -.085em;
+            font-weight: 700;
+        }
+
+        .hero-title span {
+            display: block;
+        }
+
+        .hero-title .grey {
+            color: var(--grey);
+        }
+
+        .hero-description {
+            margin-top: 65px;
+            max-width: 600px;
+
+            font-size: 21px;
+            line-height: 1.35;
+        }
+
+        .hero-bottom {
+            margin-top: 80px;
+            border-top: 1px solid var(--line);
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .hero-meta {
+            padding-top: 16px;
+        }
+
+        .meta-label {
+            display: block;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9px;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            color: var(--grey);
+
+            margin-bottom: 8px;
+        }
+
+        .meta-value {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        .section {
+            padding: 115px 5.5vw;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: 20% 1fr;
+            gap: 70px;
+        }
+
+        .section-number {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            color: var(--green);
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(48px, 6vw, 85px);
+            line-height: .88;
+            letter-spacing: -.065em;
+            font-weight: 700;
+        }
+
+        .content {
+            max-width: 1000px;
+        }
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .intro-layout {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 100px;
+            margin-top: 75px;
+        }
+
+        .intro-big {
+            font-size: clamp(27px, 3vw, 42px);
+            line-height: 1.15;
+            letter-spacing: -.025em;
+        }
+
+        .intro-small {
+            padding-top: 5px;
+            border-left: 1px solid var(--line);
+            padding-left: 35px;
+
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* =====================================================
+           AREAS
+        ===================================================== */
+
+        .areas {
+            margin-top: 70px;
+            border-top: 1px solid var(--line);
+        }
+
+        .area {
+            display: grid;
+            grid-template-columns: 70px 1fr 1fr;
+            gap: 25px;
+
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
+
+            align-items: baseline;
+        }
+
+        .area-number {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: var(--grey);
+        }
+
+        .area-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            font-weight: 600;
+            letter-spacing: -.035em;
+        }
+
+        .area-text {
+            font-size: 17px;
+            color: #555;
+        }
+
+        /* =====================================================
+           FEATURED PROJECT
+        ===================================================== */
+
+        .project-section {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .project-section .section-number {
+            color: #a2b57e;
+        }
+
+        .project-section .section-title {
+            color: var(--white);
+        }
+
+        .project-intro {
+            margin-top: 75px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+        }
+
+        .project-name {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(70px, 11vw, 155px);
+            font-weight: 700;
+            line-height: .78;
+            letter-spacing: -.085em;
+        }
+
+        .project-tag {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            color: #a2b57e;
+            white-space: nowrap;
+        }
+
+        /* Gran bloque visual sin necesidad de inventar fotografías */
+
+        .project-visual {
+            margin-top: 65px;
+            min-height: 470px;
+
+            background: #d7dfc9;
+            color: var(--black);
+
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: flex-end;
+            padding: 45px;
+        }
+
+        .project-visual::before {
+            content: "DOWN";
+            position: absolute;
+
+            top: -45px;
+            right: -20px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(150px, 25vw, 370px);
+            font-weight: 700;
+            letter-spacing: -.1em;
+
+            color: rgba(17,17,17,.07);
+        }
+
+        .visual-label {
+            position: relative;
+            z-index: 2;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+        }
+
+        .visual-copy {
+            position: relative;
+            z-index: 2;
+
+            max-width: 570px;
+            margin-top: 12px;
+
+            font-size: 25px;
+            line-height: 1.18;
+        }
+
+        .project-description {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+
+            margin-top: 55px;
+        }
+
+        .project-description p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* =====================================================
+           CONTENT LINES
+        ===================================================== */
+
+        .content-lines {
+            margin-top: 75px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-top: 1px solid var(--line);
+        }
+
+        .line-item {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .line-item:nth-child(odd) {
+            padding-right: 35px;
+            border-right: 1px solid var(--line);
+        }
+
+        .line-item:nth-child(even) {
+            padding-left: 35px;
+        }
+
+        .line-name {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -.02em;
+        }
+
+        .line-type {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9px;
+            color: var(--grey);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            text-align: right;
+        }
+
+        /* =====================================================
+           PUBLICATIONS
+        ===================================================== */
+
+        .publications {
+            margin-top: 70px;
+            border-top: 1px solid var(--line);
+        }
+
+        .publication {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            gap: 30px;
+
+            padding: 32px 0;
+            border-bottom: 1px solid var(--line);
+
+            align-items: center;
+        }
+
+        .publication-type {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .publication-name {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -.04em;
+        }
+
+        .publication-link {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* =====================================================
+           DOCUMENT
+        ===================================================== */
+
+        .document {
+            margin-top: 70px;
+
+            background: var(--green);
+            color: var(--white);
+
+            padding: 55px;
+
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 50px;
+            align-items: end;
+        }
+
+        .document-label {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            margin-bottom: 18px;
+        }
+
+        .document-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(40px, 5vw, 70px);
+            line-height: .9;
+            letter-spacing: -.06em;
+            font-weight: 700;
+        }
+
+        .document-description {
+            max-width: 600px;
+            margin-top: 25px;
+
+            font-size: 18px;
+        }
+
+        .document-button {
+            background: var(--white);
+            color: var(--black);
+
+            padding: 17px 23px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+
+            white-space: nowrap;
+        }
+
+        /* =====================================================
+           CLOSING
+        ===================================================== */
+
+        .closing {
+            padding: 145px 5.5vw 80px;
+            border-top: 1px solid var(--line);
+        }
+
+        .closing-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(65px, 10vw, 145px);
+            line-height: .8;
+            letter-spacing: -.085em;
+            font-weight: 700;
+        }
+
+        .closing-title span {
+            color: var(--green);
+        }
+
+        .closing-footer {
+            margin-top: 130px;
+
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+
+            display: flex;
+            justify-content: space-between;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        .closing-footer a {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-bottom {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .section-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .intro-layout {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .area {
+                grid-template-columns: 50px 1fr;
+            }
+
+            .area-text {
+                grid-column: 2;
+            }
+
+            .project-intro {
+                display: block;
+            }
+
+            .project-tag {
+                display: block;
+                margin-bottom: 25px;
+            }
+
+            .project-description {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .document {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 0 6vw;
+            }
+
+            .hero {
+                padding: 70px 6vw 60px;
+            }
+
+            .hero-title {
+                font-size: clamp(65px, 20vw, 110px);
+            }
+
+            .hero-description {
+                font-size: 18px;
+                margin-top: 45px;
+            }
+
+            .hero-bottom {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section {
+                padding: 80px 6vw;
+            }
+
+            .section-title {
+                font-size: 50px;
+            }
+
+            .intro-big {
+                font-size: 28px;
+            }
+
+            .content-lines {
+                grid-template-columns: 1fr;
+            }
+
+            .line-item:nth-child(odd) {
+                padding-right: 0;
+                border-right: none;
+            }
+
+            .line-item:nth-child(even) {
+                padding-left: 0;
+            }
+
+            .publication {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .publication-link {
+                margin-top: 10px;
+            }
+
+            .project-visual {
+                min-height: 330px;
+                padding: 25px;
+            }
+
+            .visual-copy {
+                font-size: 20px;
+            }
+
+            .document {
+                padding: 35px 28px;
+            }
+
+            .closing {
+                padding: 100px 6vw 60px;
+            }
+
+            .closing-footer {
+                margin-top: 90px;
+                display: block;
+            }
+
+            .closing-footer a {
+                display: inline-block;
+                margin-top: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <a href="index.html" class="logo">
+        DANI.
+    </a>
+
+    <a href="index.html#experiencia" class="back">
+        ← Volver al portfolio
+    </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div>
+
+        <div class="eyebrow">
+            Experiencia · 2026
+        </div>
+
+
+        <div class="hero-main">
+
+            <h1 class="hero-title">
+                <span>Labers /</span>
+                <span class="grey">Transciende</span>
+            </h1>
+
+
+            <p class="hero-description">
+                Comunicación, estrategia y contenido desarrollados
+                dentro de un entorno de agencia.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        <div class="hero-meta">
+            <span class="meta-label">Rol</span>
+            <span class="meta-value">Marketing & Growth</span>
+        </div>
+
+        <div class="hero-meta">
+            <span class="meta-label">Área</span>
+            <span class="meta-value">Comunicación & Marketing</span>
+        </div>
+
+        <div class="hero-meta">
+            <span class="meta-label">Entorno</span>
+            <span class="meta-value">Agencia</span>
+        </div>
+
+        <div class="hero-meta">
+            <span class="meta-label">Año</span>
+            <span class="meta-value">2026</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTEXTO
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-grid">
+
+        <div class="section-number">
+            01 / CONTEXTO
+        </div>
+
+
+        <div class="content">
+
+            <h2 class="section-title">
+                Estrategia<br>
+                antes que ruido.
+            </h2>
+
+
+            <div class="intro-layout">
+
+                <p class="intro-big">
+                    Trabajar la comunicación desde el porqué:
+                    qué contar, para quién, cómo convertirlo
+                    en contenido y qué objetivo persigue.
+                </p>
+
+
+                <p class="intro-small">
+                    Una experiencia de agencia vinculada a
+                    proyectos de comunicación, marketing digital,
+                    contenidos y social media para diferentes
+                    organizaciones.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ÁREAS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-grid">
+
+        <div class="section-number">
+            02 / ÁREAS
+        </div>
+
+
+        <div class="content">
+
+            <h2 class="section-title">
+                De la estrategia<br>
+                a la ejecución.
+            </h2>
+
+
+            <div class="areas">
+
+                <div class="area">
+
+                    <span class="area-number">
+                        01
+                    </span>
+
+                    <span class="area-title">
+                        Estrategia
+                    </span>
+
+                    <span class="area-text">
+                        Definición de líneas de comunicación,
+                        objetivos y planificación.
+                    </span>
+
+                </div>
+
+
+                <div class="area">
+
+                    <span class="area-number">
+                        02
+                    </span>
+
+                    <span class="area-title">
+                        Social Media
+                    </span>
+
+                    <span class="area-text">
+                        Planificación y desarrollo de contenidos
+                        para canales sociales.
+                    </span>
+
+                </div>
+
+
+                <div class="area">
+
+                    <span class="area-number">
+                        03
+                    </span>
+
+                    <span class="area-title">
+                        Contenido
+                    </span>
+
+                    <span class="area-text">
+                        Conceptos, líneas editoriales, carruseles,
+                        reels y formatos digitales.
+                    </span>
+
+                </div>
+
+
+                <div class="area">
+
+                    <span class="area-number">
+                        04
+                    </span>
+
+                    <span class="area-title">
+                        Planificación
+                    </span>
+
+                    <span class="area-text">
+                        Calendarios, organización temática y
+                        coordinación de proyectos.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DOWN CÓRDOBA
+===================================================== -->
+
+<section class="section project-section">
+
+    <div class="section-grid">
+
+        <div class="section-number">
+            03 / PROYECTO
+        </div>
+
+
+        <div class="content">
+
+            <h2 class="section-title">
+                Caso<br>
+                destacado.
+            </h2>
+
+
+            <div class="project-intro">
+
+                <div class="project-tag">
+                    Comunicación · Social Media
+                </div>
+
+                <h3 class="project-name">
+                    Down<br>
+                    Córdoba
+                </h3>
+
+            </div>
+
+
+            <div class="project-visual">
+
+                <div>
+
+                    <div class="visual-label">
+                        Estrategia de contenidos
+                    </div>
+
+                    <p class="visual-copy">
+                        Convertir diferentes áreas de trabajo
+                        en contenidos claros, educativos y
+                        relevantes para redes sociales.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-description">
+
+                <p>
+                    La planificación de contenidos se estructuró
+                    alrededor de diferentes líneas temáticas,
+                    trabajando cada una desde formatos
+                    educativos, divulgativos y audiovisuales.
+                </p>
+
+                <p>
+                    El proyecto permitió trabajar la comunicación
+                    desde una perspectiva editorial: ordenar temas,
+                    construir una narrativa y convertir información
+                    especializada en contenido digital.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LÍNEAS DE CONTENIDO
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-grid">
+
+        <div class="section-number">
+            04 / CONTENIDOS
+        </div>
+
+
+        <div class="content">
+
+            <h2 class="section-title">
+                Diferentes temas.<br>
+                Una misma línea.
+            </h2>
+
+
+            <div class="content-lines">
+
+                <div class="line-item">
+                    <span class="line-name">Logopedia</span>
+                    <span class="line-type">Educativo</span>
+                </div>
+
+                <div class="line-item">
+                    <span class="line-name">Habilidades Básicas</span>
+                    <span class="line-type">Divulgación</span>
+                </div>
+
+                <div class="line-item">
+                    <span class="line-name">Lectoescritura</span>
+                    <span class="line-type">Educativo</span>
+                </div>
+
+                <div class="line-item">
+                    <span class="line-name">Lectura Fácil</span>
+                    <span class="line-type">Accesibilidad</span>
+                </div>
+
+                <div class="line-item">
+                    <span class="line-name">Autonomía Social</span>
+                    <span class="line-type">Comunicación</span>
+                </div>
+
+                <div class="line-item">
+                    <span class="line-name">Ocio</span>
+                    <span class="line-type">Social</span>
+                </div>
+
+                <div class="line-item">
+                    <span class="line-name">Carruseles</span>
+                    <span class="line-type">Formato</span>
+                </div>
+
+                <div class="line-item">
+                    <span class="line-name">Reels</span>
+                    <span class="line-type">Audiovisual</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PUBLICACIONES
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-grid">
+
+        <div class="section-number">
+            05 / PUBLICADO
+        </div>
+
+
+        <div class="content">
+
+            <h2 class="section-title">
+                Trabajo<br>
+                publicado.
+            </h2>
+
+
+            <div class="publications">
+
+
+                <a
+                    class="publication"
+                    href="https://www.instagram.com/trasciende_estudio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span class="publication-type">
+                        Instagram
+                    </span>
+
+                    <span class="publication-name">
+                        @trasciende_estudio
+                    </span>
+
+                    <span class="publication-link">
+                        Ver ↗
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="publication"
+                    href="https://downcordoba.org/trasciende-estudio-trabaja-con-nosotros/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span class="publication-type">
+                        Web
+                    </span>
+
+                    <span class="publication-name">
+                        Down Córdoba
+                    </span>
+
+                    <span class="publication-link">
+                        Ver ↗
+                    </span>
+
+                </a>
+
+
+                <a
+                    class="publication"
+                    href="https://labers.es/comunicacion-asociaciones-fundaciones/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span class="publication-type">
+                        Web
+                    </span>
+
+                    <span class="publication-name">
+                        Comunicación para asociaciones
+                    </span>
+
+                    <span class="publication-link">
+                        Ver ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DOCUMENTACIÓN
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-grid">
+
+        <div class="section-number">
+            06 / DOCUMENTACIÓN
+        </div>
+
+
+        <div class="content">
+
+            <h2 class="section-title">
+                El proyecto,<br>
+                documentado.
+            </h2>
+
+
+            <div class="document">
+
+                <div>
+
+                    <div class="document-label">
+                        Case Study · PDF
+                    </div>
+
+                    <h3 class="document-title">
+                        Labers /<br>
+                        Transciende
+                    </h3>
+
+                    <p class="document-description">
+                        Contexto, áreas de trabajo, estrategia,
+                        contenidos y principales líneas desarrolladas.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="documents/Labers_Transciende_Case_Study.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-button"
+                >
+                    Abrir PDF ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CIERRE
+===================================================== -->
+
+<section class="closing">
+
+    <h2 class="closing-title">
+        Comunicación<br>
+        con <span>un porqué.</span>
+    </h2>
+
+
+    <div class="closing-footer">
+
+        <span>
+            Labers / Transciende · 2026
+        </span>
+
+        <a href="index.html#experiencia">
+            ← Volver al portfolio
+        </a>
+
+    </div>
+
+</section>
+
+
+</body>
+</html>
