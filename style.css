@@ -106,9 +106,7 @@ a {
   font-size: 11px;
   letter-spacing: 0.18em;
   font-weight: 700;
-
   color: #58a923;
-
   text-transform: uppercase;
 }
 
@@ -117,26 +115,20 @@ a {
   justify-content: space-between;
   gap: 50px;
   align-items: end;
-
   margin-bottom: 55px;
 }
 
 .section-head > p {
   max-width: 430px;
-
   color: var(--muted);
-
   font-size: 16px;
   line-height: 1.55;
-
   margin: 0;
 }
 
 h2 {
   font: 800 clamp(52px, 7vw, 104px) / 0.9 "Manrope", sans-serif;
-
   letter-spacing: -0.07em;
-
   margin: 0;
 }
 
@@ -166,65 +158,45 @@ h2 span {
 .hero-kicker {
   font-size: 11px;
   letter-spacing: 0.18em;
-
   font-weight: 700;
-
   margin-bottom: 24px;
-
   color: #58a923;
 }
 
 .hero h1 {
   font: 800 clamp(68px, 10.5vw, 170px) / 0.86 "Manrope", sans-serif;
-
   letter-spacing: -0.075em;
-
   margin: 0;
-
   max-width: 1200px;
 }
 
 .hero h1 em {
   font-style: normal;
-
   -webkit-text-stroke: 1.5px var(--ink);
-
   color: transparent;
 }
 
 .hero-bottom {
   display: flex;
-
   justify-content: space-between;
-
   align-items: end;
-
   gap: 40px;
-
   max-width: 1000px;
-
   margin-top: 55px;
 }
 
 .hero-bottom p {
   max-width: 520px;
-
   color: var(--muted);
-
   font-size: 18px;
-
   line-height: 1.55;
-
   margin: 0;
 }
 
 .arrow-link {
   font-weight: 700;
-
   border-bottom: 1px solid;
-
   padding-bottom: 5px;
-
   white-space: nowrap;
 }
 
@@ -255,23 +227,41 @@ h2 span {
   white-space: nowrap;
 }
 
+
+/*
+   Los dos bloques son idénticos.
+   El segundo entra justo cuando
+   el primero sale por la izquierda.
+*/
+
 .marquee-track {
   display: flex;
 
   width: max-content;
 
-  animation: marquee 24s linear infinite;
+  animation: marquee 22s linear infinite;
 
   will-change: transform;
 }
 
-.marquee-track span {
-  display: block;
+.marquee-content {
+  display: flex;
+
+  align-items: center;
 
   flex-shrink: 0;
 
-  padding-right: 45px;
+  width: max-content;
 }
+
+.marquee-content span {
+  flex-shrink: 0;
+
+  margin-right: 14px;
+}
+
+
+/* Movimiento continuo */
 
 @keyframes marquee {
 
@@ -297,48 +287,35 @@ h2 span {
 .intro-grid,
 .about-grid {
   display: grid;
-
   grid-template-columns: 1fr 1.35fr;
-
   gap: 10vw;
-
   margin-top: 45px;
 }
 
 .lead {
   font-size: 25px;
-
   line-height: 1.35;
-
   color: #242424;
 }
 
 .intro p,
 .about-copy p {
   font-size: 18px;
-
   line-height: 1.65;
-
   color: #5d6670;
 }
 
 .tag-row {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 8px;
-
   margin-top: 28px;
 }
 
 .tag-row span {
   border: 1px solid #ccc;
-
   padding: 9px 13px;
-
   border-radius: 100px;
-
   font-size: 12px;
 }
 
@@ -353,17 +330,11 @@ h2 span {
 
 .experience-item {
   display: grid;
-
   grid-template-columns: 150px 1fr 210px;
-
   gap: 35px;
-
   padding: 38px 0;
-
   border-bottom: 1px solid var(--line);
-
   align-items: start;
-
   transition: 0.25s;
 }
 
@@ -380,7 +351,6 @@ h2 span {
 .year,
 .exp-role {
   font-size: 13px;
-
   color: #68727c;
 }
 
@@ -390,27 +360,20 @@ h2 span {
 
 .exp-main h3 {
   font: 700 27px "Manrope", sans-serif;
-
   margin: 0 0 10px;
-
   letter-spacing: -0.04em;
 }
 
 .exp-main h3 span {
   font-size: 17px;
-
   color: #58a923;
 }
 
 .exp-main p {
   margin: 0;
-
   max-width: 720px;
-
   color: var(--muted);
-
   font-size: 16px;
-
   line-height: 1.55;
 }
 
@@ -429,25 +392,17 @@ h2 span {
 
 .project-feature {
   display: grid;
-
   grid-template-columns: 1.65fr 0.75fr;
-
   min-height: 590px;
-
   border-radius: var(--radius);
-
   overflow: hidden;
-
   background: #ecece7;
 }
 
 .project-media {
   position: relative;
-
   min-height: 590px;
-
   background: #dededc;
-
   overflow: hidden;
 }
 
@@ -455,11 +410,8 @@ h2 span {
 .project-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   display: block;
-
   transition: transform 0.7s;
 }
 
@@ -470,13 +422,10 @@ h2 span {
 
 .media-placeholder {
   position: absolute;
-
   inset: 0;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: end;
 
   padding: 35px;
@@ -492,29 +441,23 @@ h2 span {
 
 .media-placeholder small {
   font-size: 12px;
-
   opacity: 0.7;
-
   margin-bottom: 10px;
 }
 
 .media-placeholder strong {
   font: 800 38px "Manrope", sans-serif;
-
   letter-spacing: -0.05em;
 }
 
 .media-placeholder span {
   font-size: 11px;
-
   letter-spacing: 0.15em;
-
   margin-top: 7px;
 }
 
 .media-hover {
   position: absolute;
-
   top: 22px;
   right: 22px;
 
@@ -525,7 +468,6 @@ h2 span {
   padding: 11px 16px;
 
   font-size: 12px;
-
   font-weight: 700;
 
   opacity: 0;
@@ -537,7 +479,6 @@ h2 span {
 
 .project-media:hover .media-hover {
   opacity: 1;
-
   transform: none;
 }
 
@@ -545,43 +486,32 @@ h2 span {
   padding: 55px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: space-between;
 }
 
 .project-number {
   font-size: 12px;
-
   color: #777;
 }
 
 .project-copy h3 {
   font: 800 50px / 0.94 "Manrope", sans-serif;
-
   letter-spacing: -0.06em;
-
   margin: 18px 0;
 }
 
 .project-copy p {
   font-size: 16px;
-
   color: var(--muted);
-
   line-height: 1.6;
 }
 
 .text-link {
   font-weight: 700;
-
   border-bottom: 1px solid;
-
   padding-bottom: 5px;
-
   display: inline-block;
-
   margin-top: 15px;
 }
 
@@ -596,23 +526,16 @@ h2 span {
 
 .project-grid {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 25px;
-
   margin-top: 25px;
 }
 
 .project-card {
   background: #f3f3ef;
-
   border-radius: var(--radius);
-
   padding: 0 0 30px;
-
   overflow: hidden;
-
   transition: transform 0.3s;
 }
 
@@ -622,11 +545,8 @@ h2 span {
 
 .project-image {
   height: 410px;
-
   position: relative;
-
   background: #dcdcd9;
-
   overflow: hidden;
 }
 
@@ -648,15 +568,11 @@ h2 span {
 
 .card-meta {
   display: flex;
-
   justify-content: space-between;
-
   padding: 22px 28px 0;
 
   font-size: 11px;
-
   letter-spacing: 0.08em;
-
   text-transform: uppercase;
 
   color: #6a6f72;
@@ -664,25 +580,19 @@ h2 span {
 
 .project-card h3 {
   font: 700 36px / 0.95 "Manrope", sans-serif;
-
   letter-spacing: -0.055em;
-
   margin: 18px 28px 8px;
 }
 
 .project-card p {
   font-size: 15px;
-
   line-height: 1.5;
-
   color: var(--muted);
-
   margin: 0 28px;
 }
 
 .project-card.dark {
   background: #151515;
-
   color: #fff;
 }
 
@@ -706,66 +616,35 @@ h2 span {
 
 .video-grid {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 25px;
 }
 
 .video-card {
   background: #111;
-
   color: #fff;
-
   border-radius: var(--radius);
-
   overflow: hidden;
 }
 
 .video-frame {
   aspect-ratio: 16 / 10;
-
   background: #1b1b1b;
-
   position: relative;
 }
 
 .video-frame video {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   display: block;
-}
-
-.video-fallback {
-  position: absolute;
-
-  inset: 0;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  color: #888;
-
-  font-size: 13px;
-
-  pointer-events: none;
 }
 
 .video-caption {
   display: flex;
-
   justify-content: space-between;
-
   padding: 18px 22px;
-
   font-size: 12px;
-
   letter-spacing: 0.08em;
 }
 
@@ -780,7 +659,6 @@ h2 span {
 
 .dark-section {
   background: #111;
-
   color: #fff;
 }
 
@@ -798,9 +676,7 @@ h2 span {
 
 .publication-list a {
   display: grid;
-
   grid-template-columns: 1fr 1fr 130px;
-
   gap: 20px;
 
   padding: 25px 0;
@@ -818,7 +694,6 @@ h2 span {
 
 .publication-list span {
   font: 700 24px "Manrope", sans-serif;
-
   letter-spacing: -0.04em;
 }
 
@@ -828,9 +703,7 @@ h2 span {
 
 .publication-list b {
   font-size: 12px;
-
   text-align: right;
-
   text-decoration: underline;
 }
 
@@ -849,15 +722,278 @@ h2 span {
 
 .education {
   margin-top: 40px;
-
   border-top: 1px solid #c9c9c3;
 }
 
 .education div {
   display: flex;
-
   justify-content: space-between;
 
+  padding: 18px 0;
+
+  border-bottom: 1px solid #c9c9c3;
+
+  font-size: 14px;
+}
+
+.education span {
+  color: #777;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+  background: #fff;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 55px;
+}
+
+.skills-grid div {
+  padding: 30px;
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.skills-grid div:nth-child(3n) {
+  border-right: 0;
+}
+
+.skills-grid span {
+  font-size: 11px;
+  color: #58a923;
+}
+
+.skills-grid h3 {
+  font: 700 29px "Manrope", sans-serif;
+  letter-spacing: -0.05em;
+  margin: 35px 0 10px;
+}
+
+.skills-grid p {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contact {
+  background: var(--acid);
+
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact .section-label {
+  color: #214c08;
+}
+
+.contact h2 {
+  font-size: clamp(80px, 14vw, 200px);
+}
+
+.contact h2 span {
+  color: #fff;
+}
+
+.contact > p {
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.contact-mail {
+  font: 700 clamp(25px, 4vw, 55px) "Manrope", sans-serif;
+  letter-spacing: -0.05em;
+  border-bottom: 2px solid;
+  align-self: flex-start;
+}
+
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+
+  padding-top: 18px;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .site-header nav {
+    display: none;
+  }
+
+  .section {
+    padding: 80px 6vw;
+  }
+
+  .hero {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .hero h1 {
+    font-size: 18vw;
+  }
+
+  .hero-bottom,
+  .section-head {
+    display: block;
+  }
+
+  .hero-bottom p {
+    margin-bottom: 30px;
+  }
+
+  .intro-grid,
+  .about-grid,
+  .project-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .project-feature {
+    min-height: 0;
+  }
+
+  .project-media {
+    min-height: 420px;
+  }
+
+  .project-copy {
+    padding: 35px;
+  }
+
+  .project-copy h3 {
+    font-size: 42px;
+  }
+
+  .project-grid,
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-item {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .exp-role {
+    display: none;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-grid div:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+
+  .skills-grid div:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .publication-list a {
+    grid-template-columns: 1fr 110px;
+  }
+
+  .publication-list small {
+    display: none;
+  }
+
+}
+
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 600px) {
+
+  .site-header {
+    padding: 0 5vw;
+  }
+
+  .header-contact {
+    display: none;
+  }
+
+  .hero {
+    min-height: 85vh;
+  }
+
+  .hero h1 {
+    font-size: 18vw;
+  }
+
+  .hero-bottom p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 70px 5vw;
+  }
+
+  h2 {
+    font-size: 56px;
+  }
+
+  .project-grid {
+    gap: 15px;
+  }
+
+  .project-image,
+  .project-card.tall .project-image {
+    height: 330px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid div,
+  .skills-grid div:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .publication-list span {
+    font-size: 18px;
+  }
+
+  .contact-mail {
+    font-size: 25px;
+  }
+
+  .contact-footer {
+    display: block;
+  }
+
+  .contact-footer span {
+    display: block;
+    margin-top: 8px;
+  }
+
+}
   padding: 18px 0;
 
   border-bottom: 1px solid #c9c9c3;
