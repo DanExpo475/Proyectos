@@ -1,1710 +1,393 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="MNA Stands — Experiencia en comunicación, marketing, presencia digital y proyectos B2B."
-    >
-
-    <title>MNA Stands — DANI.</title>
-
-
-    <style>
-
-        :root {
-            --bg: #f3f0e8;
-            --black: #111111;
-            --grey: #777777;
-            --line: #d7d3c9;
-            --green: #647c42;
-            --white: #ffffff;
-        }
-
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-
-        body {
-            background: var(--bg);
-            color: var(--black);
-
-            font-family: Georgia, "Times New Roman", serif;
-
-            line-height: 1.45;
-        }
-
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-
-        /* =====================================================
-           HEADER
-        ===================================================== */
-
-        .case-header {
-
-            height: 72px;
-
-            padding: 0 5.5vw;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            border-bottom: 1px solid var(--line);
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 12px;
-        }
-
-
-        .logo {
-
-            font-weight: 700;
-
-            text-decoration: underline;
-
-            text-underline-offset: 3px;
-        }
-
-
-        .back-home {
-
-            text-decoration: underline;
-
-            text-underline-offset: 3px;
-        }
-
-
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .case-hero {
-
-            min-height: calc(100vh - 72px);
-
-            padding: 95px 5.5vw 70px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-        }
-
-
-        .case-label {
-
-            color: var(--green);
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            letter-spacing: .14em;
-
-            text-transform: uppercase;
-        }
-
-
-        .case-hero h1 {
-
-            max-width: 1300px;
-
-            margin-top: 65px;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: clamp(75px, 13vw, 185px);
-
-            line-height: .78;
-
-            letter-spacing: -.085em;
-
-            font-weight: 700;
-        }
-
-
-        .case-hero h1 span {
-
-            display: block;
-
-            color: var(--grey);
-        }
-
-
-        .case-intro {
-
-            max-width: 650px;
-
-            margin-top: 65px;
-
-            font-size: 21px;
-
-            line-height: 1.35;
-        }
-
-
-
-        /* =====================================================
-           META
-        ===================================================== */
-
-        .case-meta {
-
-            margin-top: 80px;
-
-            padding-top: 20px;
-
-            border-top: 1px solid var(--line);
-
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 30px;
-        }
-
-
-        .case-meta div {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 7px;
-        }
-
-
-        .case-meta small {
-
-            color: var(--grey);
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 9px;
-
-            text-transform: uppercase;
-
-            letter-spacing: .12em;
-        }
-
-
-        .case-meta strong {
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 14px;
-        }
-
-
-
-        /* =====================================================
-           CONTEXTO
-        ===================================================== */
-
-        .intro-section {
-
-            padding: 120px 5.5vw;
-
-            border-top: 1px solid var(--line);
-
-            background: var(--white);
-        }
-
-
-        .two-column {
-
-            display: grid;
-
-            grid-template-columns: 20% 1fr;
-
-            gap: 70px;
-        }
-
-
-        .section-number {
-
-            color: var(--green);
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            letter-spacing: .14em;
-
-            text-transform: uppercase;
-        }
-
-
-        .section-title {
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: clamp(50px, 6vw, 85px);
-
-            line-height: .88;
-
-            letter-spacing: -.065em;
-
-            font-weight: 700;
-        }
-
-
-        .intro-copy {
-
-            margin-top: 70px;
-
-            max-width: 900px;
-        }
-
-
-        .intro-copy .lead {
-
-            max-width: 800px;
-
-            margin-bottom: 30px;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: clamp(25px, 3vw, 40px);
-
-            line-height: 1.15;
-
-            letter-spacing: -.025em;
-        }
-
-
-        .intro-copy p:not(.lead) {
-
-            max-width: 700px;
-
-            margin-bottom: 22px;
-
-            color: var(--grey);
-
-            font-size: 17px;
-
-            line-height: 1.65;
-        }
-
-
-
-        /* =====================================================
-           ÁREAS
-        ===================================================== */
-
-        .areas {
-
-            margin-top: 70px;
-
-            border-top: 1px solid var(--line);
-        }
-
-
-        .area {
-
-            display: grid;
-
-            grid-template-columns: 70px 1fr 1fr;
-
-            gap: 25px;
-
-            padding: 28px 0;
-
-            border-bottom: 1px solid var(--line);
-
-            align-items: baseline;
-        }
-
-
-        .area-number {
-
-            color: var(--grey);
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 10px;
-        }
-
-
-        .area-title {
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 25px;
-
-            font-weight: 600;
-
-            letter-spacing: -.035em;
-        }
-
-
-        .area-text {
-
-            color: var(--grey);
-
-            font-size: 17px;
-        }
-
-
-
-        /* =====================================================
-           PROYECTOS / TRABAJO
-        ===================================================== */
-
-        .projects-section {
-
-            padding: 120px 5.5vw;
-
-            border-top: 1px solid var(--line);
-        }
-
-
-        .projects-heading {
-
-            display: grid;
-
-            grid-template-columns: 20% 1fr;
-
-            gap: 70px;
-
-            margin-bottom: 75px;
-        }
-
-
-        .projects-heading p {
-
-            max-width: 650px;
-
-            margin-top: 35px;
-
-            color: var(--grey);
-
-            font-size: 18px;
-
-            line-height: 1.55;
-        }
-
-
-        .project-list {
-
-            border-top: 1px solid var(--line);
-        }
-
-
-        .project-item {
-
-            display: grid;
-
-            grid-template-columns: 80px 1fr 280px 40px;
-
-            gap: 25px;
-
-            min-height: 145px;
-
-            padding: 32px 0;
-
-            border-bottom: 1px solid var(--line);
-
-            align-items: center;
-        }
-
-
-        .project-number {
-
-            color: var(--grey);
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 11px;
-        }
-
-
-        .project-name {
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: clamp(28px, 3vw, 45px);
-
-            font-weight: 600;
-
-            letter-spacing: -.05em;
-        }
-
-
-        .project-description {
-
-            color: var(--grey);
-
-            font-size: 15px;
-
-            line-height: 1.45;
-        }
-
-
-        .project-arrow {
-
-            color: var(--green);
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 20px;
-
-            text-align: right;
-        }
-
-
-
-        /* =====================================================
-           BLOQUE DESTACADO
-        ===================================================== */
-
-        .featured {
-
-            padding: 120px 5.5vw;
-
-            background: var(--black);
-
-            color: var(--white);
-        }
-
-
-        .featured-grid {
-
-            display: grid;
-
-            grid-template-columns: 20% 1fr;
-
-            gap: 70px;
-        }
-
-
-        .featured .section-number {
-
-            color: #a3b681;
-        }
-
-
-        .featured-content {
-
-            max-width: 1100px;
-        }
-
-
-        .featured-tag {
-
-            color: #a3b681;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            letter-spacing: .13em;
-
-            text-transform: uppercase;
-        }
-
-
-        .featured h2 {
-
-            margin-top: 20px;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: clamp(75px, 12vw, 170px);
-
-            line-height: .78;
-
-            letter-spacing: -.085em;
-
-            font-weight: 700;
-        }
-
-
-        .featured h2 span {
-
-            color: #777777;
-        }
-
-
-        .featured-description {
-
-            max-width: 650px;
-
-            margin-top: 55px;
-
-            font-size: 21px;
-
-            line-height: 1.4;
-        }
-
-
-
-        /* =====================================================
-           VISUAL
-        ===================================================== */
-
-        .project-visual {
-
-            min-height: 480px;
-
-            margin-top: 65px;
-
-            padding: 40px;
-
-            background: #deded9;
-
-            color: var(--black);
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: flex-end;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-
-        .project-visual::before {
-
-            content: "MNA";
-
-            position: absolute;
-
-            top: -30px;
-
-            right: -10px;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: clamp(160px, 25vw, 390px);
-
-            font-weight: 700;
-
-            letter-spacing: -.1em;
-
-            color: rgba(17,17,17,.07);
-        }
-
-
-        .visual-copy {
-
-            position: relative;
-
-            z-index: 2;
-        }
-
-
-        .visual-label {
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            text-transform: uppercase;
-
-            letter-spacing: .12em;
-        }
-
-
-        .visual-copy p {
-
-            max-width: 650px;
-
-            margin-top: 12px;
-
-            font-size: 27px;
-
-            line-height: 1.15;
-        }
-
-
-
-        /* =====================================================
-           DETALLES
-        ===================================================== */
-
-        .project-details {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 80px;
-
-            margin-top: 55px;
-        }
-
-
-        .project-details p {
-
-            font-size: 18px;
-
-            line-height: 1.55;
-        }
-
-
-
-        /* =====================================================
-           PUBLICADO
-        ===================================================== */
-
-        .published {
-
-            padding: 120px 5.5vw;
-
-            border-top: 1px solid var(--line);
-        }
-
-
-        .published-grid {
-
-            display: grid;
-
-            grid-template-columns: 20% 1fr;
-
-            gap: 70px;
-        }
-
-
-        .published-content h2 {
-
-            max-width: 850px;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: clamp(50px, 7vw, 100px);
-
-            line-height: .85;
-
-            letter-spacing: -.075em;
-        }
-
-
-        .publication-list {
-
-            margin-top: 70px;
-
-            border-top: 1px solid var(--line);
-        }
-
-
-        .publication {
-
-            display: grid;
-
-            grid-template-columns: 110px 1fr auto;
-
-            gap: 30px;
-
-            padding: 28px 0;
-
-            border-bottom: 1px solid var(--line);
-
-            align-items: center;
-        }
-
-
-        .publication-type {
-
-            color: var(--green);
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 9px;
-
-            font-weight: 700;
-
-            text-transform: uppercase;
-
-            letter-spacing: .12em;
-        }
-
-
-        .publication-name {
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 24px;
-
-            font-weight: 600;
-
-            letter-spacing: -.035em;
-        }
-
-
-        .publication-link {
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 12px;
-
-            text-decoration: underline;
-
-            text-underline-offset: 4px;
-        }
-
-
-
-        /* =====================================================
-           CIERRE
-        ===================================================== */
-
-        .closing {
-
-            min-height: 65vh;
-
-            padding: 120px 5.5vw 75px;
-
-            background: var(--green);
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-        }
-
-
-        .closing h2 {
-
-            max-width: 1000px;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: clamp(60px, 9vw, 130px);
-
-            line-height: .82;
-
-            letter-spacing: -.08em;
-
-            font-weight: 700;
-        }
-
-
-        .closing h2 span {
-
-            color: #dce5cd;
-        }
-
-
-        .closing-bottom {
-
-            margin-top: 100px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: flex-end;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 12px;
-        }
-
-
-        .closing-bottom a {
-
-            text-decoration: underline;
-
-            text-underline-offset: 4px;
-        }
-
-
-
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
-
-        @media (max-width: 900px) {
-
-            .case-hero {
-
-                min-height: auto;
-
-                padding: 85px 6vw 65px;
-            }
-
-
-            .case-meta {
-
-                grid-template-columns: 1fr 1fr;
-            }
-
-
-            .two-column,
-            .projects-heading,
-            .featured-grid,
-            .published-grid {
-
-                grid-template-columns: 1fr;
-
-                gap: 30px;
-            }
-
-
-            .intro-copy {
-
-                margin-top: 50px;
-            }
-
-
-            .project-details {
-
-                grid-template-columns: 1fr;
-
-                gap: 25px;
-            }
-
-
-            .project-item {
-
-                grid-template-columns: 55px 1fr 35px;
-            }
-
-
-            .project-description {
-
-                display: none;
-            }
-
-        }
-
-
-
-        @media (max-width: 600px) {
-
-            .case-header {
-
-                padding: 0 6vw;
-            }
-
-
-            .case-hero {
-
-                padding: 70px 6vw 60px;
-            }
-
-
-            .case-hero h1 {
-
-                margin-top: 45px;
-
-                font-size: 20vw;
-            }
-
-
-            .case-intro {
-
-                font-size: 18px;
-
-                margin-top: 45px;
-            }
-
-
-            .case-meta {
-
-                grid-template-columns: 1fr;
-
-                gap: 22px;
-            }
-
-
-            .intro-section,
-            .projects-section,
-            .featured,
-            .published,
-            .closing {
-
-                padding-left: 6vw;
-
-                padding-right: 6vw;
-            }
-
-
-            .intro-section,
-            .projects-section,
-            .featured,
-            .published {
-
-                padding-top: 80px;
-
-                padding-bottom: 80px;
-            }
-
-
-            .section-title {
-
-                font-size: 50px;
-            }
-
-
-            .area {
-
-                grid-template-columns: 45px 1fr;
-            }
-
-
-            .area-text {
-
-                grid-column: 2;
-            }
-
-
-            .project-item {
-
-                grid-template-columns: 40px 1fr 25px;
-
-                min-height: 110px;
-
-                padding: 25px 0;
-            }
-
-
-            .project-name {
-
-                font-size: 25px;
-            }
-
-
-            .project-visual {
-
-                min-height: 340px;
-
-                padding: 25px;
-            }
-
-
-            .visual-copy p {
-
-                font-size: 20px;
-            }
-
-
-            .publication {
-
-                grid-template-columns: 1fr;
-
-                gap: 8px;
-            }
-
-
-            .publication-link {
-
-                margin-top: 8px;
-            }
-
-
-            .closing {
-
-                padding-top: 90px;
-
-                padding-bottom: 60px;
-            }
-
-
-            .closing-bottom {
-
-                display: block;
-
-                margin-top: 90px;
-            }
-
-
-            .closing-bottom a {
-
-                display: inline-block;
-
-                margin-top: 20px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MNA Stands — Comunicación, contenidos y presencia digital para un entorno B2B especializado en ferias, eventos y espacios corporativos.">
+<title>MNA Stands — DANI.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f4f4f0;
+  --paper:#fff;
+  --ink:#101010;
+  --muted:#697078;
+  --line:#d9d9d3;
+  --accent:#713B48;
+  --accent-dark:#5E303C;
+  --accent-light:#8A5360;
+  --dark:#111;
+  --radius:22px;
+  --max:1440px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Manrope",Arial,sans-serif;line-height:1.45}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.header{
+  height:72px;padding:0 5.5vw;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;font-size:12px
+}
+.logo{font-weight:800;letter-spacing:-.04em}
+.back{text-decoration:underline;text-underline-offset:4px}
+
+.hero{padding:86px 5.5vw 70px;min-height:calc(100vh - 72px);display:flex;flex-direction:column;justify-content:space-between}
+.eyebrow,.section-label,.meta-label,.visual-kicker{
+  color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase
+}
+.hero h1{
+  margin-top:64px;font-size:clamp(82px,14vw,190px);line-height:.76;letter-spacing:-.09em;font-weight:800
+}
+.hero h1 span{display:block;color:#72777c}
+.hero-intro{max-width:720px;margin-top:60px;font-size:22px;line-height:1.35}
+.meta-grid{margin-top:78px;padding-top:20px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.meta{display:flex;flex-direction:column;gap:7px}
+.meta-label{color:var(--muted)}
+.meta-value{font-size:14px;font-weight:700}
+
+.hero-visual{
+  margin-top:75px;display:grid;grid-template-columns:1.65fr .35fr;min-height:480px;overflow:hidden;border-radius:var(--radius);
+  background:#dedbd5
+}
+.hero-image{min-height:480px;background:#ddd}
+.hero-image img{width:100%;height:100%;object-fit:cover}
+.hero-side{
+  padding:30px;background:var(--accent);color:white;display:flex;flex-direction:column;justify-content:space-between
+}
+.hero-side .visual-kicker{color:#eadde1}
+.hero-side strong{font-size:clamp(25px,2.6vw,42px);line-height:.98;letter-spacing:-.05em}
+
+.section{padding:120px 5.5vw;border-top:1px solid var(--line)}
+.section-grid{display:grid;grid-template-columns:20% 1fr;gap:70px;max-width:var(--max);margin:auto}
+.section-title{font-size:clamp(52px,6.5vw,88px);line-height:.88;letter-spacing:-.07em;font-weight:800}
+.section-title span{color:#747a80}
+.context-layout{margin-top:70px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.context-lead{font-size:clamp(25px,3vw,40px);line-height:1.12;letter-spacing:-.035em}
+.context-copy p{max-width:700px;margin-bottom:24px;color:var(--muted);font-size:17px;line-height:1.7}
+
+.areas{margin-top:70px;border-top:1px solid var(--line)}
+.area{display:grid;grid-template-columns:70px 1fr 1fr;gap:25px;padding:29px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.area-number{color:var(--muted);font-size:10px}
+.area-title{font-size:24px;font-weight:700;letter-spacing:-.04em}
+.area-text{color:var(--muted);font-size:16px}
+
+.dark-section{background:var(--dark);color:white}
+.dark-section .section-label{color:var(--accent-light)}
+.dark-section .section-title span{color:#777}
+.work-intro{max-width:700px;margin-top:32px;color:#bfc0bf;font-size:18px;line-height:1.6}
+
+.work-list{margin-top:65px;border-top:1px solid #353535}
+.work-row{
+  display:grid;grid-template-columns:70px 1fr 300px 35px;gap:25px;align-items:center;
+  padding:30px 0;border-bottom:1px solid #353535
+}
+.work-number{color:#777;font-size:10px}
+.work-name{font-size:clamp(28px,3vw,45px);font-weight:700;letter-spacing:-.055em}
+.work-desc{color:#999;font-size:15px}
+.work-arrow{color:#c8aab2;font-size:20px;text-align:right}
+
+.feature{
+  padding:120px 5.5vw;background:var(--paper);border-top:1px solid var(--line)
+}
+.feature-grid{display:grid;grid-template-columns:20% 1fr;gap:70px;max-width:var(--max);margin:auto}
+.feature-copy{max-width:1100px}
+.feature-copy h2{font-size:clamp(65px,10vw,145px);line-height:.8;letter-spacing:-.09em;font-weight:800}
+.feature-copy h2 span{color:#73777b}
+.feature-lead{max-width:720px;margin-top:50px;font-size:21px;line-height:1.45}
+
+.mna-visual{
+  margin-top:65px;min-height:560px;padding:42px;background:#e7e3dd;position:relative;overflow:hidden;border-radius:var(--radius)
+}
+.mna-visual::before{
+  content:"MNA";position:absolute;right:-15px;top:-85px;font-size:clamp(170px,28vw,410px);
+  font-weight:800;letter-spacing:-.12em;color:rgba(113,59,72,.09);line-height:1
+}
+.mna-visual::after{
+  content:"STANDS";position:absolute;right:48px;top:300px;font-size:15px;letter-spacing:.5em;font-weight:800;color:rgba(16,16,16,.16)
+}
+.visual-copy{position:absolute;left:42px;bottom:42px;z-index:2;max-width:650px}
+.visual-copy .visual-kicker{color:var(--accent-dark)}
+.visual-copy h3{margin-top:12px;font-size:clamp(34px,4vw,60px);line-height:.95;letter-spacing:-.06em}
+.visual-copy p{margin-top:15px;max-width:560px;font-size:18px;color:#565b60}
+
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:55px}
+.detail-grid p{font-size:17px;line-height:1.65;color:var(--muted)}
+
+.presence{padding:120px 5.5vw;border-top:1px solid var(--line)}
+.presence-grid{display:grid;grid-template-columns:20% 1fr;gap:70px;max-width:var(--max);margin:auto}
+.presence h2{font-size:clamp(52px,7vw,100px);line-height:.84;letter-spacing:-.08em}
+.links{margin-top:65px;border-top:1px solid var(--line)}
+.link-row{display:grid;grid-template-columns:130px 1fr auto;gap:25px;align-items:center;padding:27px 0;border-bottom:1px solid var(--line)}
+.link-type{color:var(--accent);font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.link-name{font-size:22px;font-weight:700;letter-spacing:-.04em}
+.link-action{text-decoration:underline;text-underline-offset:4px;font-size:12px}
+
+.closing{min-height:65vh;padding:120px 5.5vw 70px;background:var(--accent);color:white;display:flex;flex-direction:column;justify-content:space-between}
+.closing .eyebrow{color:#eadde1}
+.closing h2{margin-top:25px;max-width:1050px;font-size:clamp(65px,10vw,145px);line-height:.8;letter-spacing:-.09em}
+.closing h2 span{color:#e7d8dc}
+.closing-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:100px;font-size:12px}
+.closing-bottom a{text-decoration:underline;text-underline-offset:4px}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .meta-grid{grid-template-columns:1fr 1fr}
+  .section-grid,.feature-grid,.presence-grid{grid-template-columns:1fr;gap:30px}
+  .context-layout{grid-template-columns:1fr;gap:35px}
+  .area{grid-template-columns:55px 1fr}.area-text{grid-column:2}
+  .work-row{grid-template-columns:50px 1fr 30px}.work-desc{display:none}
+  .hero-visual{grid-template-columns:1fr}.hero-side{min-height:190px}
+  .detail-grid{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:600px){
+  .header{padding:0 6vw}
+  .hero{padding:70px 6vw 60px}
+  .hero h1{margin-top:45px;font-size:20vw}
+  .hero-intro{font-size:18px;margin-top:45px}
+  .meta-grid{grid-template-columns:1fr;gap:22px}
+  .section,.feature,.presence,.closing{padding-left:6vw;padding-right:6vw;padding-top:82px;padding-bottom:82px}
+  .section-title{font-size:50px}
+  .hero-image,.hero-visual{min-height:340px}
+  .hero-side{padding:25px}
+  .area{grid-template-columns:42px 1fr;padding:25px 0}
+  .area-text{grid-column:2}
+  .work-row{grid-template-columns:38px 1fr 24px;padding:25px 0}
+  .work-name{font-size:25px}
+  .mna-visual{min-height:380px;padding:25px}
+  .visual-copy{left:25px;bottom:25px}
+  .mna-visual::after{right:25px;top:205px}
+  .link-row{grid-template-columns:1fr;gap:7px}
+  .link-action{margin-top:4px}
+  .closing-bottom{display:block;margin-top:90px}.closing-bottom a{display:inline-block;margin-top:20px}
+}
+</style>
 </head>
 
-
 <body>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header class="case-header">
-
-    <a href="index.html" class="logo">
-        DANI.
-    </a>
-
-
-    <a href="index.html#experiencia" class="back-home">
-        ← Volver al portfolio
-    </a>
-
+<header class="header">
+  <a href="../index.html" class="logo">DANI.</a>
+  <a href="../index.html#experiencia" class="back">← Volver al portfolio</a>
 </header>
-
-
 
 <main>
 
+<section class="hero">
+  <div>
+    <div class="eyebrow">EXPERIENCIA · COMUNICACIÓN · MARKETING</div>
+    <h1>MNA <span>Stands</span></h1>
+    <p class="hero-intro">
+      Comunicación, contenidos y presencia digital para una marca B2B especializada en ferias, eventos y espacios corporativos.
+    </p>
 
+    <div class="meta-grid">
+      <div class="meta"><span class="meta-label">Rol</span><span class="meta-value">Comunicación &amp; Marketing</span></div>
+      <div class="meta"><span class="meta-label">Área</span><span class="meta-value">Comunicación Digital</span></div>
+      <div class="meta"><span class="meta-label">Entorno</span><span class="meta-value">B2B · Ferias · Eventos</span></div>
+      <div class="meta"><span class="meta-label">Etapa</span><span class="meta-value">Experiencia profesional</span></div>
+    </div>
+  </div>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+  <div class="hero-visual reveal">
+    <div class="hero-image">
+      <img src="../img/mna-stands.jpg" alt="MNA Stands" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-side">
+      <span class="visual-kicker">MNA STANDS</span>
+      <strong>Espacios que también comunican.</strong>
+    </div>
+  </div>
+</section>
 
-<section class="case-hero">
-
+<section class="section">
+  <div class="section-grid">
+    <div class="section-label">01 / CONTEXTO</div>
     <div>
+      <h2 class="section-title reveal">Comunicación<br><span>para un entorno B2B.</span></h2>
 
-        <div class="case-label">
-            EXPERIENCIA · ETAPA INICIAL
-        </div>
-
-
-        <h1>
-            MNA
-            <span>Stands</span>
-        </h1>
-
-
-        <p class="case-intro">
-            Primera etapa profesional vinculada a comunicación,
-            presencia digital, contenidos y proyectos dentro de
-            un entorno B2B.
+      <div class="context-layout reveal">
+        <p class="context-lead">
+          Una experiencia profesional vinculada a la comunicación y el marketing de una actividad donde marca, espacio y negocio están conectados.
         </p>
-
+        <div class="context-copy">
+          <p>
+            MNA Stands trabaja en un contexto especialmente visual y profesional: ferias, congresos, eventos y espacios corporativos.
+          </p>
+          <p>
+            Mi experiencia se desarrolló alrededor de la comunicación de la marca, los contenidos y su presencia digital, entendiendo cómo trasladar una actividad B2B a canales de comunicación más claros y atractivos.
+          </p>
+          <p>
+            El proyecto permitió trabajar con una comunicación orientada a empresas y profesionales, donde el contenido debía explicar servicios, mostrar proyectos y reforzar la presencia de la marca.
+          </p>
+        </div>
+      </div>
     </div>
-
-
-    <div class="case-meta">
-
-        <div>
-
-            <small>
-                Rol
-            </small>
-
-            <strong>
-                Comunicación & Marketing
-            </strong>
-
-        </div>
-
-
-        <div>
-
-            <small>
-                Área
-            </small>
-
-            <strong>
-                Comunicación Digital
-            </strong>
-
-        </div>
-
-
-        <div>
-
-            <small>
-                Entorno
-            </small>
-
-            <strong>
-                B2B
-            </strong>
-
-        </div>
-
-
-        <div>
-
-            <small>
-                Etapa
-            </small>
-
-            <strong>
-                Inicial
-            </strong>
-
-        </div>
-
-    </div>
-
+  </div>
 </section>
 
+<section class="section">
+  <div class="section-grid">
+    <div class="section-label">02 / ÁREAS</div>
+    <div>
+      <h2 class="section-title reveal">Comunicación<br><span>desde diferentes frentes.</span></h2>
 
-
-<!-- =====================================================
-     CONTEXTO
-===================================================== -->
-
-<section class="intro-section">
-
-    <div class="two-column">
-
-        <div class="section-number">
-            01 / CONTEXTO
+      <div class="areas reveal">
+        <div class="area">
+          <span class="area-number">01</span>
+          <span class="area-title">Comunicación</span>
+          <span class="area-text">Desarrollo y adaptación de contenidos vinculados a la actividad y los servicios de la empresa.</span>
         </div>
-
-
-        <div>
-
-            <h2 class="section-title">
-                Comunicación
-                <br>
-                en movimiento.
-            </h2>
-
-
-            <div class="intro-copy">
-
-                <p class="lead">
-                    Una primera experiencia profesional vinculada
-                    a la comunicación, el marketing y la presencia
-                    digital dentro de un entorno B2B.
-                </p>
-
-
-                <p>
-                    MNA Stands supuso una primera aproximación al
-                    trabajo profesional de comunicación y marketing,
-                    trabajando sobre una actividad muy vinculada
-                    a eventos, ferias y espacios profesionales.
-                </p>
-
-
-                <p>
-                    El contexto B2B implicaba adaptar la comunicación
-                    a un público profesional y combinar presencia
-                    digital, contenidos y necesidades comerciales.
-                </p>
-
-            </div>
-
+        <div class="area">
+          <span class="area-number">02</span>
+          <span class="area-title">Contenidos</span>
+          <span class="area-text">Piezas y materiales pensados para explicar proyectos, servicios y propuestas de valor.</span>
         </div>
-
+        <div class="area">
+          <span class="area-number">03</span>
+          <span class="area-title">Presencia digital</span>
+          <span class="area-text">Trabajo relacionado con la comunicación online y la forma de presentar la marca en digital.</span>
+        </div>
+        <div class="area">
+          <span class="area-number">04</span>
+          <span class="area-title">Comunicación B2B</span>
+          <span class="area-text">Adaptación del mensaje a un público profesional y a un contexto comercial.</span>
+        </div>
+        <div class="area">
+          <span class="area-number">05</span>
+          <span class="area-title">Ferias y eventos</span>
+          <span class="area-text">Un sector donde la comunicación convive con espacios físicos, proyectos, encuentros y experiencias de marca.</span>
+        </div>
+      </div>
     </div>
-
-
-
-<!-- =====================================================
-     ÁREAS
-===================================================== -->
-
-    <div
-        class="two-column"
-        style="margin-top: 100px;"
-    >
-
-        <div class="section-number">
-            02 / ÁREAS
-        </div>
-
-
-        <div>
-
-            <h2 class="section-title">
-                Un trabajo
-                <br>
-                transversal.
-            </h2>
-
-
-            <div class="areas">
-
-
-                <div class="area">
-
-                    <span class="area-number">
-                        01
-                    </span>
-
-
-                    <span class="area-title">
-                        Comunicación
-                    </span>
-
-
-                    <span class="area-text">
-                        Desarrollo de contenidos y comunicación
-                        vinculada a la actividad de la empresa.
-                    </span>
-
-                </div>
-
-
-
-                <div class="area">
-
-                    <span class="area-number">
-                        02
-                    </span>
-
-
-                    <span class="area-title">
-                        Marketing
-                    </span>
-
-
-                    <span class="area-text">
-                        Apoyo a acciones y materiales relacionados
-                        con la comunicación comercial.
-                    </span>
-
-                </div>
-
-
-
-                <div class="area">
-
-                    <span class="area-number">
-                        03
-                    </span>
-
-
-                    <span class="area-title">
-                        Presencia Digital
-                    </span>
-
-
-                    <span class="area-text">
-                        Trabajo relacionado con la presencia y
-                        comunicación de la marca en digital.
-                    </span>
-
-                </div>
-
-
-
-                <div class="area">
-
-                    <span class="area-number">
-                        04
-                    </span>
-
-
-                    <span class="area-title">
-                        B2B
-                    </span>
-
-
-                    <span class="area-text">
-                        Comunicación orientada a un entorno
-                        profesional y empresarial.
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
+  </div>
 </section>
 
+<section class="section dark-section">
+  <div class="section-grid">
+    <div class="section-label">03 / TRABAJO</div>
+    <div>
+      <h2 class="section-title reveal">Del mensaje<br><span>al espacio.</span></h2>
+      <p class="work-intro reveal">
+        La comunicación de una empresa de stands necesita combinar información, identidad visual y contexto comercial. El contenido funciona como una extensión de los propios proyectos.
+      </p>
 
-
-<!-- =====================================================
-     PROYECTOS / TRABAJO
-===================================================== -->
-
-<section class="projects-section">
-
-    <div class="projects-heading">
-
-        <div class="section-number">
-            03 / TRABAJO
+      <div class="work-list reveal">
+        <div class="work-row">
+          <span class="work-number">01</span>
+          <span class="work-name">Comunicación</span>
+          <span class="work-desc">Mensajes y materiales vinculados a la actividad de la marca.</span>
+          <span class="work-arrow">↗</span>
         </div>
-
-
-        <div>
-
-            <h2 class="section-title">
-                Comunicación
-                <br>
-                para empresa.
-            </h2>
-
-
-            <p>
-                Una experiencia que permitió conocer el lado más
-                comercial de la comunicación y trabajar contenidos
-                dentro de un contexto profesional y B2B.
-            </p>
-
+        <div class="work-row">
+          <span class="work-number">02</span>
+          <span class="work-name">Contenido</span>
+          <span class="work-desc">Piezas adaptadas a diferentes necesidades y formatos.</span>
+          <span class="work-arrow">↗</span>
         </div>
-
+        <div class="work-row">
+          <span class="work-number">03</span>
+          <span class="work-name">Digital</span>
+          <span class="work-desc">Presencia online y comunicación de marca.</span>
+          <span class="work-arrow">↗</span>
+        </div>
+        <div class="work-row">
+          <span class="work-number">04</span>
+          <span class="work-name">B2B</span>
+          <span class="work-desc">Comunicación dirigida a empresas y profesionales.</span>
+          <span class="work-arrow">↗</span>
+        </div>
+      </div>
     </div>
-
-
-    <div class="project-list">
-
-
-        <div class="project-item">
-
-            <span class="project-number">
-                01
-            </span>
-
-
-            <span class="project-name">
-                Comunicación
-            </span>
-
-
-            <span class="project-description">
-                Contenidos y materiales vinculados a la comunicación
-                de la empresa y sus servicios.
-            </span>
-
-
-            <span class="project-arrow">
-                ↗
-            </span>
-
-        </div>
-
-
-
-        <div class="project-item">
-
-            <span class="project-number">
-                02
-            </span>
-
-
-            <span class="project-name">
-                Presencia Digital
-            </span>
-
-
-            <span class="project-description">
-                Trabajo relacionado con la presencia online y
-                comunicación digital de la marca.
-            </span>
-
-
-            <span class="project-arrow">
-                ↗
-            </span>
-
-        </div>
-
-
-
-        <div class="project-item">
-
-            <span class="project-number">
-                03
-            </span>
-
-
-            <span class="project-name">
-                Contenido
-            </span>
-
-
-            <span class="project-description">
-                Desarrollo de piezas y contenidos adaptados
-                a diferentes necesidades de comunicación.
-            </span>
-
-
-            <span class="project-arrow">
-                ↗
-            </span>
-
-        </div>
-
-
-
-        <div class="project-item">
-
-            <span class="project-number">
-                04
-            </span>
-
-
-            <span class="project-name">
-                Entorno B2B
-            </span>
-
-
-            <span class="project-description">
-                Comunicación orientada a empresas, profesionales
-                y proyectos vinculados a ferias y eventos.
-            </span>
-
-
-            <span class="project-arrow">
-                ↗
-            </span>
-
-        </div>
-
-
-    </div>
-
+  </div>
 </section>
 
+<section class="feature">
+  <div class="feature-grid">
+    <div class="section-label">04 / PROYECTO</div>
+    <div class="feature-copy">
+      <h2>Diseño que <span>comunica.</span></h2>
+      <p class="feature-lead">
+        En MNA Stands, el propio producto es un espacio de comunicación: una forma de presentar marcas, generar encuentros y construir experiencias dentro de ferias y eventos.
+      </p>
 
-
-<!-- =====================================================
-     BLOQUE DESTACADO
-===================================================== -->
-
-<section class="featured">
-
-    <div class="featured-grid">
-
-        <div class="section-number">
-            04 / EXPERIENCIA
+      <div class="mna-visual reveal">
+        <div class="visual-copy">
+          <span class="visual-kicker">COMUNICACIÓN · B2B · EXPERIENCES</span>
+          <h3>De concepto a espacio.</h3>
+          <p>Una identidad que se construye entre contenidos, proyectos, espacios y presencia digital.</p>
         </div>
+      </div>
 
-
-        <div class="featured-content">
-
-            <div class="featured-tag">
-                Primera etapa profesional
-            </div>
-
-
-            <h2>
-                Del entorno
-                <span>al proyecto.</span>
-            </h2>
-
-
-            <p class="featured-description">
-                Una primera experiencia para entender cómo la
-                comunicación y el marketing se integran dentro
-                de una empresa con una actividad eminentemente
-                profesional y comercial.
-            </p>
-
-
-            <div class="project-visual">
-
-                <div class="visual-copy">
-
-                    <div class="visual-label">
-                        Comunicación · Marketing · B2B
-                    </div>
-
-
-                    <p>
-                        Una experiencia que conecta comunicación,
-                        presencia digital y necesidades comerciales.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-details">
-
-                <p>
-                    El entorno B2B permitió acercarse a una
-                    comunicación más orientada a empresas,
-                    profesionales y relaciones comerciales.
-                </p>
-
-
-                <p>
-                    Esta etapa sirvió como punto de partida para
-                    seguir desarrollando posteriormente una visión
-                    más estratégica y digital de la comunicación.
-                </p>
-
-            </div>
-
-        </div>
-
+      <div class="detail-grid">
+        <p>
+          El trabajo dentro de este sector permitió entender la comunicación desde una perspectiva más comercial: qué necesita conocer un cliente, cómo mostrar un proyecto y cómo convertir una actividad especializada en contenidos comprensibles.
+        </p>
+        <p>
+          También supuso trabajar con una marca donde la parte visual tiene un peso central y donde cada proyecto puede convertirse en una pieza de comunicación.
+        </p>
+      </div>
     </div>
-
+  </div>
 </section>
 
+<section class="presence">
+  <div class="presence-grid">
+    <div class="section-label">05 / PRESENCIA DIGITAL</div>
+    <div>
+      <h2>Una marca<br>también <span>online.</span></h2>
 
-
-<!-- =====================================================
-     PUBLICADO / PRESENCIA DIGITAL
-===================================================== -->
-
-<section class="published">
-
-    <div class="published-grid">
-
-        <div class="section-number">
-            05 / PRESENCIA
+      <div class="links reveal">
+        <a class="link-row" href="https://www.instagram.com/mnastands/?hl=es" target="_blank" rel="noopener">
+          <span class="link-type">Instagram</span>
+          <span class="link-name">MNA Stands</span>
+          <span class="link-action">Ver canal ↗</span>
+        </a>
+        <div class="link-row">
+          <span class="link-type">B2B</span>
+          <span class="link-name">Comunicación profesional</span>
+          <span class="link-action">Experiencia</span>
         </div>
-
-
-        <div class="published-content">
-
-            <h2>
-                Comunicación
-                <br>
-                también digital.
-            </h2>
-
-
-            <div class="publication-list">
-
-
-                <div class="publication">
-
-                    <span class="publication-type">
-                        Digital
-                    </span>
-
-
-                    <span class="publication-name">
-                        Presencia online
-                    </span>
-
-
-                    <span class="publication-link">
-                        ↗
-                    </span>
-
-                </div>
-
-
-
-                <div class="publication">
-
-                    <span class="publication-type">
-                        B2B
-                    </span>
-
-
-                    <span class="publication-name">
-                        Comunicación profesional
-                    </span>
-
-
-                    <span class="publication-link">
-                        ↗
-                    </span>
-
-                </div>
-
-
-
-                <div class="publication">
-
-                    <span class="publication-type">
-                        Marketing
-                    </span>
-
-
-                    <span class="publication-name">
-                        Contenidos de marca
-                    </span>
-
-
-                    <span class="publication-link">
-                        ↗
-                    </span>
-
-                </div>
-
-
-            </div>
-
+        <div class="link-row">
+          <span class="link-type">Contenido</span>
+          <span class="link-name">Proyectos y espacios</span>
+          <span class="link-action">Trabajo</span>
         </div>
-
+      </div>
     </div>
-
+  </div>
 </section>
-
-
-
-<!-- =====================================================
-     CIERRE
-===================================================== -->
 
 <section class="closing">
-
-    <div>
-
-        <div class="case-label">
-            MNA STANDS · ETAPA INICIAL
-        </div>
-
-
-        <h2>
-            El comienzo
-            <br>
-            <span>de la trayectoria.</span>
-        </h2>
-
-    </div>
-
-
-    <div class="closing-bottom">
-
-        <span>
-            Comunicación · Marketing · B2B
-        </span>
-
-
-        <a href="index.html#experiencia">
-            ← Volver al portfolio
-        </a>
-
-    </div>
-
+  <div>
+    <div class="eyebrow">MNA STANDS · COMUNICACIÓN &amp; MARKETING</div>
+    <h2>Comunicar<br><span>también es construir.</span></h2>
+  </div>
+  <div class="closing-bottom">
+    <span>Comunicación · Marketing · Digital · B2B</span>
+    <a href="../index.html#experiencia">← Volver al portfolio</a>
+  </div>
 </section>
-
 
 </main>
 
-
+<script>
+const items=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+items.forEach(item=>observer.observe(item));
+</script>
 </body>
-
 </html>
